@@ -1,0 +1,71 @@
+// --- Colors ---
+$color-bg-dark: #0a0a0a;
+$color-card-bg: rgba(20, 20, 20, 0.8);
+$color-text-main: white;
+$color-text-muted: #888;
+$color-text-dim: #ccc;
+$color-text-dark: #666;
+
+
+$neon-cyan: #00d2ff;
+
+// --- Tech Colors Map ---
+$tech-colors: (
+  'angular': #dd0031,
+  'react': #61dafb,
+  'nodejs': #83cd29,
+  'nestjs': #df234f,
+  'aws': #ff9900,
+  'docker': #2496ed,
+  'cicd': #fc6d26,
+  'web3': #4f9cf9,
+  'solidity': #666666
+);
+
+// --- Gradients ---
+$gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$gradient-accent: linear-gradient(135deg, #4f9cf9 0%, #ff6b35 100%);
+$gradient-highlight: linear-gradient(135deg, #4ecdc4 0%, #44a08d 50%, #667eea 100%);
+// Adicione ao seu _variables.scss
+$gradient-blue-theme: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$gradient-purple-theme: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+// --- Borders & Shadows ---
+$border-light: 0.0625rem solid rgba(255, 255, 255, 0.1);
+$border-hover: 0.0625rem solid rgba(255, 255, 255, 0.3);
+$shadow-card: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.3);
+$shadow-hover: 0 2rem 4rem rgba(0, 0, 0, 0.4);
+
+
+// --- Layout & Spacing ---
+$container-max-width: 75rem;
+$transition-base: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+
+// --- Mixins ---
+@mixin glass-effect($opacity: 0.1, $blur: 0.625rem) {
+  background: rgba(255, 255, 255, $opacity);
+  backdrop-filter: blur($blur);
+  border: 0.0625rem solid rgba(255, 255, 255, ($opacity + 0.1));
+}
+
+
+/* Estado Inicial (Escondido e abaixo) */
+.reveal-hidden {
+  opacity: 0;
+  // Move o elemento 50px para baixo e reduz levemente a escala
+  transform: translateY(50px) scale(0.98);
+  filter: blur(4px);
+  transition: 
+    opacity 0.8s ease-out, 
+    transform 1s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.8s ease-out;
+  will-change: transform, opacity;
+}
+
+/* Estado Ativo (Posição original) */
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+

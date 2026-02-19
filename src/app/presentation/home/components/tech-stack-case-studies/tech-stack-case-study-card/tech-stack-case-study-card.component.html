@@ -1,0 +1,25 @@
+<div class="project-card" 
+     [style.grid-area]="data.gridArea" 
+     (click)="handleProjectClick()" 
+     tabindex="0"
+     (keydown.enter)="handleProjectClick()"
+     (keydown.space)="handleProjectClick(); $event.preventDefault()">
+  
+  <div class="project-image" [ngClass]="data.gradientClass">
+    <div class="logo-wrapper">
+      <img [src]="data.imageUrl" 
+           [alt]="data.title" 
+           class="project-logo" 
+           loading="lazy">
+    </div>
+
+    <div class="bg-overlay"></div>
+  </div>
+  
+  <div class="project-info">
+    <h3 class="project-title">{{ data.title | transloco }}</h3>
+    <p class="project-description">{{ data.description | transloco }}</p>
+  </div>
+  
+  <button class="project-arrow" aria-label="Open project details">→</button>
+</div>

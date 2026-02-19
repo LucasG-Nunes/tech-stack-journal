@@ -1,0 +1,143 @@
+@use '../../../../styles/variables' as *;
+
+$neon-cyan: #00d2ff;
+
+.main-footer {
+  background-color: #050505;
+  padding: 4rem 2.4rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  @media (max-width: 480px) {
+    padding: 3rem 1.6rem 2rem;
+  }
+}
+
+.footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .logo-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba($neon-cyan, 0.4));
+  }
+
+  .logo-text {
+    .name {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+    .role {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin: 0;
+    }
+  }
+}
+
+.footer-right {
+  .contacts-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+}
+
+.social-links-footer {
+  display: flex;
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+
+  .social-link {
+    width: 2.8rem;
+    height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #fff;
+    text-decoration: none;
+
+    svg, .gh-text {
+      width: 1.4rem;
+      height: 1.4rem;
+      transition: transform 0.3s ease;
+    }
+
+    .gh-text {
+      font-size: 0.8rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      background: rgba($neon-cyan, 0.1);
+      border-color: $neon-cyan;
+      box-shadow: 0 0 20px rgba($neon-cyan, 0.2);
+
+      svg, .gh-text {
+        transform: scale(1.1);
+      }
+    }
+
+    &.whatsapp:hover {
+      color: #25d366;
+      border-color: #25d366;
+      box-shadow: 0 0 20px rgba(#25d366, 0.2);
+    }
+  }
+}
+
+.footer-bottom {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  text-align: center;
+
+  .footer-tagline {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.4);
+
+    strong {
+      color: #fff;
+    }
+
+    .heart {
+      display: inline-block;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}

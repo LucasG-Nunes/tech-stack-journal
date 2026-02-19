@@ -1,0 +1,25 @@
+<div class="tech-card" 
+     appScrollReveal
+     (click)="onClick()" 
+     (keydown.enter)="onClick()"
+     (keydown.space)="onClick(); $event.preventDefault()"
+     role="button" 
+     tabindex="0"
+     [attr.aria-label]="('BLOG.CATEGORIES_SECTION.ARIA_VIEW' | transloco) + item.name">
+  
+  <div class="tech-icon" aria-hidden="true">
+    {{ item.icon }}
+  </div>
+
+  <div class="tech-info">
+    <h4 class="tech-name">{{ item.name }}</h4>
+    <p class="tech-description">{{ item.description | transloco }}</p>
+  </div>
+
+  <footer class="tech-footer">
+    <span class="article-count">
+      <strong>{{ item.articleCount }}</strong> 
+      {{ 'BLOG.CATEGORIES_SECTION.ARTICLES_COUNT' | transloco }}
+    </span>
+  </footer>
+</div>

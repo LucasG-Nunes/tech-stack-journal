@@ -1,0 +1,25 @@
+<section class="recent-articles" aria-labelledby="recent-title">
+  <div class="articles-container">
+    <header class="section-header" appScrollReveal>
+      <h2 id="recent-title" class="section-title">
+        {{ 'BLOG.RECENT_ARTICLES.TITLE' | transloco }}
+      </h2>
+      <p class="section-subtitle">
+        {{ 'BLOG.RECENT_ARTICLES.SUBTITLE' | transloco }}
+      </p>
+    </header>
+
+    <div class="articles-grid" role="list">
+      @for (item of articles; track $index) {
+        <tech-stack-article-card (viewArticle)="callViewArticle()" role="listitem" [article]="item" [class.featured]="item.isFeatured" appScrollReveal="$index * 100" />
+      }
+    </div>
+
+    <div class="view-all-section" appScrollReveal="200">
+      <button class="view-all-button" (click)="onViewAll()" [attr.aria-label]="'BLOG.RECENT_ARTICLES.VIEW_ALL_ARIA' | transloco">
+        <span>{{ 'BLOG.RECENT_ARTICLES.VIEW_ALL' | transloco }}</span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </button>
+    </div>
+  </div>
+</section>

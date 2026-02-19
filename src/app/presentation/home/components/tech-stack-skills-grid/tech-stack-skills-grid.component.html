@@ -1,0 +1,20 @@
+<section class="skills-section" aria-labelledby="skills-heading">
+  <h2 id="skills-heading" class="skills-title" appScrollReveal>
+    {{ 'SKILLS.HEADING' | transloco }}
+  </h2>
+
+  <ul class="skills-grid" role="list">
+    @for (skill of skills; track skill.title; let i = $index) {
+      <li
+        class="skill-item"
+        tabindex="0"
+        [class]="skill.className"
+        [attr.aria-label]="'Tecnologia: ' + skill.title"
+        appScrollReveal="i * 80">
+        <div class="tech-logo-container">
+          <tech-stack-icon [svgRaw]="skill.svg" />
+        </div>
+      </li>
+    }
+  </ul>
+</section>

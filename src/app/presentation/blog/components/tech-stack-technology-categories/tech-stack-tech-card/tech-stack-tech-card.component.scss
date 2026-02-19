@@ -1,0 +1,85 @@
+/* ========== TECH STACK CARD (SHARED) ========== */
+:host {
+  display: block;
+  height: 100%;
+}
+
+.tech-card {
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(0.625rem);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  outline: none; 
+
+  &:focus-visible {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.25rem rgba(103, 126, 234, 0.3);
+    transform: translateY(-0.25rem);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+  }
+
+  &:hover {
+    transform: translateY(-0.5rem);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.4);
+    
+    &::before { opacity: 0.1; }
+    .tech-icon { transform: scale(1.1); }
+  }
+
+  .tech-icon, .tech-info, .tech-footer {
+    position: relative;
+    z-index: 1;
+  }
+
+  .tech-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+    display: block;
+  }
+
+  .tech-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin: 0 0 0.5rem;
+  }
+
+  .tech-description {
+    font-size: 0.875rem;
+    color: #ccc;
+    line-height: 1.5;
+    margin: 0 0 1.5rem;
+    flex-grow: 1;
+  }
+
+  .article-count {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    color: #667eea;
+    background: rgba(103, 126, 234, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-weight: 500;
+    
+    strong { color: white; }
+  }
+}

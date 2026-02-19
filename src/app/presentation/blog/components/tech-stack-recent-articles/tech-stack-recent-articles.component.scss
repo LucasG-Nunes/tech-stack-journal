@@ -1,0 +1,70 @@
+@use '../../../../../styles/variables' as *;
+
+.recent-articles {
+  padding: 4rem 2rem 6rem;
+
+  .articles-container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+
+      ::ng-deep tech-stack-article-card.featured {
+        @media (min-width: 64rem) {
+          grid-column: span 2;
+        }
+      }
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+
+      .section-title {
+        font-size: 2.5rem;
+        color: $color-text-main;
+        margin-bottom: 0.5rem;
+      }
+
+      .section-subtitle {
+        color: $color-text-muted;
+        font-size: 1.125rem;
+      }
+    }
+
+    .view-all-section {
+      text-align: center;
+
+      .view-all-button {
+        @include glass-effect(0.05, 0.625rem);
+        border-radius: 3rem;
+        padding: 1rem 2rem;
+        color: $color-text-main;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: $transition-base;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+          transform: translateY(-2px);
+          box-shadow: 0 1rem 2rem rgba(103, 126, 234, 0.1);
+
+          .arrow {
+            transform: translateX(4px);
+          }
+        }
+
+        .arrow {
+          transition: transform 0.3s ease;
+        }
+      }
+    }
+  }
+}

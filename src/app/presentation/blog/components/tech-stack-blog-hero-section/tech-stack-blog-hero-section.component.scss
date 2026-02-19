@@ -1,0 +1,68 @@
+@use "sass:map"; // 1. Importa o módulo de mapas
+@use '../../../../../styles/variables' as *;
+
+.blog-hero {
+  padding: 4rem 2rem 6rem;
+  text-align: center;
+
+  .hero-container {
+    max-width: 50rem;
+    margin: 0 auto;
+
+    .hero-content {
+      .hero-subtitle {
+        font-size: 1.25rem;
+        color: $color-text-dim;
+        margin-bottom: 3rem;
+        line-height: 1.6;
+      }
+
+      .hero-title {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+
+        .title-main {
+          display: block;
+          color: $color-text-main;
+        }
+
+        .title-highlight {
+          display: block;
+          background: $gradient-highlight;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-style: italic;
+        }
+      }
+
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin: 0;
+
+        .stat-group {
+          display: flex;
+          flex-direction: column-reverse;
+
+          .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: map-get($tech-colors, 'angular');
+            margin-bottom: 0.5rem;
+          }
+
+          .stat-label {
+            font-size: 0.875rem;
+            color: $color-text-muted;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+          }
+        }
+      }
+    }
+  }
+}

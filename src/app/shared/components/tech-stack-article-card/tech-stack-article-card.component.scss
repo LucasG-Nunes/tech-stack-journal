@@ -1,0 +1,111 @@
+@use "sass:color";
+@use "sass:map";
+@use '../../../../styles/variables' as *;
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+.article-card {
+  height: 100%;
+  @include glass-effect(0.05, 0.625rem);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: $transition-base;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-0.5rem);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: $shadow-hover;
+
+    &::before {
+      opacity: 0.1;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: $gradient-primary;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .article-image {
+    height: 12rem;
+    background: linear-gradient(
+      135deg, 
+      color.adjust($color-card-bg, $lightness: -5%) 0%, 
+      color.adjust($color-card-bg, $lightness: 5%) 100%
+    );
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .tech-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+
+      background: rgba(map.get($tech-colors, 'angular'), 0.9);
+      color: $color-text-main;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .article-date {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.6);
+      color: $color-text-dim;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+    }
+  }
+
+  .article-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: $color-text-main;
+      margin: 0 0 0.75rem;
+      line-height: 1.4;
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: $color-text-dim;
+      line-height: 1.6;
+      margin: 0 0 1rem;
+      flex-grow: 1;
+    }
+
+    .article-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: $color-text-dark;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+  }
+}

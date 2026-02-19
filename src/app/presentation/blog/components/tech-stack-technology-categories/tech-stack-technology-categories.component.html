@@ -1,0 +1,18 @@
+<section class="tech-categories" aria-labelledby="categories-title">
+  <div class="categories-container">
+    <header class="section-header" appScrollReveal>
+      <h2 id="categories-title" class="section-title">
+        {{ 'BLOG.CATEGORIES_SECTION.TITLE' | transloco }}
+      </h2>
+      <p class="section-subtitle">
+        {{ 'BLOG.CATEGORIES_SECTION.SUBTITLE' | transloco }}
+      </p>
+    </header>
+
+    <div class="categories-list">
+      @for (item of categories; track $index) {
+        <tech-stack-category-block [category]="item" appScrollReveal="$index * 150" />
+      }
+    </div>
+  </div>
+</section>

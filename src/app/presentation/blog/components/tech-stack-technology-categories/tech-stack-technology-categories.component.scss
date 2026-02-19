@@ -1,0 +1,39 @@
+@use '../../../../../styles/variables' as *;
+
+.tech-categories {
+  padding: 4rem 2rem;
+
+  .categories-container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $color-text-main;
+        margin-bottom: 1rem;
+      }
+
+      .section-subtitle {
+        font-size: 1.125rem;
+        color: $color-text-muted;
+        margin: 0;
+      }
+    }
+
+    .categories-list {
+      tech-stack-category-block {
+        display: block;
+        margin-bottom: 5rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

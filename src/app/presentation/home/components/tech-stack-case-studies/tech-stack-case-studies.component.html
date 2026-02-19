@@ -1,0 +1,15 @@
+<section class="case-studies-section" aria-labelledby="projects-title">
+  <div class="case-studies-container">
+    <header class="section-header">
+      <h2 id="projects-title" class="section-title">
+        {{ 'PROJECTS.TITLE' | transloco }}
+      </h2>
+    </header>
+
+    <div class="projects-grid">
+      @for (project of projects; track project.title) {
+        <tech-stack-case-study-card [data]="project" (projectOpened)="openProjectModal($event)" />
+      }
+    </div>
+  </div>
+</section>
