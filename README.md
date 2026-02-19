@@ -1,59 +1,71 @@
-# TechStackJournal
+# 🚀 Tech Stack Journal
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.2.
+Um ecossistema de portfólio de engenharia de software de alto impacto, construído com **Angular 18+**. Este projeto não é apenas uma vitrine, mas um laboratório técnico onde aplico arquiteturas escaláveis, semântica avançada e padrões de UX/A11y que o mercado de alta performance exige.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🏗️ Arquitetura e Estrutura
 
-```bash
-ng serve
-```
+O projeto foi desenhado sob os princípios de **Clean Architecture** e **Modularidade**, separando rigorosamente a camada de dados da camada de apresentação:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Data-Driven**: Toda a informação é gerida através de constantes e modelos tipados (`data/constants`), mantendo os componentes enxutos e focados em lógica de UI.
+- **Semântica HTML5**: Substituição de estruturas genéricas por tags semânticas (`section`, `article`, `aside`, `header`) para SEO e acessibilidade nativa.
+- **Scroll Reveal Engine**: Engine própria baseada em `Intersection Observer` para controle de ciclo de vida de animações via diretivas Angular.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📂 Organização do Ecossistema
 
 ```bash
-ng generate --help
+src/app/
+├── core/               # Lógica de negócio global, Guards e i18n
+├── data/               # Camada de dados: Constantes, Mocks e Interfaces
+├── presentation/       # Componentes de página e fluxos de usuário
+│   ├── blog/           # Gestão de artigos técnicos e categorias
+│   └── home/           # Dashboard principal e introdução
+└── shared/             # UI Kit Atômico e Comportamentos (Directives)
+
 ```
 
-## Building
 
-To build the project run:
+## 💼 Experiência e Projetos em Destaque
 
-```bash
-ng build
-```
+- Nesta plataforma, documento minha jornada técnica através de projetos reais e autorais:
+- Sispreq (Angular/Java/AWS): Sistema corporativo escalável.
+- Clym (Blockchain/Voluntário): Atuação em ecossistemas Web3.
+- Randon Bank: Soluções para o setor financeiro.
+- PJE: Desenvolvimento focado em ecossistemas governamentais com Angular.
+- RPG Project: Exploração de estados complexos e UI imersiva com React.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-```bash
-ng test
-```
+## 🚀 Como Executar o Projeto
+Clone o repositório:
 
-## Running end-to-end tests
+Bash
 
-For end-to-end (e2e) testing, run:
+git clone [https://github.com/seu-usuario/tech-stack-journal.git](https://github.com/seu-usuario/tech-stack-journal.git)
+Instale as dependências:
 
-```bash
-ng e2e
-```
+Bash
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+npm install
+Inicie o servidor de desenvolvimento:
 
-## Additional Resources
+Bash
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+npx ng serve
+Acesse http://localhost:4200 no seu navegador.
+
+
+## 📫 Conecte-se Comigo
+Desenvolvo soluções que unem performance, design e inovação. Se você busca um engenheiro focado em entregar valor real, entre em contato:
+
+WhatsApp: +55 81 99453-2077
+
+Email: lucasgnam38@hotmail.com
+
+LinkedIn: [linkedin.com/in/lucasNunes](https://www.linkedin.com/in/lucas-gnunes/)
+
+Engenheiro Full Stack | Angular Specialist | Cloud & DevOps enthusiast

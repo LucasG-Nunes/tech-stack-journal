@@ -1,0 +1,32 @@
+<section class="voices-container" appScrollReveal>
+  <div class="header-box">
+    <h2 class="section-title">{{ 'VOICES.TITLE' | transloco }}</h2>
+    <p class="section-subtitle">{{ 'VOICES.SUBTITLE' | transloco }}</p>
+  </div>
+
+  <div class="voices-grid">
+    @for (print of testimonialPrints; track print.id) {
+      <div class="voice-card-wrapper">
+        <div class="voice-card">
+          <div class="image-wrapper">
+            <img [src]="print.url" [alt]="print.name" class="linkedin-print" loading="lazy" />
+            <div class="card-overlay">
+              <a [href]="linkedinUrl" target="_blank" rel="noopener noreferrer" class="verify-btn">
+                {{ 'VOICES.VERIFY' | transloco }}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        @if (activeLang !== 'pt-br') {
+          <div class="translation-box">
+            <span class="label">{{ 'VOICES.TRANSLATION_LABEL' | transloco }}</span>
+            <p class="text">"{{ 'VOICES.TESTIMONIALS.' + print.id | transloco }}"</p>
+          </div>
+        }
+      </div>
+    } @empty {
+      <p class="empty-state">{{ 'VOICES.EMPTY' | transloco }}</p>
+    }
+  </div>
+</section>

@@ -1,0 +1,200 @@
+{
+  "HOME": {
+    "TITLE": "Building scalable products",
+    "SUBTITLE": "performance, design and innovation",
+    "EXPERTISE_TITLE": "Expertise in the following technologies"
+  },
+  "NAV": {
+    "BLOG": "Blog",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact"
+  },
+  "SEO": {
+    "TITLE": "Lucas Nunes | Product Engineer | Scalable Solutions Specialist",
+    "DESCRIPTION": "Software Engineer focused on transforming business challenges into robust digital solutions. Expert in React, Angular, Node.js and Cloud Infrastructure.",
+    "KEYWORDS": "Product Engineer, Software Architect, Angular Specialist, Scalable Systems, Lucas Nunes, Senior Web Developer"
+  },
+  "HEADER": {
+    "NAME": "Lucas Meireles",
+    "ROLE": "Product Engineer | Scalable Solutions (React • Angular • Node)",
+    "SWITCH_LANG": "Switch to Portuguese"
+  },
+  "HERO": {
+    "ACCESSIBLE_TITLE": "Welcome to my engineering ecosystem!",
+    "TAGLINE_BASE": "Building scalable products that unite",
+    "TAGLINE_HIGHLIGHT": "performance, design, and intelligence.",
+    "DESCRIPTION": "I am a Software Engineer focused on transforming business challenges into robust digital solutions. With solid experience in national payment management for the CNJ and financial ecosystems at Randon, I leverage the TypeScript ecosystem to deliver scalable products. Currently, I focus on clean architecture concepts, high performance, and building SaaS products that drive real value."
+  },
+  "SKILLS": {
+    "HEADING": "Expertise in the following technologies",
+    "ARIA_TECH": "Technology: "
+  },
+  "PROJECTS": {
+    "TITLE": "Projects and Contributions",
+    "SUBTITLE": "Check out some of my most recent work",
+    "ITEMS": {
+      "RANDON": {
+        "TITLE": "Financing & CDC Ecosystem",
+        "DESC": "Credit and backoffice solutions for fleet financing and Randon products.",
+        "DEEP_DIVE": "I worked as a Software Engineer in the vehicle fleet financing ecosystem, developing scalable credit solutions and backoffices. We used <b>Next.js</b> and <b>NestJS</b> following the <b>BFF</b> architecture pattern, ensuring efficient and secure communication between the frontend and financial services. <br><br> On the frontend, we prioritized data integrity and user experience, utilizing <b>React Hook Form</b> and <b>Zod</b> for complex and secure validations in high-criticality forms. <br><br> Following <b>Clean Architecture</b> principles, we ensured code quality with <b>Jest</b> unit tests and a modern <b>Docker</b> infrastructure. I actively collaborated with the security team to mitigate vulnerabilities, ensuring the final product was not only high-performing but fully compliant with banking standards."
+      },
+      "CNJ_PJE": {
+        "TITLE": "PJe: Procedural Search Modernization",
+        "DESC": "Refactoring and performance optimization for Brazil's largest judicial system.",
+        "DEEP_DIVE": "I led the modernization of critical <b>PJe</b> modules, focusing on transitioning legacy components to a contemporary <b>Angular</b> architecture. The main challenge was optimizing the procedural search engine, where I used <b>Signals</b> for granular reactivity and <b>RxJS</b> to manage complex asynchronous flows, drastically reducing API response times. <br><br> We implemented significant accessibility and performance improvements monitored via <b>Lighthouse</b>, ensuring a fluid interface with <b>Angular Material</b>. The project required strict control over component lifecycles and the application of <b>Clean Code</b> principles to ensure the maintainability of an ecosystem serving millions of daily users."
+      },
+      "BARBER": {
+        "TITLE": "Smart Barber Manager",
+        "DESC": "Mobile SaaS ecosystem focused on scheduling automation and revenue management.",
+        "DEEP_DIVE": "Developed with a <b>SaaS</b> model focus, this project exemplifies the creation of a <b>profitable MVP</b> in a short timeframe, balancing operational costs and performance. I used <b>React Native (Expo)</b> and <b>Node.js</b> to deliver a robust solution, grounded in <b>rigorous technical documentation</b> that serves as the product's blueprint. <br><br> Beyond engineering, the project serves as the foundation for a knowledge-sharing initiative, where I document the journey of building a profitable app — from <b>Figma</b> prototyping and <b>Jira backlog management</b> to launch — providing a practical look at transforming code into a real business asset."
+      },
+      "LAB": {
+        "TITLE": "Portfolio & Engineering Lab",
+        "DESC": "My R&D core focused on Clean Architecture, real-world experience, and software quality.",
+        "DEEP_DIVE": "This lab is my creative space, where <b>technical documentation</b> is born from the real need for well-structured software. Built with <b>Angular</b> and focused on <b>Clean Architecture</b>, it's where I share my daily engineering journey, turning complex experiments into practical content for the community. <br><br> I treat every update with rigor, using <b>Versioning</b> and <b>Release</b> cycles, yet always prioritizing the human experience: in upcoming versions, I'll integrate the <b>Spotify Web SDK</b> so users can feel the same 'flow' and tranquility I seek when coding. It's the place where I prove that quality, tested, and documented code is what enables global scale, but the focus on daily life and people is what makes software truly real."
+      },
+      "CNJ_RPV": {
+        "TITLE": "Court-Ordered Payments Management (Sispreq)",
+        "DESC": "National architecture for unification and transparency of federal judicial payments.",
+        "DEEP_DIVE": "I worked on the development of <b>Sispreq</b>, a key project within the <b>Justice 4.0 Program</b>, aimed at modernizing Brazil's judicial payment workflows. Using <b>Angular 17+</b> with a reactive architecture based on <b>Signals</b> and <b>RxJS</b>, we ensured precise state management to handle sensitive financial data. <br><br> On the backend, we leveraged <b>Java with Spring Boot</b> to support complex business rules and secure integrations. The project followed <b>Clean Architecture</b> principles, ensuring the system remains sustainable and scalable for federal courts nationwide. My role spanned from initial technical mapping to delivering high-performance modules, always focusing on data integrity and regulatory compliance."
+      }
+    }
+  },
+  "THINK_DIFFERENT": {
+    "TITLE_BASE": "Think different, ",
+    "TITLE_HIGHLIGHT": "be different.",
+    "DESCRIPTION": "I don't just create digital experiences — I design journeys that connect people to solutions. My approach merges aesthetics, functionality, and a human touch to turn the complex into something intuitive and enjoyable to use.",
+    "RESUME_BTN": "View Resume",
+    "RESUME_ARIA": "Open Lucas Nunes' resume in a new tab",
+    "CONTACT_LABEL": "GET IN TOUCH AT"
+  },
+  "FOOTER": {
+    "ROLE": "Software Engineer",
+    "TAGLINE_BASE": "Turning confusion into reality, one pixel at a time — created with precision and a touch of",
+    "TAGLINE_HIGHLIGHT": "Brazilian heart ",
+    "SOCIAL_LABEL": "Social Media",
+    "CONTACTS_LABEL": "Contacts"
+  },
+  "BLOG": {
+    "BREADCRUMB": "Technical Blog",
+    "ROLE_SUBTITLE": "Full Stack Engineer | Angular & Node.js | AWS Cloud | Web3 & Smart Contracts",
+    "STATS": {
+      "TECH_LABEL": "Technologies",
+      "ARTICLES_LABEL": "Articles",
+      "LEARNING_LABEL": "Learning"
+    },
+    "CATEGORIES_SECTION": {
+      "TITLE": "Technical Articles",
+      "SUBTITLE": "Knowledge organized by field of expertise",
+      "ARIA_VIEW": "View articles about ",
+      "ARTICLES_COUNT": "articles",
+      "LIST": {
+        "WEB2": {
+          "TITLE": "Web 2 Development",
+          "DESC": "Modern web development focused on performance and user experience",
+          "ITEMS": {
+            "TS": "Static typing for JavaScript",
+            "ANG": "Enterprise framework with standalone components",
+            "REACT": "Library for user interfaces",
+            "NEXT": "React framework for production",
+            "NODE": "Server-side JavaScript runtime",
+            "NEST": "Scalable Node.js framework",
+            "FRONT_TOOLS": "HTML5, CSS3, SASS/SCSS, RxJS, Storybook"
+          }
+        },
+        "CLOUD": {
+          "TITLE": "Cloud & DevOps",
+          "DESC": "Modern infrastructure and development pipeline",
+          "ITEMS": {
+            "AWS": "S3, CloudFront, Lambda, API Gateway, DynamoDB",
+            "DOCKER": "Application containerization",
+            "CICD": "GitLab CI/CD, GitHub Actions"
+          }
+        },
+        "WEB3": {
+          "TITLE": "Web3 & Blockchain",
+          "DESC": "Decentralized development and smart contracts",
+          "ITEMS": {
+            "SOL": "Language for smart contracts",
+            "HARDHAT": "Ethereum development environment",
+            "DAPP": "MetaMask and WalletConnect integration"
+          }
+        },
+        "QUALITY": {
+          "TITLE": "Testing & Quality",
+          "DESC": "Quality assurance and automated testing",
+          "ITEMS": {
+            "JEST": "JavaScript testing framework",
+            "ANG_TEST": "Karma and Jasmine for Angular"
+          }
+        }
+      }
+    },
+    "RECENT_ARTICLES": {
+      "TITLE": "Recent Articles",
+      "SUBTITLE": "Latest published content",
+      "VIEW_ALL": "View all articles",
+      "VIEW_ALL_ARIA": "View all published articles",
+      "READ_TIME": "read",
+      "VIEWS": "views"
+    },
+    "ARTICLES": {
+      "STANDALONE": {
+        "TITLE": "Standalone Components in Angular 17: The Future of Angular",
+        "DESC": "Discover how standalone components revolutionized Angular development with a simpler and more performant structure."
+      },
+      "METAMASK": {
+        "TITLE": "Integrating MetaMask in React Applications",
+        "DESC": "Complete guide to connecting wallets in your dApps, handling providers and message signatures."
+      },
+      "AWS_DEPLOY": {
+        "TITLE": "Automated Deploy with AWS Lambda and API Gateway",
+        "DESC": "Configuring serverless infrastructure on AWS automatically using CI/CD."
+      },
+      "TS_ADVANCED": {
+        "TITLE": "Advanced TypeScript: Conditional Types and Utility Types",
+        "DESC": "Mastering advanced TypeScript features to create robust code and dynamic types."
+      }
+    }
+  },
+  "SHARED": {
+    "MODAL_CONSTRUCTION": {
+      "TITLE": "Under Construction",
+      "MESSAGE": "I am currently refining the backend architecture and API integrations to ensure peak performance. This content will be available soon with the robustness it deserves!",
+      "BUTTON": "Got it"
+    }
+  },
+
+  "EDUCATION": {
+    "TITLE": "Academic Journey",
+    "STATUS": {
+      "COMPLETED": "Completed",
+      "IN_PROGRESS": "In Progress",
+      "EXPECTED": "Expected"
+    },
+    "COURSES": {
+      "ADS": "Analysis and Systems Development",
+      "SOFTWARE_ENG": "Software Engineering"
+    },
+    "DIPLOMA": "Diploma.pdf"
+  },
+
+  "VOICES": {
+    "TITLE": "Collaboration Voices",
+    "SUBTITLE": "Real feedback from LinkedIn about our shared projects",
+    "VERIFY": "Verify on LinkedIn",
+    "TRANSLATION_LABEL": "Quick Translation",
+    "TESTIMONIALS": {
+      "ELENICE": "I worked with Lucas at DB on a project for the CNJ client. Lucas delivered exceptional performance, consistently providing high-quality results. He is highly collaborative and dedicated. I strongly recommend him as a professional and look forward to future partnerships.",
+      "SAMIRA": "Lucas is a dedicated and highly skilled professional who is always striving for improvement. He possesses strong technical knowledge and extreme resilience. A great team player who goes above and beyond to ensure top-tier deliveries. It’s been an honor to witness his growth so closely.",
+      "CARLOS": "Lucas is highly committed and always eager to learn and evolve. His drive for acquiring new knowledge, combined with his determination to achieve results, makes him a standout professional.",
+      "EDSON": "Working with Lucas was a pleasure. He stands out for his clear and effective communication, contributing to a productive and collaborative environment. Proactive and always ready to help, he is a valuable asset to any team. He demonstrated great autonomy, resolving challenges with speed and efficiency, especially under tight deadlines.",
+      "RENAN": "Working with Lucas is a consistently positive experience. A detail-oriented and dedicated professional who delivers excellent quality. With solid frontend expertise, he masters his stack while prioritizing code quality, usability, and user experience.",
+      "ALEXSANDER": "Lucas is a competent developer, always willing to assist and collaborate with the team. His dedication and practical approach to problem-solving make a real difference in day-to-day operations.",
+      "MARCOS": "Lucas is an exceptional software developer. His technical skills are impressive, and he shows deep knowledge of various technologies and development best practices. He is a proactive collaborator with a great ability to understand client needs and solve complex problems with creativity.",
+      "JESSICA": "As a designer, I could always rely on Lucas's technical skills and attention to detail when implementing complex interfaces. He is always looking to optimize code, and his proactive communication made our collaboration fluid, resulting in solutions that are both functional and elegant.",
+      "RHANNA": "Lucas is an admirable professional. He has always worked exceptionally well within the team and is technically very strong. A professional I definitely hope to work with again in future opportunities.",
+      "ADRIANE": "Lucas is a great professional, constantly bringing technological innovations in both components and languages to ensure the best performance for the client. He is very kind and works seamlessly with the team. It was a pleasure to work alongside him."
+    }
+  }
+}

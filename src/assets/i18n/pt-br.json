@@ -1,0 +1,204 @@
+{
+  "HOME": {
+    "TITLE": "Construindo produtos escaláveis",
+    "SUBTITLE": "performance, design e inovação",
+    "EXPERTISE_TITLE": "Expertise nas seguintes tecnologias"
+  },
+  "NAV": {
+    "BLOG": "Blog",
+    "PROJECTS": "Projetos",
+    "CONTACT": "Contato"
+  },
+  "SEO": {
+    "TITLE": "Lucas Nunes | Desenvolvimento de Aplicativos e Sistemas Web Profissionais",
+    "DESCRIPTION": "Especialista em desenvolvimento de aplicativos, sites e sistemas web de alta performance. Transforme sua ideia em um produto digital escalável. Entre em contato!",
+    "KEYWORDS": "Lucas Nunes engenheiro, contratar desenvolvedor Angular, desenvolvedor TypeScript senior, sistema SaaS Angular, portfólio engenheiro de software"
+  },
+  "HEADER": {
+    "NAME": "Lucas Nunes",
+    "ROLE": "Product Engineer | Especialista em Aplicativos e Sistemas Scaláveis",
+    "SWITCH_LANG": "Mudar para Inglês"
+  },
+  "HERO": {
+    "ACCESSIBLE_TITLE": "Bem-vindo ao meu ecossistema de engenharia!",
+    "TAGLINE_BASE": "Construindo produtos escaláveis que unem",
+    "TAGLINE_HIGHLIGHT": "performance, design e inteligência.",
+    "DESCRIPTION": "Sou um Engenheiro de Software focado em transformar desafios de negócio em soluções digitais robustas. Com sólida experiência na gestão de pagamentos nacionais pelo CNJ e ecossistemas financeiros na Randon, utilizo o ecossistema TypeScript para entregar produtos que escalam. Atualmente, foco em conceitos de arquitetura limpa, alta performance e no desenvolvimento de produtos SaaS que geram valor real."
+  },
+  "SKILLS": {
+    "HEADING": "Expertise nas seguintes tecnologias",
+    "ARIA_TECH": "Tecnologia: "
+  },
+  "PROJECTS": {
+    "TITLE": "Projetos e Contribuições",
+    "SUBTITLE": "Confira alguns dos meus trabalhos mais recentes",
+    "ITEMS": {
+      "RANDON": {
+        "TITLE": "Ecossistema Financeiro & CDC",
+        "DESC": "Soluções de crédito e backoffice para financiamento de frotas e produtos Randon.",
+        "DEEP_DIVE": "Atuei como Engenheiro de Software no ecossistema de financiamento para frotas de veículos, desenvolvendo soluções de crédito e backoffices escaláveis. Utilizamos <b>Next.js</b> e <b>NestJS</b> sob o padrão de arquitetura <b>BFF</b>, garantindo uma comunicação eficiente e segura entre o frontend e os serviços financeiros. <br><br> No frontend, priorizamos a integridade dos dados e a experiência do usuário, utilizando <b>React Hook Form</b> e <b>Zod</b> para validações complexas e seguras em formulários de alta criticidade. <br><br> Seguindo princípios de <b>Clean Architecture</b>, asseguramos a qualidade do código com testes unitários em <b>Jest</b> e uma infraestrutura moderna em <b>Docker</b>. Colaborei ativamente com o time de segurança para mitigação de vulnerabilidades, garantindo que o produto final fosse não apenas performático, mas totalmente em conformidade com os padrões bancários."
+      },
+      "CNJ_PJE": {
+        "TITLE": "PJe: Modernização de Busca Processual",
+        "DESC": "Refatoração e otimização de performance para o maior sistema judicial do Brasil.",
+        "DEEP_DIVE": "Liderei a modernização de módulos críticos do <b>PJe</b>, focando na transição de componentes legados para uma arquitetura contemporânea em <b>Angular</b>. O desafio principal foi otimizar a engine de busca processual, onde utilizei <b>Signals</b> para reatividade granular e <b>RxJS</b> para gerenciar fluxos assíncronos complexos, reduzindo drasticamente o tempo de resposta das APIs. <br><br> Implementamos melhorias significativas de acessibilidade e performance monitoradas via <b>Lighthouse</b>, garantindo uma interface fluida com <b>Angular Material</b>. O projeto exigiu um controle rigoroso sobre o ciclo de vida dos componentes e a aplicação de princípios de <b>Clean Code</b> para assegurar a manutenibilidade de um ecossistema que atende milhões de usuários diariamente."
+      },
+      "BARBER": {
+        "TITLE": "Smart Barber Manager",
+        "DESC": "Ecossistema SaaS mobile focado em automação de agendamentos e gestão de receita.",
+        "DEEP_DIVE": "Desenvolvido com foco no modelo <b>SaaS</b>, este projeto exemplifica a criação de um <b>MVP lucrável</b> em curto espaço de tempo, equilibrando custos operacionais e performance. Utilizei <b>React Native (Expo)</b> e <b>Node.js</b> para entregar uma solução robusta, baseada em uma <b>documentação técnica rigorosa</b> que serve como o 'blueprint' do produto. <br><br> Além da engenharia, o projeto é a base para uma iniciativa de compartilhamento de conhecimento, onde documento o dia a dia da construção de um app rentável — desde a prototipação no <b>Figma</b> e gestão de <b>Backlog no Jira</b> até o lançamento — trazendo uma visão prática de como transformar código em um ativo de negócio real."
+      },
+      "LAB": {
+        "TITLE": "Portfolio & Engineering Lab",
+        "DESC": "Meu núcleo de P&D focado em Clean Architecture, vivência real e qualidade de software.",
+        "DEEP_DIVE": "Este laboratório é o meu espaço de criação, onde a <b>documentação técnica</b> nasce da necessidade real de um software bem estruturado. Desenvolvido em <b>Angular</b> com foco em <b>Clean Architecture</b>, o projeto é onde compartilho minha vivência diária na engenharia, transformando experimentos complexos em conteúdo prático para o público. <br><br> Trato cada evolução com rigor, utilizando <b>Versioning</b> e ciclos de <b>Release</b>, mas sem abrir mão da experiência humana: nas próximas versões, integrarei o <b>Spotify Web SDK</b> para que o usuário sinta a mesma tranquilidade e 'flow' que busco ao codar. É o lugar onde provo que código de qualidade, testado e documentado, é o que permite escala global, mas é o foco no dia a dia e nas pessoas que torna o software real."
+      },
+      "CNJ_RPV": {
+        "TITLE": "Gestão de Precatórios e RPVs (Sispreq)",
+        "DESC": "Arquitetura nacional para unificação e transparência de pagamentos judiciais da União.",
+        "DEEP_DIVE": "Atuei no desenvolvimento do <b>Sispreq</b>, um dos pilares do <b>Programa Justiça 4.0</b>, focado na modernização do fluxo de pagamentos judiciais do Brasil. Empregando <b>Angular 17+</b> com uma arquitetura reativa baseada em <b>Signals</b> e <b>RxJS</b>, garantimos um gerenciamento de estado preciso para lidar com dados financeiros sensíveis. <br><br> No backend, utilizamos <b>Java com Spring Boot</b> para sustentar regras de negócio complexas e integrações seguras. O projeto seguiu princípios de <b>Clean Architecture</b>, assegurando que o sistema fosse sustentável e escalável para todos os tribunais federais. Minha atuação envolveu desde o mapeamento técnico inicial até a entrega de módulos de alta performance, sempre com foco em integridade de dados e conformidade regulatória."
+      }
+    }
+  },
+
+  "THINK_DIFFERENT": {
+    "TITLE_BASE": "Pense diferente, ",
+    "TITLE_HIGHLIGHT": "seja diferente.",
+    "DESCRIPTION": "Eu não apenas crio experiências digitais — eu desenho jornadas que conectam pessoas a soluções. Minha abordagem une estética, funcionalidade e uma visão humana para transformar o complexo em algo intuitivo e prazeroso de usar.",
+    "RESUME_BTN": "Ver Currículo",
+    "RESUME_ARIA": "Abrir currículo de Lucas Nunes em nova aba",
+    "CONTACT_LABEL": "ENTRE EM CONTATO EM"
+  },
+
+  "FOOTER": {
+    "ROLE": "Engenheiro de Software",
+    "TAGLINE_BASE": "Transformando confusão em realidade, um pixel por vez — criado com precisão e um toque de",
+    "TAGLINE_HIGHLIGHT": "coração brasileiro ",
+    "SOCIAL_LABEL": "Redes Sociais",
+    "CONTACTS_LABEL": "Contatos"
+  },
+
+  "BLOG": {
+    "BREADCRUMB": "Blog Técnico",
+    "ROLE_SUBTITLE": "Engenheiro Full Stack | Angular & Node.js | AWS Cloud | Web3 & Smart Contracts",
+    "STATS": {
+      "TECH_LABEL": "Tecnologias",
+      "ARTICLES_LABEL": "Artigos",
+      "LEARNING_LABEL": "Aprendizado"
+    },
+    "CATEGORIES_SECTION": {
+      "TITLE": "Artigos Técnicos",
+      "SUBTITLE": "Conhecimento organizado por área de atuação",
+      "ARIA_VIEW": "Ver artigos sobre ",
+      "ARTICLES_COUNT": "artigos",
+      "LIST": {
+        "WEB2": {
+          "TITLE": "Desenvolvimento Web 2",
+          "DESC": "Desenvolvimento web moderno com foco em performance e experiência do usuário",
+          "ITEMS": {
+            "TS": "Tipagem estática para JavaScript",
+            "ANG": "Framework enterprise com standalone components",
+            "REACT": "Biblioteca para interfaces de usuário",
+            "NEXT": "Framework React para produção",
+            "NODE": "Runtime JavaScript server-side",
+            "NEST": "Framework Node.js escalável",
+            "FRONT_TOOLS": "HTML5, CSS3, SASS/SCSS, RxJS, Storybook"
+          }
+        },
+        "CLOUD": {
+          "TITLE": "Cloud & DevOps",
+          "DESC": "Infraestrutura moderna e pipeline de desenvolvimento",
+          "ITEMS": {
+            "AWS": "S3, CloudFront, Lambda, API Gateway, DynamoDB",
+            "DOCKER": "Containerização de aplicações",
+            "CICD": "GitLab CI/CD, GitHub Actions"
+          }
+        },
+        "WEB3": {
+          "TITLE": "Web3 & Blockchain",
+          "DESC": "Desenvolvimento descentralizado e contratos inteligentes",
+          "ITEMS": {
+            "SOL": "Linguagem para smart contracts",
+            "HARDHAT": "Ambiente de desenvolvimento Ethereum",
+            "DAPP": "Integração com MetaMask e WalletConnect"
+          }
+        },
+        "QUALITY": {
+          "TITLE": "Testes & Qualidade",
+          "DESC": "Garantia de qualidade e testes automatizados",
+          "ITEMS": {
+            "JEST": "Framework de testes JavaScript",
+            "ANG_TEST": "Karma e Jasmine para Angular"
+          }
+        }
+      }
+    },
+    "RECENT_ARTICLES": {
+      "TITLE": "Artigos Recentes",
+      "SUBTITLE": "Últimos conteúdos publicados",
+      "VIEW_ALL": "Ver todos os artigos",
+      "VIEW_ALL_ARIA": "Ver todos os artigos publicados",
+      "READ_TIME": "de leitura",
+      "VIEWS": "visualizações"
+    },
+    "ARTICLES": {
+      "STANDALONE": {
+        "TITLE": "Standalone Components no Angular 17: O Futuro do Angular",
+        "DESC": "Descubra como os standalone components revolucionaram o desenvolvimento Angular com uma estrutura mais simples e performática."
+      },
+      "METAMASK": {
+        "TITLE": "Integrando MetaMask em Aplicações React",
+        "DESC": "Guia completo para conectar wallets em suas dApps, lidando com provedores e assinaturas de mensagens."
+      },
+      "AWS_DEPLOY": {
+        "TITLE": "Deploy Automático com AWS Lambda e API Gateway",
+        "DESC": "Configurando infraestrutura serverless na AWS de forma automatizada usando CI/CD."
+      },
+      "TS_ADVANCED": {
+        "TITLE": "Advanced TypeScript: Conditional Types e Utility Types",
+        "DESC": "Dominando recursos avançados do TypeScript para criar códigos mais robustos e tipos dinâmicos."
+      }
+    }
+  },
+
+  "SHARED": {
+    "MODAL_CONSTRUCTION": {
+      "TITLE": "Em Construção",
+      "MESSAGE": "Estou refinando a arquitetura do backend e a integração das APIs para garantir a melhor performance. Em breve, este conteúdo estará disponível com toda a robustez necessária!",
+      "BUTTON": "Entendido"
+    }
+  },
+
+  "EDUCATION": {
+    "TITLE": "Jornada Acadêmica",
+    "STATUS": {
+      "COMPLETED": "Concluído",
+      "IN_PROGRESS": "Em Andamento",
+      "EXPECTED": "Previsão"
+    },
+    "COURSES": {
+      "ADS": "Análise e Desenvolvimento de Sistemas",
+      "SOFTWARE_ENG": "Engenharia de Software"
+    },
+    "DIPLOMA": "Diploma.pdf"
+  },
+
+  "VOICES": {
+    "TITLE": "Vozes de Colaboração",
+    "SUBTITLE": "Feedback real do LinkedIn sobre nossos projetos compartilhados",
+    "VERIFY": "Verificar no LinkedIn",
+    "TRANSLATION_LABEL": "Tradução Rápida",
+    "TESTIMONIALS": {
+      "ELENICE": "Trabalhei com o Lucas na DB em um projeto para o cliente CNJ. O Lucas entregou um desempenho excepcional, fornecendo consistentemente resultados de alta qualidade. Ele é altamente colaborativo e dedicado. Recomendo-o fortemente como profissional e espero futuras parcerias.",
+      "SAMIRA": "O Lucas é um profissional dedicado e altamente qualificado, que está sempre em busca de aperfeiçoamento. Possui sólido conhecimento técnico e extrema resiliência. Um ótimo jogador de equipe que vai além para garantir entregas de alto nível. Foi uma honra presenciar seu crescimento tão de perto.",
+      "CARLOS": "O Lucas é muito comprometido e está sempre ansioso para aprender e evoluir. Sua busca por adquirir novos conhecimentos, aliada à sua determinação em alcançar resultados, o torna um profissional de destaque.",
+      "EDSON": "Trabalhar com o Lucas foi um prazer. Ele se destaca pela comunicação clara e eficaz, contribuindo para um ambiente produtivo e colaborativo. Proativo e sempre pronto a ajudar, é um ativo valioso para qualquer equipe. Demonstrou grande autonomia, resolvendo desafios com velocidade e eficiência, especialmente sob prazos apertados.",
+      "RENAN": "Trabalhar com o Lucas é consistentemente uma experiência positiva. Um profissional detalhista e dedicado que entrega excelente qualidade. Com sólida expertise em frontend, domina sua stack priorizando qualidade de código, usabilidade e experiência do usuário.",
+      "ALEXSANDER": "O Lucas é um desenvolvedor competente, sempre disposto a ajudar e colaborar com a equipe. Sua dedicação e abordagem prática para resolução de problemas fazem uma diferença real nas operações do dia a dia.",
+      "MARCOS": "O Lucas é um desenvolvedor de software excepcional. Suas habilidades técnicas são impressionantes e ele demonstra profundo conhecimento de diversas tecnologias e melhores práticas de desenvolvimento. É um colaborador proativo com grande capacidade de entender as necessidades do cliente e resolver problemas complexos com criatividade.",
+      "JESSICA": "Como designer, sempre pude contar com as habilidades técnicas e a atenção aos detalhes do Lucas ao implementar interfaces complexas. Ele está sempre buscando otimizar o código, e sua comunicação proativa tornou nossa colaboração fluida, resultando em soluções que são funcionais e elegantes.",
+      "RHANNA": "O Lucas é um profissional admirável. Sempre trabalhou excepcionalmente bem com a equipe e é tecnicamente muito forte. Um profissional com quem espero definitivamente trabalhar novamente em oportunidades futuras.",
+      "ADRIANE": "O Lucas é um ótimo profissional, trazendo constantemente inovações tecnológicas tanto em componentes quanto em linguagens para garantir a melhor performance para o cliente. É muito gentil e trabalha perfeitamente em equipe. Foi um prazer trabalhar ao seu lado."
+    }
+  }
+}

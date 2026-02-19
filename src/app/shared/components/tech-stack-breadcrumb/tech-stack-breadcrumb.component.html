@@ -1,0 +1,19 @@
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a routerLink="/" class="breadcrumb-link">Home</a>
+      <span class="separator" aria-hidden="true">→</span>
+    </li>
+    
+    @for (item of items; track item.path) {
+      <li class="breadcrumb-item">
+        <a [routerLink]="item.path" class="breadcrumb-link">{{ item.label }}</a>
+        <span class="separator" aria-hidden="true">→</span>
+      </li>
+    }
+    
+    <li class="breadcrumb-item">
+      <span class="current" aria-current="page">{{ current }}</span>
+    </li>
+  </ol>
+</nav>

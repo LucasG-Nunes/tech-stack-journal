@@ -1,0 +1,28 @@
+<section class="blog-hero" aria-labelledby="blog-main-title">
+  <div class="hero-container">
+    <tech-stack-breadcrumb [current]="'BLOG.BREADCRUMB' | transloco" />
+    
+    <div class="hero-content">
+      <h1 id="blog-main-title" class="hero-title">
+        <span class="title-main">Tech</span>
+        <span class="title-highlight">Knowledge</span>
+      </h1>
+      
+      <p class="hero-subtitle">
+        {{ 'BLOG.ROLE_SUBTITLE' | transloco }}
+      </p>
+      
+      <dl class="hero-stats">
+        <tech-stack-stat-item 
+          [label]="'BLOG.STATS.TECH_LABEL' | transloco" 
+          value="4+" />
+        <tech-stack-stat-item 
+          [label]="'BLOG.STATS.ARTICLES_LABEL' | transloco" 
+          value="20+" />
+        <tech-stack-stat-item 
+          [label]="'BLOG.STATS.LEARNING_LABEL' | transloco" 
+          value="∞" />
+      </dl>
+    </div>
+  </div>
+</section>

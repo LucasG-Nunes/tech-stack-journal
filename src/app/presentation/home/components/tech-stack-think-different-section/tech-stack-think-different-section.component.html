@@ -1,0 +1,37 @@
+<section class="think-different-section" aria-labelledby="think-title">
+  <div class="think-different-container">
+    <div class="content-wrapper">
+      <div class="avatar-section">
+        <div class="avatar-large" aria-hidden="true">👨‍💻</div>
+      </div>
+
+      <div class="text-section">
+        <h2 id="think-title" class="think-different-title">
+          {{ 'THINK_DIFFERENT.TITLE_BASE' | transloco }}
+          <span class="highlight-gradient">{{ 'THINK_DIFFERENT.TITLE_HIGHLIGHT' | transloco }}</span>
+        </h2>
+
+        <p class="think-different-description">
+          {{ 'THINK_DIFFERENT.DESCRIPTION' | transloco }}
+        </p>
+
+        <a class="resume-button"
+           href="assets/docs/Lucas_Nunes_international_resume.docx"
+           target="_blank"
+           rel="noopener noreferrer"
+           [attr.aria-label]="'THINK_DIFFERENT.RESUME_ARIA' | transloco"
+           download>
+          <span>{{ 'THINK_DIFFERENT.RESUME_BTN' | transloco }}</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-section">
+      <p class="contact-label">{{ 'THINK_DIFFERENT.CONTACT_LABEL' | transloco }}</p>
+      <a href="mailto:lucasgnam38@hotmail.com" class="contact-email">
+        lucasgnam38<span class="at-symbol" aria-hidden="true">&#64;</span>hotmail.com
+      </a>
+    </div>
+  </div>
+</section>

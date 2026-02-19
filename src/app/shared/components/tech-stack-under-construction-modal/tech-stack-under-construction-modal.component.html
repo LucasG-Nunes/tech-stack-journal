@@ -1,0 +1,25 @@
+<div 
+  class="modal-overlay" 
+  (click)="close()" 
+  (keydown.escape)="close()"
+  tabindex="0"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modal-title">
+  
+  <div class="modal-content" appScrollReveal>
+    <div class="icon" aria-hidden="true">🏗️</div>
+    
+    <h1 id="modal-title" class="modal-title">
+      {{ 'SHARED.MODAL_CONSTRUCTION.TITLE' | transloco }}
+    </h1>
+    
+    <p class="modal-body">
+      {{ 'SHARED.MODAL_CONSTRUCTION.MESSAGE' | transloco }}
+    </p>
+    
+    <button class="close-btn" (click)="close()" type="button">
+      {{ 'SHARED.MODAL_CONSTRUCTION.BUTTON' | transloco }}
+    </button>
+  </div>
+</div>

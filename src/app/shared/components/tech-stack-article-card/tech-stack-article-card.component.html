@@ -1,0 +1,27 @@
+<article class="article-card" [attr.aria-labelledby]="'title-' + article.id">
+  <div class="article-image">
+    <span class="tech-badge">{{ article.category }}</span>
+    <time [attr.datetime]="article.date" class="article-date">
+      {{ article.date | date:'mediumDate' }}
+    </time>
+  </div>
+  
+  <div class="article-content">
+    <h3 [id]="'title-' + article.id">
+      <a (click)="handleArticleClick($event)" [routerLink]="['/blog', article.slug]" class="article-link">
+        {{ article.title | transloco }}
+      </a>
+    </h3>
+    <p>{{ article.description | transloco }}</p>
+    
+    <footer class="article-meta">
+      <span class="read-time">
+        <i class="icon-clock" aria-hidden="true"></i> 
+        {{ article.readTime }} {{ 'BLOG.RECENT_ARTICLES.READ_TIME' | transloco }}
+      </span>
+      <span class="article-views">
+        {{ article.views }} {{ 'BLOG.RECENT_ARTICLES.VIEWS' | transloco }}
+      </span>
+    </footer>
+  </div>
+</article>

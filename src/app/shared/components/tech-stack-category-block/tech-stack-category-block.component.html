@@ -1,0 +1,24 @@
+<section class="category-block" [attr.aria-labelledby]="category.id">
+  <header class="category-header" appScrollReveal>
+    <div class="category-icon" aria-hidden="true">{{ category.icon }}</div>
+    <div class="header-text">
+      <h3 [id]="category.id" class="category-title">
+        {{ category.title | transloco }}
+      </h3>
+      <p class="category-description">
+        {{ category.description | transloco }}
+      </p>
+    </div>
+  </header>
+  
+  <div class="tech-grid" role="list">
+    @for (tech of category.items; track tech.id; let i = $index) {
+      <tech-stack-tech-card
+      (selected)="callCardSelected($event)" 
+        role="listitem"
+        [item]="tech"
+        appScrollReveal="i * 100"> 
+      </tech-stack-tech-card>
+    }
+  </div>
+</section>

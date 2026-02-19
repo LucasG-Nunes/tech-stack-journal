@@ -1,0 +1,17 @@
+@use '../styles/variables' as *;
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.content-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; 
+  padding: 4rem 0;
+}
+

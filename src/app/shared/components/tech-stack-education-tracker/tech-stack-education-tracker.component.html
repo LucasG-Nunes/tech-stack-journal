@@ -1,0 +1,36 @@
+<section class="education-container" appScrollReveal>
+  <h2 class="section-title">{{ 'EDUCATION.TITLE' | transloco }}</h2>
+
+  <div class="education-grid">
+    <div class="tracker-card completed" appScrollReveal>
+      <div class="course-header">
+        <div class="course-title-group">
+          <h3>{{ 'EDUCATION.COURSES.ADS' | transloco }}</h3>
+        </div>
+        <a href="assets/docs/diploma-ads.pdf" target="_blank" class="diploma-link">
+          <span class="file-icon">📄</span> {{ 'EDUCATION.DIPLOMA' | transloco }}
+        </a>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-fill full-run">
+          <div class="avatar-walker">🎓</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tracker-card in-progress" appScrollReveal>
+      <div class="course-header">
+        <div class="course-title-group">
+          <h3>{{ 'EDUCATION.COURSES.SOFTWARE_ENG' | transloco }}</h3>
+          <span class="graduation-date">{{ 'EDUCATION.STATUS.EXPECTED' | transloco }} Dez 2028</span>
+        </div>
+        <div class="status-badge wave-pulse">{{ 'EDUCATION.STATUS.IN_PROGRESS' | transloco }} ({{ currentProgress }}%)</div>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-fill" [style.width.%]="currentProgress">
+          <div class="avatar-walker">👨‍💻</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

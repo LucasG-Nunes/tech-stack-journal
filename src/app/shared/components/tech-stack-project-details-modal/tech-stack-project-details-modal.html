@@ -1,0 +1,62 @@
+<div
+  class="modal-overlay"
+  [class.is-maximized]="isMaximized"
+  (click)="close()"
+  (keydown.escape)="close()"
+  tabindex="0"
+  role="button"
+  aria-label="Fechar modal">
+  <div
+    class="modal-content"
+    [class.maximized-mode]="isMaximized"
+    (click)="$event.stopPropagation()"
+    (keydown.escape)="close()"
+    tabindex="-1"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    appScrollReveal>
+    <header class="modal-header">
+      <div class="header-top">
+        <div class="left-actions">
+          <div class="type-badge">{{ projectData.type }}</div>
+          <button
+            class="expand-btn"
+            (click)="toggleMaximize()"
+            type="button"
+            [title]="isMaximized ? 'Minimizar' : 'Expandir (F11)'"
+            aria-label="Alternar tela cheia">
+            <span class="icon" aria-hidden="true">{{ isMaximized ? '❐' : '⛶' }}</span>
+          </button>
+        </div>
+        <div class="floating-icon" aria-hidden="true">🚀</div>
+      </div>
+      <h1 id="modal-title" class="modal-title">{{ projectData.title | transloco }}</h1>
+    </header>
+
+    <div class="modal-body custom-scroll">
+      <div class="project-preview" [class]="projectData.gradientClass">
+        <div class="preview-overlay"></div>
+        <img [src]="projectData.imageUrl" [alt]="projectData.title" class="modal-project-logo" />
+      </div>
+
+      <div class="project-content">
+        <p class="description">{{ projectData.description | transloco }}</p>
+
+        @if (isMaximized) {
+        <div class="extra-details">
+          <div class="divider"></div>
+          <h3>Technical Deep Dive</h3>
+          <div class="deep-dive-card">
+            <p class="rich-text" [innerHTML]="'PROJECTS.ITEMS.' + getProjectKey() + '.DEEP_DIVE' | transloco"></p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+
+    <footer class="modal-footer">
+      <button class="close-btn" (click)="close()" type="button">{{ 'SHARED.MODAL_CONSTRUCTION.BUTTON' | transloco }}</button>
+    </footer>
+  </div>
+</div>
