@@ -81,7 +81,7 @@ get projectLinks(): ProjectResourceLink[] | null {
   const key = `PROJECTS.ITEMS.${this.getProjectKey()}.RESOURCES.LINKS`;
   const translation = this.translocoService.translate<unknown>(key);
   
-  if (!translation) return null;
+  if (typeof translation === 'string') return null;
   
   return translation as ProjectResourceLink[];
 }
@@ -90,7 +90,7 @@ get projectImages(): ProjectResourceImage[] | null {
   const key = `PROJECTS.ITEMS.${this.getProjectKey()}.RESOURCES.IMAGES`;
   const translation = this.translocoService.translate<unknown>(key);
   
-  if (!translation) return null;
+  if (typeof translation === 'string') return null;
   
   return translation as ProjectResourceImage[];
 }
