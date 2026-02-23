@@ -1,4 +1,4 @@
-@use "sass:map"; // 1. Importa o módulo de mapas
+@use "sass:map";
 @use '../../../../styles/variables' as *;
 
 .category-block {
@@ -32,14 +32,14 @@
 
     .header-text {
       .category-title {
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-weight: 600;
         color: $color-text-main;
         margin: 0 0 0.5rem;
       }
 
       .category-description {
-        font-size: 1rem;
+        font-size: 1.5rem;
         color: $color-text-dim;
         margin: 0;
         line-height: 1.5;

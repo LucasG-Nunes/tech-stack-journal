@@ -5,12 +5,13 @@ import { TechIconComponent } from '../../../../shared/components/tech-stack-icon
 import { SKILLS_DATA } from '../../../../shared/contants/skills-grid.constant';
 import { ScrollRevealDirective } from "../../../../shared/directives/scroll-reveal.directive";
 import { TranslocoModule } from '@jsverse/transloco';
+import { TooltipDirective } from "../../../../shared/directives/custom-tooltip.directive";
 
 
 @Component({
   selector: 'tech-stack-skills-grid',
   standalone: true,
-  imports: [CommonModule,TranslocoModule, TechIconComponent, ScrollRevealDirective],
+  imports: [CommonModule, TranslocoModule, TechIconComponent, ScrollRevealDirective, TooltipDirective],
   templateUrl: './tech-stack-skills-grid.component.html',
   styleUrls: ['./tech-stack-skills-grid.component.scss']
 })

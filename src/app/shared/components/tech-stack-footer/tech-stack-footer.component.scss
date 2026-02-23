@@ -39,13 +39,13 @@ $neon-cyan: #00d2ff;
   .logo-text {
     .name {
       display: block;
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       font-weight: 800;
       color: #fff;
       letter-spacing: -0.5px;
     }
     .role {
-      font-size: 0.85rem;
+      font-size: 1.4rem;
       color: rgba(255, 255, 255, 0.5);
       margin: 0;
     }
@@ -54,7 +54,7 @@ $neon-cyan: #00d2ff;
 
 .footer-right {
   .contacts-title {
-    font-size: 0.75rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.3);
@@ -84,9 +84,10 @@ $neon-cyan: #00d2ff;
     color: #fff;
     text-decoration: none;
 
-    svg, .gh-text {
-      width: 1.4rem;
-      height: 1.4rem;
+    svg,
+    .gh-text {
+      width: 1.6rem;
+      height: 1.6rem;
       transition: transform 0.3s ease;
     }
 
@@ -103,7 +104,8 @@ $neon-cyan: #00d2ff;
       border-color: $neon-cyan;
       box-shadow: 0 0 20px rgba($neon-cyan, 0.2);
 
-      svg, .gh-text {
+      svg,
+      .gh-text {
         transform: scale(1.1);
       }
     }
@@ -123,7 +125,7 @@ $neon-cyan: #00d2ff;
   text-align: center;
 
   .footer-tagline {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.4);
 
     strong {
@@ -138,6 +140,11 @@ $neon-cyan: #00d2ff;
 }
 
 @keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }

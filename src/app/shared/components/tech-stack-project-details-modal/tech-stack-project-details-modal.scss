@@ -13,7 +13,7 @@ $border-glass: rgba(0, 210, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 1000;
   cursor: pointer;
   outline: none;
   transition: backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -122,7 +122,7 @@ $border-glass: rgba(0, 210, 255, 0.2);
       }
 
       .modal-title {
-        font-size: clamp(2rem, 5vw, 2.8rem);
+        font-size: 4rem;
         font-weight: 800;
         margin: 0;
         background: linear-gradient(135deg, #ffffff 20%, $neon-cyan 100%);
@@ -184,7 +184,7 @@ $border-glass: rgba(0, 210, 255, 0.2);
         .description {
           color: rgba(255, 255, 255, 0.8);
           line-height: 1.8;
-          font-size: 1.15rem;
+          font-size: 1.8rem;
         }
 
         .extra-details {
@@ -196,7 +196,7 @@ $border-glass: rgba(0, 210, 255, 0.2);
           h3 {
             color: $neon-cyan;
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
           }
 
           .deep-dive-card {
@@ -210,7 +210,7 @@ $border-glass: rgba(0, 210, 255, 0.2);
             .rich-text {
               color: rgba(255, 255, 255, 0.8);
               line-height: 1.6;
-              font-size: 1.1rem;
+              font-size: 1.5rem;
 
               ::ng-deep {
                 b, strong {
@@ -242,7 +242,7 @@ $border-glass: rgba(0, 210, 255, 0.2);
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         box-shadow: 0 10px 20px rgba($neon-cyan, 0.2);
-
+        font-size: 1.5rem;
         &:hover {
           transform: translateY(-5px);
           box-shadow: 0 15px 30px rgba($neon-cyan, 0.4);
@@ -273,4 +273,145 @@ $border-glass: rgba(0, 210, 255, 0.2);
 @keyframes content-reveal {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+
+.resources-section {
+  margin-top: 3rem;
+  
+  h3 {
+    color: $neon-cyan;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba($neon-cyan, 0.2);
+    }
+  }
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+
+  .resource-link {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba($neon-cyan, 0.1);
+    padding: 1.2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+
+    .link-label { color: white; font-size: 1.3rem; }
+    
+    &:hover {
+      background: rgba($neon-cyan, 0.08);
+      border-color: $neon-cyan;
+      transform: translateX(5px);
+    }
+  }
+}
+
+.images-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  .evidence-card {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    
+    .image-wrapper {
+      height: 200px;
+      overflow: hidden;
+      cursor: zoom-in;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        &:hover { transform: scale(1.05); }
+      }
+    }
+
+    .image-caption {
+      padding: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1.1rem;
+      line-height: 1.4;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+  }
+}
+
+
+
+
+.image-upscale-overlay {
+  position: fixed;
+  inset: 0; // top, bottom, left, right: 0
+  z-index: 9999; // Valor bem alto para cobrir tudo
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+  padding: 2rem;
+  cursor: zoom-out;
+  animation: fadeIn 0.2s ease-out;
+
+  .preview-container {
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .upscaled-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .close-preview {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: $glass-bg;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

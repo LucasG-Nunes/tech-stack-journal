@@ -17,7 +17,13 @@
   "HEADER": {
     "NAME": "Lucas Nunes",
     "ROLE": "Product Engineer | Especialista em Aplicativos e Sistemas Scaláveis",
-    "SWITCH_LANG": "Mudar para Inglês"
+    "TOOLTIPS": {
+      "LANG": "Mudar para Inglês",
+      "LINKEDIN": "Vamos nos conectar e trocar ideias!",
+      "GITHUB": "Explore meus repositórios e contribua!",
+      "WHATSAPP": "Vamos construir um produto de sucesso juntos?",
+      "BLOG": "Lab de Engenharia: Venha contribuir com a comunidade!"
+    }
   },
   "HERO": {
     "ACCESSIBLE_TITLE": "Bem-vindo ao meu ecossistema de engenharia!",
@@ -27,7 +33,18 @@
   },
   "SKILLS": {
     "HEADING": "Expertise nas seguintes tecnologias",
-    "ARIA_TECH": "Tecnologia: "
+    "ARIA_TECH": "Tecnologia: ",
+    "TOOLTIPS": {
+      "angular": "Signals, RxJS, Standalone Components e Injeção de Dependência.",
+      "react": "Hooks, Context API, Server Components e State Management.",
+      "nodejs": "Event Loop, Streams, Non-blocking I/O e Desenvolvimento de APIs.",
+      "nestjs": "Arquitetura Modular, Injeção de Dependência, Decorators e Pipes.",
+      "aws": "Serverless (Lambda), S3, CloudFront, API Gateway e IAM.",
+      "docker": "Containerização, Docker Compose e Otimização de Imagens (Multi-stage).",
+      "gitlab": "Pipelines de CI/CD, Automação de Deploy e Configuração YAML.",
+      "web3": "Descentralização, dApps, Integração com Wallets e Ethers.js/Viem.",
+      "solidity": "Smart Contracts, EVM, Hardhat/Foundry e Segurança em Blockchain."
+    }
   },
   "PROJECTS": {
     "TITLE": "Projetos e Contribuições",
@@ -36,28 +53,80 @@
       "RANDON": {
         "TITLE": "Ecossistema Financeiro & CDC",
         "DESC": "Soluções de crédito e backoffice para financiamento de frotas e produtos Randon.",
-        "DEEP_DIVE": "Atuei como Engenheiro de Software no ecossistema de financiamento para frotas de veículos, desenvolvendo soluções de crédito e backoffices escaláveis. Utilizamos <b>Next.js</b> e <b>NestJS</b> sob o padrão de arquitetura <b>BFF</b>, garantindo uma comunicação eficiente e segura entre o frontend e os serviços financeiros. <br><br> No frontend, priorizamos a integridade dos dados e a experiência do usuário, utilizando <b>React Hook Form</b> e <b>Zod</b> para validações complexas e seguras em formulários de alta criticidade. <br><br> Seguindo princípios de <b>Clean Architecture</b>, asseguramos a qualidade do código com testes unitários em <b>Jest</b> e uma infraestrutura moderna em <b>Docker</b>. Colaborei ativamente com o time de segurança para mitigação de vulnerabilidades, garantindo que o produto final fosse não apenas performático, mas totalmente em conformidade com os padrões bancários."
+        "DEEP_DIVE": "Atuei como Engenheiro de Software em um squad de <b>6 pessoas</b> focado no ecossistema de financiamento de frotas. Desenvolvemos soluções de crédito e backoffices escaláveis utilizando <b>Next.js</b> e <b>NestJS</b> sob o padrão <b>BFF</b>. <br><br> Por se tratar de um produto financeiro de alta criticidade, tive a experiência de atuar em colaboração direta com <b>equipes de Pentest</b>. Essa interação foi fundamental para a mitigação de riscos e vulnerabilidades em fluxos de pagamento, garantindo que as definições de arquitetura estivessem alinhadas aos mais rígidos padrões de segurança bancária. <br><br> No frontend, priorizamos a integridade dos dados através de validações complexas com <b>React Hook Form</b> e <b>Zod</b>, assegurando uma experiência fluida e segura para o usuário final."
       },
       "CNJ_PJE": {
         "TITLE": "PJe: Modernização de Busca Processual",
         "DESC": "Refatoração e otimização de performance para o maior sistema judicial do Brasil.",
-        "DEEP_DIVE": "Liderei a modernização de módulos críticos do <b>PJe</b>, focando na transição de componentes legados para uma arquitetura contemporânea em <b>Angular</b>. O desafio principal foi otimizar a engine de busca processual, onde utilizei <b>Signals</b> para reatividade granular e <b>RxJS</b> para gerenciar fluxos assíncronos complexos, reduzindo drasticamente o tempo de resposta das APIs. <br><br> Implementamos melhorias significativas de acessibilidade e performance monitoradas via <b>Lighthouse</b>, garantindo uma interface fluida com <b>Angular Material</b>. O projeto exigiu um controle rigoroso sobre o ciclo de vida dos componentes e a aplicação de princípios de <b>Clean Code</b> para assegurar a manutenibilidade de um ecossistema que atende milhões de usuários diariamente."
+        "DEEP_DIVE": "Compus o corpo de engenharia em um squad multidisciplinar de <b>8 pessoas</b>, operando sob <b>metodologias ágeis</b> para modernizar módulos críticos do <b>PJe</b>. O desafio central foi a transição de componentes legados para uma arquitetura moderna em <b>Angular</b>. <br><br> Focamos na engine de busca processual, onde implementamos <b>Signals</b> e <b>RxJS</b> para otimizar o processamento assíncrono e a reatividade da interface. <br><br> Essa modernização, monitorada via <b>Lighthouse</b> e focada em acessibilidade com <b>Angular Material</b>, resultou em uma redução drástica no tempo de resposta das APIs, garantindo que o sistema judicial mais acessado do país entregasse uma experiência de alta performance para milhões de usuários."
       },
       "BARBER": {
         "TITLE": "Smart Barber Manager",
-        "DESC": "Ecossistema SaaS mobile focado em automação de agendamentos e gestão de receita.",
-        "DEEP_DIVE": "Desenvolvido com foco no modelo <b>SaaS</b>, este projeto exemplifica a criação de um <b>MVP lucrável</b> em curto espaço de tempo, equilibrando custos operacionais e performance. Utilizei <b>React Native (Expo)</b> e <b>Node.js</b> para entregar uma solução robusta, baseada em uma <b>documentação técnica rigorosa</b> que serve como o 'blueprint' do produto. <br><br> Além da engenharia, o projeto é a base para uma iniciativa de compartilhamento de conhecimento, onde documento o dia a dia da construção de um app rentável — desde a prototipação no <b>Figma</b> e gestão de <b>Backlog no Jira</b> até o lançamento — trazendo uma visão prática de como transformar código em um ativo de negócio real."
+        "DESC": "SaaS mobile focado em automação de agendamentos e gestão de receita.",
+        "DEEP_DIVE": "Este projeto é um estudo de caso sobre a criação de um <b>MVP rentável</b>. Utilizando <b>React Native (Expo)</b> e <b>Node.js</b>, implementamos um sistema de gestão de planos (Trimestral, Semestral e Anual) baseado em padrões de <b>Revenue Management</b>. <br><br> O handle de assinaturas foi estruturado para suportar diferentes ciclos de faturamento, equilibrando custos operacionais e escalabilidade. Mais do que uma ferramenta de gestão, o projeto serve como um 'blueprint' técnico, onde documento desde a arquitetura de banco de dados até as estratégias de lançamento no mercado real."
       },
       "LAB": {
         "TITLE": "Portfolio & Engineering Lab",
-        "DESC": "Meu núcleo de P&D focado em Clean Architecture, vivência real e qualidade de software.",
-        "DEEP_DIVE": "Este laboratório é o meu espaço de criação, onde a <b>documentação técnica</b> nasce da necessidade real de um software bem estruturado. Desenvolvido em <b>Angular</b> com foco em <b>Clean Architecture</b>, o projeto é onde compartilho minha vivência diária na engenharia, transformando experimentos complexos em conteúdo prático para o público. <br><br> Trato cada evolução com rigor, utilizando <b>Versioning</b> e ciclos de <b>Release</b>, mas sem abrir mão da experiência humana: nas próximas versões, integrarei o <b>Spotify Web SDK</b> para que o usuário sinta a mesma tranquilidade e 'flow' que busco ao codar. É o lugar onde provo que código de qualidade, testado e documentado, é o que permite escala global, mas é o foco no dia a dia e nas pessoas que torna o software real."
+        "DESC": "Núcleo de P&D focado em Clean Architecture e IA-Driven Development.",
+        "DEEP_DIVE": "Este laboratório é o meu espaço pessoal de experimentação, onde a <b>Clean Architecture</b> é aplicada em sua forma mais pura com <b>Angular 19</b>. Como um 'squad de um homem só', utilizo ferramentas de <b>AI Code Review</b> (como <b>CodeRabbit</b>) para manter o rigor técnico e a qualidade de cada Pull Request. <br><br> O projeto integra login social e o <b>Spotify SDK</b> para criar um ambiente de 'flow' produtivo, mas o seu verdadeiro poder está nos bastidores: uma infraestrutura de <b>Edge Computing</b> via Cloudflare que garante performance resiliente. <br><br> <b>Resultados Reais:</b> A eficácia desta arquitetura é comprovada pelos dados abaixo. Mesmo sem investimento em marketing, o SEO técnico e a internacionalização (i18n) resultaram em um alcance orgânico global, com mais de <b>45% dos acessos vindos dos EUA</b> e métricas de Core Web Vitals que atingem o estado da arte em performance.",
+        "RESOURCES": {
+          "LINKS": [
+            {
+              "LABEL": "Repositório GitHub",
+              "URL": "https://github.com/lucasmeireles/portfolio-lab"
+            }
+          ],
+          "IMAGES": [
+            {
+              "URL": "assets/images/projects-references/engineering-lab/geo-analytics.png",
+              "CAPTION": "Alcance Global: Validação real da arquitetura internacionalizada com 51 acessos orgânicos dos Estados Unidos."
+            },
+            {
+              "URL": "assets/images/projects-references/engineering-lab/web-vitals.png",
+              "CAPTION": "Performance de Elite: LCP (Largest Contentful Paint) de 700ms, superando em 3x os padrões de excelência."
+            },
+            {
+              "URL": "assets/images/projects-references/engineering-lab/device-metrics.png",
+              "CAPTION": "Arquitetura Responsiva: Experiência consistente e estável em múltiplos sistemas operacionais (Windows, iOS, Linux, Android)"
+            }
+          ]
+        }
       },
       "CNJ_RPV": {
         "TITLE": "Gestão de Precatórios e RPVs (Sispreq)",
         "DESC": "Arquitetura nacional para unificação e transparência de pagamentos judiciais da União.",
-        "DEEP_DIVE": "Atuei no desenvolvimento do <b>Sispreq</b>, um dos pilares do <b>Programa Justiça 4.0</b>, focado na modernização do fluxo de pagamentos judiciais do Brasil. Empregando <b>Angular 17+</b> com uma arquitetura reativa baseada em <b>Signals</b> e <b>RxJS</b>, garantimos um gerenciamento de estado preciso para lidar com dados financeiros sensíveis. <br><br> No backend, utilizamos <b>Java com Spring Boot</b> para sustentar regras de negócio complexas e integrações seguras. O projeto seguiu princípios de <b>Clean Architecture</b>, assegurando que o sistema fosse sustentável e escalável para todos os tribunais federais. Minha atuação envolveu desde o mapeamento técnico inicial até a entrega de módulos de alta performance, sempre com foco em integridade de dados e conformidade regulatória."
+        "DEEP_DIVE": "Atuei no desenvolvimento do <b>Sispreq</b> dentro de um squad robusto de <b>30 pessoas</b>, estruturado sob o framework <b>Scrum</b>. O projeto é um pilar do <b>Justiça 4.0</b>, unificando o fluxo de pagamentos judiciais em nível nacional. <br><br> Na stack, utilizamos <b>Angular 17+ (Signals/RxJS)</b> no frontend e <b>Java com Spring Boot</b> no backend para sustentar regras de negócio complexas. O sucesso do projeto culminou em uma apresentação oficial pelo <b>Ministro Barroso</b>, destacando o impacto da solução no judiciário brasileiro em parceria com o <b>PNUD (ONU)</b>. <br><br> Abaixo, você encontra métricas de impacto, links de referência e registros desse case de sucesso que redefine a transparência financeira pública.",
+        "RESOURCES": {
+          "LINKS": [
+            {
+              "LABEL": "CNJ apresenta Sistema Nacional de Precatórios a tribunais",
+              "URL": "https://www.cnj.jus.br/cnj-apresenta-sistema-nacional-de-precatorios-a-tribunais/"
+            },
+            {
+              "LABEL": "Justiça 4.0 apresenta Programa Conecta e SisPreq à Justiça estadual e federal no RJ",
+              "URL": "https://www.cnj.jus.br/justica-4-0-apresenta-programa-conecta-e-sispreq-as-justicas-estadual-e-federal-no-rj/"
+            }
+          ],
+          "IMAGES": [
+            {
+              "URL": "assets/images/projects-references/cnj-sispreq/barroso-speech.png",
+              "CAPTION": "Ministro Barroso destacando o Sispreq como 'virada histórica'."
+            },
+            {
+              "URL": "assets/images/projects-references/cnj-sispreq/metrics-code.png",
+              "CAPTION": "Métricas do ecossistema: +460k linhas de código e 5k Merge Requests."
+            },
+            {
+              "URL": "assets/images/projects-references/cnj-sispreq/financial-impact.png",
+              "CAPTION": "Projeção de R$ 70 bilhões em precatórios para 2026."
+            }
+          ]
+        }
       }
+    },
+    "MODAL": {
+      "LINKS_TITLE": "Referências e Artigos",
+      "METRICS_TITLE": "Métricas e Case de Sucesso"
     }
   },
 
@@ -67,7 +136,17 @@
     "DESCRIPTION": "Eu não apenas crio experiências digitais — eu desenho jornadas que conectam pessoas a soluções. Minha abordagem une estética, funcionalidade e uma visão humana para transformar o complexo em algo intuitivo e prazeroso de usar.",
     "RESUME_BTN": "Ver Currículo",
     "RESUME_ARIA": "Abrir currículo de Lucas Nunes em nova aba",
-    "CONTACT_LABEL": "ENTRE EM CONTATO EM"
+    "CONTACT_LABEL": "ENTRE EM CONTATO EM",
+    "CONTRIBUTE_BUTTON": "Contribuições & Insights",
+    "CONTRIBUTE_ARIA": "Ver blog técnico e contribuições para a comunidade",
+
+    "TOOLTIPS": {
+      "LANG": "Mudar para Inglês",
+      "LINKEDIN": "Vamos nos conectar e trocar ideias!",
+      "GITHUB": "Explore meus repositórios e contribua!",
+      "WHATSAPP": "Vamos construir um produto de sucesso juntos?",
+      "BLOG": "Lab de Engenharia: Venha contribuir com a comunidade!"
+    }
   },
 
   "FOOTER": {
@@ -75,7 +154,14 @@
     "TAGLINE_BASE": "Transformando confusão em realidade, um pixel por vez — criado com precisão e um toque de",
     "TAGLINE_HIGHLIGHT": "coração brasileiro ",
     "SOCIAL_LABEL": "Redes Sociais",
-    "CONTACTS_LABEL": "Contatos"
+    "CONTACTS_LABEL": "Contatos",
+    "TOOLTIPS": {
+      "LANG": "Mudar para Inglês",
+      "LINKEDIN": "Vamos nos conectar e trocar ideias!",
+      "GITHUB": "Explore meus repositórios e contribua!",
+      "WHATSAPP": "Vamos construir um produto de sucesso juntos?",
+      "BLOG": "Lab de Engenharia: Venha contribuir com a comunidade!"
+    }
   },
 
   "BLOG": {
