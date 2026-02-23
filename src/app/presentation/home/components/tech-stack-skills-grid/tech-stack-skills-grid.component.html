@@ -10,7 +10,8 @@
         tabindex="0"
         [class]="skill.className"
         [attr.aria-label]="'Tecnologia: ' + skill.title"
-        appScrollReveal="i * 80">
+        appScrollReveal="i * 80"
+        [customTooltip]="'SKILLS.TOOLTIPS.' + skill.id | transloco">
         <div class="tech-logo-container">
           <tech-stack-icon [svgRaw]="skill.svg" />
         </div>

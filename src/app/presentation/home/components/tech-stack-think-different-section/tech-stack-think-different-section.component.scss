@@ -1,5 +1,11 @@
 @use '../../../../../styles/variables' as *;
-$color-primary: #667eea;
+
+// Variáveis locais para consistência
+$neon-cyan: #00d2ff;
+$color-text-dim: #a0a0a0;
+$glass-bg: rgba(255, 255, 255, 0.03);
+$glass-border: rgba(255, 255, 255, 0.08);
+$transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 :host {
   display: block;
@@ -8,132 +14,217 @@ $color-primary: #667eea;
 }
 
 .think-different-section {
-  padding: 1rem;
+  padding: 4rem 1rem; 
 
   .think-different-container {
-    background: rgba(255, 255, 255, 0.03);
+    background: $glass-bg;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 2rem;
+    border: 1px solid $glass-border;
+    border-radius: 2.5rem;
     padding: 4rem;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 
-    .content-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 4rem;
-
-      .avatar-section {
-        .avatar-large {
-          width: 18rem;
-          height: 18rem;
-          background: $gradient-primary;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 8rem;
-          box-shadow: 0 0 50px rgba($color-primary, 0.2);
-
-          @media (max-width: 480px) {
-            width: 12rem;
-            height: 12rem;
-            font-size: 5rem;
-          }
-        }
-      }
-
-      .text-section {
-        .think-different-title {
-          font-size: 3.2rem;
-          font-weight: 800;
-          color: white;
-          margin-bottom: 2rem;
-          line-height: 1.2;
-
-          .highlight-gradient {
-            background: $gradient-primary;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-style: italic;
-          }
-
-          @media (max-width: 480px) {
-            font-size: 2.4rem;
-          }
-        }
-
-        .think-different-description {
-          font-size: 1.8rem;
-          line-height: 1.6;
-          color: $color-text-dim;
-          margin-bottom: 3rem;
-
-          @media (max-width: 480px) {
-            font-size: 1.6rem;
-          }
-        }
-
-        .resume-button {
-          display: inline-flex;
-          align-items: center;
-          gap: 1rem;
-          padding: 1.2rem 2.4rem;
-          border-radius: 3rem;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          color: white;
-          text-decoration: none;
-          font-weight: 600;
-          transition: $transition-base;
-
-          &:hover {
-            background: white;
-            color: $color-bg-dark;
-            .arrow {
-              transform: translateX(5px);
-            }
-          }
-        }
-      }
-
-      @media (max-width: 768px) {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-      }
+    @media (max-width: 480px) {
+      padding: 2rem;
     }
+  }
+}
 
-    .contact-section {
-      margin-top: 6rem;
-      text-align: center;
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
 
-      .contact-label {
-        text-transform: uppercase;
-        letter-spacing: 0.2rem;
-        font-size: 1.2rem;
-        color: $color-text-dim;
-        margin-bottom: 1rem;
-      }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+}
 
-      .contact-email {
-        font-size: 3.6rem;
-        font-weight: 800;
-        color: white;
-        text-decoration: none;
-        word-break: break-all;
+.avatar-section {
+  .avatar-large {
+    width: 16rem;
+    height: 16rem;
+    background: $gradient-primary;
+    border-radius: 3rem; // Estilo Squircle (mais moderno que 50%)
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7rem;
+    box-shadow: 0 20px 50px rgba($neon-cyan, 0.15);
 
-        .at-symbol {
-          color: $color-primary;
-        }
+    @media (max-width: 480px) {
+      width: 10rem;
+      height: 10rem;
+      font-size: 4rem;
+    }
+  }
+}
 
-        @media (max-width: 480px) {
-          font-size: 2.2rem;
-        }
-      }
+.text-section {
+  flex: 1;
+
+  .think-different-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+
+    .highlight-gradient {
+      background: $gradient-primary;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     @media (max-width: 480px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  .think-different-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: $color-text-dim;
+    margin-bottom: 2.5rem;
+  }
+}
+
+// Estilização dos Botões
+.container-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+
+  .resume-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: 1px solid $glass-border;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: $transition-fast;
+
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: white;
+      transform: translateY(-3px);
+      .arrow { transform: translateX(5px); }
+    }
+
+    &[href="/blog"] {
+      background: $neon-cyan;
+      color: #000;
+      border: none;
+      
+      &:hover {
+        background: white;
+        box-shadow: 0 10px 25px rgba($neon-cyan, 0.3);
+      }
+    }
+  }
+}
+
+.contact-section {
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid $glass-border;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-label {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-email {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $neon-cyan;
+    }
+
+    .at-symbol {
+      color: $neon-cyan;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.social-links-footer {
+  display: flex;
+  gap: 1rem;
+
+  .social-link {
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: $glass-bg;
+    border: 1px solid $glass-border;
+    transition: $transition-fast;
+    color: #fff;
+
+    svg, .gh-text {
+      width: 2.6rem;
+      height: 2.6rem;
+      transition: transform 0.3s ease;
+    }
+
+    .gh-text {
+      font-size: 0.9rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      background: rgba($neon-cyan, 0.1);
+      border-color: $neon-cyan;
+      box-shadow: 0 10px 20px rgba($neon-cyan, 0.2);
+
+      svg, .gh-text { transform: scale(1.1); }
+    }
+
+    &.whatsapp:hover {
+      color: #25d366;
+      border-color: #25d366;
+      box-shadow: 0 10px 20px rgba(#25d366, 0.2);
     }
   }
 }

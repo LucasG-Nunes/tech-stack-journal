@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { CommonModule } from '@angular/common';
+import { TooltipDirective } from '../../directives/custom-tooltip.directive';
 
 @Component({
   selector: 'tech-stack-header',
   standalone: true,
-  imports: [CommonModule, TranslocoModule],
+  imports: [CommonModule, TranslocoModule,TooltipDirective],
   templateUrl: './tech-stack-header.component.html',
   styleUrl: './tech-stack-header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

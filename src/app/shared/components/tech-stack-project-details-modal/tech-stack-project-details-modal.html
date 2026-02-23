@@ -46,10 +46,39 @@
         @if (isMaximized) {
         <div class="extra-details">
           <div class="divider"></div>
+
           <h3>Technical Deep Dive</h3>
           <div class="deep-dive-card">
             <p class="rich-text" [innerHTML]="'PROJECTS.ITEMS.' + getProjectKey() + '.DEEP_DIVE' | transloco"></p>
           </div>
+
+          @if (projectLinks; as links) {
+          <div class="resources-section">
+            <h3>{{ 'PROJECTS.MODAL.LINKS_TITLE' | transloco }}</h3>
+            <div class="links-grid">
+              @for (link of links; track link.URL) { @if (link.LABEL) {
+              <a [href]="link.URL" target="_blank" class="resource-link">
+                <span class="link-icon">🔗</span>
+                <span class="link-label">{{ link.LABEL }}</span>
+              </a>
+              } }
+            </div>
+          </div>
+          } @if (projectImages; as images) {
+          <div class="resources-section">
+            <h3>{{ 'PROJECTS.MODAL.METRICS_TITLE' | transloco }}</h3>
+            <div class="images-gallery">
+              @for (img of images; track img.URL) {
+              <div class="evidence-card" (click)="openImagePreview(img.URL)" tabindex="0" (keydown.enter)="openImagePreview(img.URL)">
+                <div class="image-wrapper">
+                  <img [src]="img.URL" [alt]="img.CAPTION" loading="lazy" />
+                </div>
+                <p class="image-caption">{{ img.CAPTION }}</p>
+              </div>
+              }
+            </div>
+          </div>
+          }
         </div>
         }
       </div>
@@ -58,5 +87,16 @@
     <footer class="modal-footer">
       <button class="close-btn" (click)="close()" type="button">{{ 'SHARED.MODAL_CONSTRUCTION.BUTTON' | transloco }}</button>
     </footer>
+
+
+
+  @if (selectedImage) {
+  <div class="image-upscale-overlay" (click)="closeImagePreview()" tabindex="0" (keydown.enter)="closeImagePreview()" role="button">
+    <div class="close-preview">✕</div>
+    <img [src]="selectedImage" class="upscaled-image" [alt]="'imagem selecionadda'" />
   </div>
+  }
+
+  </div>
+
 </div>

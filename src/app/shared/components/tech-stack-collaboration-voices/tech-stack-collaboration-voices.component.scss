@@ -31,8 +31,10 @@ $color-bg-dark: #0a0a0a;
     }
 
     .section-subtitle {
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 1.1rem;
+
+    color: rgba($color-text-main, 0.4);
+    font-size: 1.8rem;
+        font-weight: 600;
       max-width: 600px;
       margin: 0 auto;
     }
