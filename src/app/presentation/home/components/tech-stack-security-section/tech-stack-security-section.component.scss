@@ -1,0 +1,193 @@
+:host {
+  display: block;
+}
+
+.security {
+  position: relative;
+  padding: clamp(8rem, 12vw, 16rem) var(--ax-gutter);
+  background:
+    radial-gradient(60rem 40rem at 90% 20%, rgba(255, 59, 92, 0.06), transparent 70%),
+    radial-gradient(70rem 50rem at 10% 90%, rgba(var(--ax-purple-rgb), 0.08), transparent 70%),
+    var(--ax-bg);
+  overflow: hidden;
+
+  /* Scanlines sutis: estética "sala de operações". */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.015) 0 1px, transparent 1px 4px);
+    pointer-events: none;
+  }
+}
+
+.security__container {
+  position: relative;
+  max-width: var(--ax-container);
+  margin: 0 auto;
+}
+
+.security__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 2.4rem;
+  align-items: start;
+}
+
+/* --- Terminal ---------------------------------------------------------------- */
+.terminal {
+  border: 1px solid var(--ax-border-strong);
+  border-radius: var(--ax-radius);
+  background: rgba(8, 8, 10, 0.9);
+  box-shadow:
+    0 3.2rem 8rem rgba(0, 0, 0, 0.6),
+    0 0 6rem rgba(255, 59, 92, 0.06);
+  overflow: hidden;
+}
+
+.terminal__bar {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.2rem 1.6rem;
+  border-bottom: 1px solid var(--ax-border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.terminal__dots {
+  display: inline-flex;
+  gap: 0.6rem;
+
+  i {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: var(--ax-border-strong);
+
+    &:first-child {
+      background: var(--ax-danger);
+    }
+  }
+}
+
+.terminal__title {
+  font-family: var(--ax-font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  color: var(--ax-text-dim);
+}
+
+.terminal__body {
+  padding: 2.4rem clamp(1.6rem, 2.4vw, 2.8rem) 2.8rem;
+  font-family: var(--ax-font-mono);
+  font-size: clamp(1.2rem, 1.1vw, 1.4rem);
+  line-height: 1.9;
+  color: var(--ax-text-muted);
+}
+
+.line {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.line--cmd {
+  margin-top: 1.2rem;
+  color: var(--ax-text);
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.prompt {
+  color: var(--ax-ok);
+}
+
+.tag {
+  color: var(--ax-purple);
+}
+
+.line--ok .check {
+  color: var(--ax-ok);
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.9rem;
+  height: 1.6rem;
+  vertical-align: text-bottom;
+  background: var(--ax-ok);
+  box-shadow: 0 0 1rem var(--ax-ok);
+  animation: term-blink 1s steps(2, start) infinite;
+}
+
+@keyframes term-blink {
+  to { visibility: hidden; }
+}
+
+/* --- Práticas ---------------------------------------------------------------- */
+.practices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    min-width: 0;
+  }
+}
+
+.practice {
+  height: 100%;
+  padding: clamp(2rem, 2vw, 2.8rem);
+}
+
+.practice__index {
+  display: block;
+  margin-bottom: 2.4rem;
+  font-family: var(--ax-font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.16em;
+  color: rgb(var(--accent-rgb));
+}
+
+.practice__title {
+  margin: 0 0 1rem;
+  font-family: var(--ax-font-display);
+  font-size: clamp(1.8rem, 1.6vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ax-text);
+}
+
+.practice__desc {
+  margin: 0;
+  font-family: var(--ax-font-body);
+  font-weight: 300;
+  font-size: 1.45rem;
+  line-height: 1.6;
+  color: var(--ax-text-muted);
+}
+
+/* --- Responsivo --------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .security__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .practices {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}

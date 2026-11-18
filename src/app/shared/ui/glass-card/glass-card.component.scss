@@ -1,0 +1,73 @@
+:host {
+  --accent-rgb: var(--ax-cyan-rgb);
+  --mx: 50%;
+  --my: 0%;
+
+  position: relative;
+  display: block;
+  padding: clamp(2.4rem, 2.6vw, 3.6rem);
+  border-radius: var(--ax-radius);
+  background: var(--ax-glass-bg);
+  backdrop-filter: var(--ax-glass-blur);
+  -webkit-backdrop-filter: var(--ax-glass-blur);
+  box-shadow: 0 2.4rem 6.4rem rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    background-color var(--ax-dur-base) var(--ax-ease-out),
+    box-shadow var(--ax-dur-base) var(--ax-ease-out);
+}
+
+:host([data-accent='purple']) {
+  --accent-rgb: var(--ax-purple-rgb);
+}
+
+/* Borda 1px em gradiente (máscara recorta o miolo). */
+:host::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    160deg,
+    rgba(var(--accent-rgb), 0.45) 0%,
+    rgba(255, 255, 255, 0.08) 35%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Spotlight seguindo o cursor. */
+:host::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    32rem circle at var(--mx) var(--my),
+    rgba(var(--accent-rgb), 0.12),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity var(--ax-dur-base) var(--ax-ease-out);
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :host(:hover) {
+    background-color: var(--ax-surface-hover);
+    box-shadow:
+      0 2.4rem 6.4rem rgba(0, 0, 0, 0.55),
+      0 0 4rem rgba(var(--accent-rgb), 0.08);
+  }
+
+  :host(:hover)::after {
+    opacity: 1;
+  }
+}

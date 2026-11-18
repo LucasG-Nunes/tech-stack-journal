@@ -1,0 +1,41 @@
+<section class="manifesto" aria-labelledby="manifesto-title">
+  <div class="manifesto__container">
+    <ax-section-header
+      index="01"
+      titleId="manifesto-title"
+      [label]="'MANIFESTO.LABEL' | transloco"
+      [title]="'MANIFESTO.TITLE' | transloco"
+      [lead]="'MANIFESTO.LEAD' | transloco" />
+
+    <div class="manifesto__pillars" axReveal [revealStagger]="0.14">
+      @for (pillar of pillars; track pillar.key; let i = $index) {
+        <ax-glass-card class="pillar" data-reveal-item [accent]="pillar.accent">
+          <div class="pillar__head">
+            <span class="pillar__code">MOD.0{{ i + 1 }}</span>
+            <span class="pillar__status" [attr.data-status]="pillar.status">
+              <span class="dot" aria-hidden="true"></span>{{ 'MANIFESTO.STATUS.' + pillar.status | transloco }}
+            </span>
+          </div>
+
+          <h3 class="pillar__title">{{ 'MANIFESTO.PILLARS.' + pillar.key + '.TITLE' | transloco }}</h3>
+          <p class="pillar__desc">{{ 'MANIFESTO.PILLARS.' + pillar.key + '.DESC' | transloco }}</p>
+
+          <ul class="pillar__tags" [attr.aria-label]="'MANIFESTO.TAGS_ARIA' | transloco">
+            @for (tag of pillar.tags; track tag) {
+              <li>{{ tag }}</li>
+            }
+          </ul>
+        </ax-glass-card>
+      }
+    </div>
+
+    <figure class="manifesto__pipeline" axReveal="blur">
+      <figcaption>{{ 'MANIFESTO.PIPELINE_LABEL' | transloco }}</figcaption>
+      <ol>
+        @for (step of pipeline; track step; let last = $last) {
+          <li [class.is-last]="last">{{ step }}</li>
+        }
+      </ol>
+    </figure>
+  </div>
+</section>

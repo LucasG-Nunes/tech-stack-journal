@@ -1,0 +1,21 @@
+@if (useVideo()) {
+  <video
+    #video
+    class="media"
+    [attr.poster]="poster()"
+    muted
+    loop
+    playsinline
+    preload="none"
+    disablepictureinpicture>
+    @for (source of sources(); track source.src) {
+      <source [src]="source.src" [type]="source.type" />
+    }
+  </video>
+} @else {
+  <canvas #canvas class="media"></canvas>
+}
+
+<div class="overlay"></div>
+<div class="glow"></div>
+<div class="grain"></div>

@@ -1,54 +1,148 @@
 {
-  "HOME": {
-    "TITLE": "Construindo produtos escaláveis",
-    "SUBTITLE": "performance, design e inovação",
-    "EXPERTISE_TITLE": "Expertise nas seguintes tecnologias"
-  },
   "NAV": {
+    "MANIFESTO": "Manifesto",
+    "ARSENAL": "Arsenal",
+    "TRACK_RECORD": "Track record",
+    "SECURITY": "Segurança",
+    "LOGS": "Logs",
     "BLOG": "Blog",
-    "PROJECTS": "Projetos",
-    "CONTACT": "Contato"
+    "CONTACT": "Contato",
+    "MAIN_ARIA": "Navegação principal",
+    "MENU_OPEN": "Abrir menu",
+    "MENU_CLOSE": "Fechar menu",
+    "LANG_ARIA": "Mudar idioma (português / inglês)",
+    "SKIP": "Pular para o conteúdo"
   },
   "SEO": {
-    "TITLE": "Lucas Nunes | Desenvolvimento de Aplicativos e Sistemas Web Profissionais",
-    "DESCRIPTION": "Especialista em desenvolvimento de aplicativos, sites e sistemas web de alta performance. Transforme sua ideia em um produto digital escalável. Entre em contato!",
-    "KEYWORDS": "Lucas Nunes engenheiro, contratar desenvolvedor Angular, desenvolvedor TypeScript senior, sistema SaaS Angular, portfólio engenheiro de software"
+    "TITLE": "Lucas Nunes | AI Solutions Engineer: Arquitetura, IA & Segurança",
+    "DESCRIPTION": "Engenheiro de Software & IA em sistemas críticos de bancos e do Judiciário: microsserviços, eventos com Kafka, Kubernetes e Kong no dia a dia, e pós-graduação em IA Generativa & LLMs em andamento.",
+    "KEYWORDS": "Lucas Nunes, AI Solutions Engineer, engenheiro de software e IA, IA Generativa, LLMs, RAG, arquitetura de microsserviços, micro-frontends, Kubernetes, Kafka, Kong, AWS, DevSecOps, segurança ofensiva"
   },
   "HEADER": {
     "NAME": "Lucas Nunes",
-    "ROLE": "Product Engineer | Especialista em Aplicativos e Sistemas Scaláveis",
-    "TOOLTIPS": {
-      "LANG": "Mudar para Inglês",
-      "LINKEDIN": "Vamos nos conectar e trocar ideias!",
-      "GITHUB": "Explore meus repositórios e contribua!",
-      "WHATSAPP": "Vamos construir um produto de sucesso juntos?",
-      "BLOG": "Lab de Engenharia: Venha contribuir com a comunidade!"
-    }
+    "ROLE": "AI Solutions Engineer",
+    "HOME_ARIA": "Lucas Nunes: voltar ao início"
   },
   "HERO": {
-    "ACCESSIBLE_TITLE": "Bem-vindo ao meu ecossistema de engenharia!",
-    "TAGLINE_BASE": "Construindo produtos escaláveis que unem",
-    "TAGLINE_HIGHLIGHT": "performance, design e inteligência.",
-    "DESCRIPTION": "Sou um Engenheiro de Software focado em transformar desafios de negócio em soluções digitais robustas. Com sólida experiência na gestão de pagamentos nacionais pelo CNJ e ecossistemas financeiros na Randon, utilizo o ecossistema TypeScript para entregar produtos que escalam. Atualmente, foco em conceitos de arquitetura limpa, alta performance e no desenvolvimento de produtos SaaS que geram valor real."
+    "TAG": "// AI Solutions Engineer · Software & IA",
+    "TITLE_LINE_1": "Engenharia de sistemas críticos.",
+    "TITLE_LINE_2": "Inteligência embarcada.",
+    "SUBTITLE": "Construo software para sistemas críticos de bancos e do Judiciário, num ecossistema de microsserviços, eventos e Kubernetes. Agora levo essa base para a IA Generativa, com pós-graduação em LLMs em andamento.",
+    "CTA_PRIMARY": "Ver track record",
+    "CTA_SECONDARY": "Abrir canal",
+    "STATUS": {
+      "SYS_LABEL": "SYS.STATUS",
+      "SYS_VALUE": "Operacional",
+      "EDU_LABEL": "Pós-grad IA Gen & LLMs",
+      "EDU_VALUE": "Em curso"
+    },
+    "METRICS": {
+      "LOC": "Linhas de código · CNJ",
+      "MRS": "Merge requests",
+      "INTL": "Alcance orgânico EUA"
+    }
   },
-  "SKILLS": {
-    "HEADING": "Expertise nas seguintes tecnologias",
-    "ARIA_TECH": "Tecnologia: ",
-    "TOOLTIPS": {
-      "angular": "Signals, RxJS, Standalone Components e Injeção de Dependência.",
-      "react": "Hooks, Context API, Server Components e State Management.",
-      "nodejs": "Event Loop, Streams, Non-blocking I/O e Desenvolvimento de APIs.",
-      "nestjs": "Arquitetura Modular, Injeção de Dependência, Decorators e Pipes.",
-      "aws": "Serverless (Lambda), S3, CloudFront, API Gateway e IAM.",
-      "docker": "Containerização, Docker Compose e Otimização de Imagens (Multi-stage).",
-      "gitlab": "Pipelines de CI/CD, Automação de Deploy e Configuração YAML.",
-      "web3": "Descentralização, dApps, Integração com Wallets e Ethers.js/Viem.",
-      "solidity": "Smart Contracts, EVM, Hardhat/Foundry e Segurança em Blockchain."
+  "MANIFESTO": {
+    "LABEL": "Manifesto",
+    "TITLE": "IA não é feature. É camada de arquitetura.",
+    "LEAD": "Modelo bom em notebook não paga a conta. O que separa um protótipo de um produto é o que existe ao redor do LLM: integração, observabilidade, custo, governança de dados e um plano B quando o modelo erra. É essa camada que estou estudando na pós, com a bagagem de quem já sustenta sistema crítico em produção.",
+    "TAGS_ARIA": "Tecnologias e práticas",
+    "PIPELINE_LABEL": "Pipeline de referência",
+    "PILLARS": {
+      "RAG": {
+        "TITLE": "RAG & Agentes",
+        "DESC": "Recuperação sobre dados próprios e agentes com ferramentas: o foco atual dos meus estudos e laboratórios."
+      },
+      "LLMOPS": {
+        "TITLE": "LLMOps",
+        "DESC": "Avaliação, versionamento de prompts e controle de custo: o que transforma demo em produto."
+      },
+      "ENTERPRISE": {
+        "TITLE": "Integração Enterprise",
+        "DESC": "Kafka, Kong e Kubernetes já fazem parte da minha rotina num sistema bancário. É por essa porta que a IA entra."
+      }
+    },
+    "STATUS": {
+      "STUDY": "Em formação",
+      "DAILY": "Dia a dia"
+    }
+  },
+  "ARSENAL": {
+    "LABEL": "Arsenal",
+    "TITLE": "Stack de combate.",
+    "LEAD": "O que uso no dia a dia e o que estou estudando, separado com honestidade.",
+    "FIELD_KIT": "Também em campo",
+    "DOMAINS": {
+      "ARCH": "Arquitetura",
+      "INFRA": "Infra & Dados",
+      "AI": "Inteligência Artificial"
+    },
+    "ITEMS": {
+      "MICROSERVICES": {
+        "NAME": "Microsserviços",
+        "DESC": "Produto inserido num ecossistema de serviços que conversam por APIs e eventos."
+      },
+      "MICROFRONTENDS": {
+        "NAME": "Micro-frontends",
+        "DESC": "Front dividido em partes independentes, cada uma com deploy e responsabilidade próprios."
+      },
+      "KONG": {
+        "NAME": "Kong",
+        "DESC": "Todo endpoint novo passa por ele: exponho no gateway para o front enxergar e consumir."
+      },
+      "AWS": {
+        "NAME": "AWS",
+        "DESC": "Lambda, S3 e CloudFront em deploys e projetos próprios."
+      },
+      "KUBERNETES": {
+        "NAME": "Kubernetes",
+        "DESC": "Rotina de acompanhar pods, ler logs e reiniciar quando o serviço pede."
+      },
+      "KAFKA": {
+        "NAME": "Kafka",
+        "DESC": "Arquitetura orientada a eventos no consignado: filas que integram seguros e garantias ao produto."
+      },
+      "PYTHON": {
+        "NAME": "Python",
+        "DESC": "Base da pós em IA: notebooks, scripts e experimentos com modelos."
+      },
+      "LLMS": {
+        "NAME": "LLMs",
+        "DESC": "Integração e avaliação de modelos de linguagem, em estudo aplicado."
+      },
+      "GENAI": {
+        "NAME": "IA Generativa",
+        "DESC": "RAG, agentes e automação: laboratórios da pós-graduação."
+      }
+    },
+    "TAGS": {
+      "DAILY": "Dia a dia",
+      "STUDY": "Em formação"
     }
   },
   "PROJECTS": {
-    "TITLE": "Projetos e Contribuições",
-    "SUBTITLE": "Confira alguns dos meus trabalhos mais recentes",
+    "LABEL": "Track Record",
+    "TITLE": "Missões em produção.",
+    "LEAD": "Sistemas onde falha não é opção: dinheiro e Justiça. Abra um dossiê para ver contexto, arquitetura e evidências.",
+    "OPEN": "Abrir dossiê",
+    "OPEN_ARIA": "Abrir dossiê do projeto",
+    "STACK_ARIA": "Stack do projeto",
+    "SECTORS": {
+      "FINANCE": "Setor financeiro",
+      "JUDICIARY": "Judiciário",
+      "SAAS": "SaaS",
+      "RND": "P&D"
+    },
+    "CLASS": {
+      "CRITICAL": "Crítico",
+      "PRODUCT": "Produto",
+      "LAB": "Lab",
+      "CURRENT": "Atual"
+    },
+    "METRICS": {
+      "SISPREQ": "em precatórios projetados para 2026",
+      "LCP": "de LCP em produção"
+    },
     "ITEMS": {
       "RANDON": {
         "TITLE": "Ecossistema Financeiro & CDC",
@@ -122,158 +216,128 @@
             }
           ]
         }
+      },
+      "SICREDI": {
+        "TITLE": "Sicredi: Crédito Consignado",
+        "DESC": "Produto de crédito consignado numa arquitetura orientada a eventos, integrado a seguros e garantias.",
+        "DEEP_DIVE": "Atuação atual no <b>Sicredi</b>, no produto de <b>crédito consignado</b>. O produto vive num ecossistema de <b>microsserviços orientado a eventos</b>: outros produtos do banco, como <b>seguros</b> e <b>garantias</b>, conversam com o consignado por <b>filas Kafka</b>, então entender o fluxo de eventos faz parte da rotina. <br><br> No dia a dia, acompanho os serviços no <b>Kubernetes</b>: observar pods, ler logs e reiniciar quando necessário. Sempre que um endpoint novo precisa chegar ao front, ele é exposto no <b>Kong</b>, o gateway que dá acesso aos componentes. <br><br> É o contexto que mais molda minha visão de arquitetura hoje: sistema financeiro crítico, integração entre produtos e operação real em produção."
       }
     },
     "MODAL": {
-      "LINKS_TITLE": "Referências e Artigos",
-      "METRICS_TITLE": "Métricas e Case de Sucesso"
+      "DOSSIER": "Dossiê",
+      "DEEP_DIVE_TITLE": "Deep dive técnico",
+      "LINKS_TITLE": "Referências",
+      "METRICS_TITLE": "Evidências e métricas",
+      "CLOSE": "Fechar dossiê",
+      "EXPAND": "Expandir dossiê",
+      "COLLAPSE": "Recolher dossiê",
+      "OPEN_IMAGE": "Ampliar evidência",
+      "IMAGE_CLOSE": "Fechar imagem",
+      "EXTERNAL": "(abre em nova aba)"
     }
   },
-
-  "THINK_DIFFERENT": {
-    "TITLE_BASE": "Pense diferente, ",
-    "TITLE_HIGHLIGHT": "seja diferente.",
-    "DESCRIPTION": "Eu não apenas crio experiências digitais — eu desenho jornadas que conectam pessoas a soluções. Minha abordagem une estética, funcionalidade e uma visão humana para transformar o complexo em algo intuitivo e prazeroso de usar.",
-    "RESUME_BTN": "Ver Currículo",
-    "RESUME_ARIA": "Abrir currículo de Lucas Nunes em nova aba",
-    "CONTACT_LABEL": "ENTRE EM CONTATO EM",
-    "CONTRIBUTE_BUTTON": "Contribuições & Insights",
-    "CONTRIBUTE_ARIA": "Ver blog técnico e contribuições para a comunidade",
-
-    "TOOLTIPS": {
-      "LANG": "Mudar para Inglês",
-      "LINKEDIN": "Vamos nos conectar e trocar ideias!",
-      "GITHUB": "Explore meus repositórios e contribua!",
-      "WHATSAPP": "Vamos construir um produto de sucesso juntos?",
-      "BLOG": "Lab de Engenharia: Venha contribuir com a comunidade!"
+  "SECURITY": {
+    "LABEL": "Segurança ofensiva & DevSecOps",
+    "TITLE": "Penso como o atacante. Construo como o defensor.",
+    "LEAD": "Treino ataque no TryHackMe por hobby e levo essa visão para o design dos sistemas. Em banco e Judiciário, segurança não é etapa final: é requisito de arquitetura.",
+    "TERMINAL_TITLE": "ops-console — bash",
+    "TERMINAL": {
+      "WHOAMI": "software & ai engineer · sistemas críticos",
+      "HOBBY": "TryHackMe: laboratórios de segurança ofensiva",
+      "FIELD": "Randon: fluxos de pagamento revisados junto ao time de pentest",
+      "APPLY": "olhar de atacante → design → revisão → produção",
+      "CHECK_GATEWAY": "endpoints expostos só via gateway (Kong)",
+      "CHECK_SECRETS": "segredos fora do código",
+      "CHECK_PIPELINE": "revisão com olhar de pentest"
+    },
+    "PRACTICES": {
+      "THREAT": {
+        "TITLE": "Olhar de atacante no design",
+        "DESC": "Treinar ataque no TryHackMe muda a pergunta: antes de “funciona?”, vem “como isso quebra?”."
+      },
+      "PIPELINE": {
+        "TITLE": "Segurança no fluxo, não no fim",
+        "DESC": "Revisão de dependências e checagens automáticas como parte do CI, não como etapa final."
+      },
+      "ZERO_TRUST": {
+        "TITLE": "Gateway como porta de entrada",
+        "DESC": "Nada vai direto ao serviço: endpoint novo só chega ao front depois de exposto no Kong."
+      },
+      "HARDENING": {
+        "TITLE": "Segredos e menor privilégio",
+        "DESC": "Credenciais fora do código e cada componente com o acesso de que precisa, nada além."
+      }
     }
   },
-
   "FOOTER": {
-    "ROLE": "Engenheiro de Software",
-    "TAGLINE_BASE": "Transformando confusão em realidade, um pixel por vez — criado com precisão e um toque de",
-    "TAGLINE_HIGHLIGHT": "coração brasileiro ",
-    "SOCIAL_LABEL": "Redes Sociais",
-    "CONTACTS_LABEL": "Contatos",
-    "TOOLTIPS": {
-      "LANG": "Mudar para Inglês",
-      "LINKEDIN": "Vamos nos conectar e trocar ideias!",
-      "GITHUB": "Explore meus repositórios e contribua!",
-      "WHATSAPP": "Vamos construir um produto de sucesso juntos?",
-      "BLOG": "Lab de Engenharia: Venha contribuir com a comunidade!"
-    }
+    "TAGLINE": "Engenharia de sistemas críticos. Inteligência embarcada. Segurança desde o design.",
+    "NAV_LABEL": "Navegação",
+    "CHANNELS_LABEL": "Canais",
+    "STATUS_LABEL": "Status",
+    "REMOTE": "Remoto",
+    "BACK_TO_TOP": "Voltar ao topo"
   },
-
   "BLOG": {
-    "BREADCRUMB": "Blog Técnico",
-    "ROLE_SUBTITLE": "Engenheiro Full Stack | Angular & Node.js | AWS Cloud | Web3 & Smart Contracts",
+    "SEO_TITLE": "Logs de engenharia | Engineering Lab",
+    "SEO_DESCRIPTION": "Notas de campo de Lucas Nunes sobre IA Generativa, LLMs, arquitetura orientada a eventos, Kubernetes e segurança.",
+    "LABEL": "Engineering Lab",
+    "TITLE": "Logs de engenharia.",
+    "LEAD": "Notas de campo sobre IA aplicada, arquitetura e segurança. Sem marketing: o que funcionou, o que quebrou e por quê.",
+    "STATUS_LABEL": "Status do lab",
     "STATS": {
-      "TECH_LABEL": "Tecnologias",
-      "ARTICLES_LABEL": "Artigos",
-      "LEARNING_LABEL": "Aprendizado"
+      "DRAFTS": "Logs em redação",
+      "PUBLISHED": "Publicados",
+      "TRACKS": "Trilhas"
     },
-    "CATEGORIES_SECTION": {
-      "TITLE": "Artigos Técnicos",
-      "SUBTITLE": "Conhecimento organizado por área de atuação",
-      "ARIA_VIEW": "Ver artigos sobre ",
-      "ARTICLES_COUNT": "artigos",
-      "LIST": {
-        "WEB2": {
-          "TITLE": "Desenvolvimento Web 2",
-          "DESC": "Desenvolvimento web moderno com foco em performance e experiência do usuário",
-          "ITEMS": {
-            "TS": "Tipagem estática para JavaScript",
-            "ANG": "Framework enterprise com standalone components",
-            "REACT": "Biblioteca para interfaces de usuário",
-            "NEXT": "Framework React para produção",
-            "NODE": "Runtime JavaScript server-side",
-            "NEST": "Framework Node.js escalável",
-            "FRONT_TOOLS": "HTML5, CSS3, SASS/SCSS, RxJS, Storybook"
-          }
-        },
-        "CLOUD": {
-          "TITLE": "Cloud & DevOps",
-          "DESC": "Infraestrutura moderna e pipeline de desenvolvimento",
-          "ITEMS": {
-            "AWS": "S3, CloudFront, Lambda, API Gateway, DynamoDB",
-            "DOCKER": "Containerização de aplicações",
-            "CICD": "GitLab CI/CD, GitHub Actions"
-          }
-        },
-        "WEB3": {
-          "TITLE": "Web3 & Blockchain",
-          "DESC": "Desenvolvimento descentralizado e contratos inteligentes",
-          "ITEMS": {
-            "SOL": "Linguagem para smart contracts",
-            "HARDHAT": "Ambiente de desenvolvimento Ethereum",
-            "DAPP": "Integração com MetaMask e WalletConnect"
-          }
-        },
-        "QUALITY": {
-          "TITLE": "Testes & Qualidade",
-          "DESC": "Garantia de qualidade e testes automatizados",
-          "ITEMS": {
-            "JEST": "Framework de testes JavaScript",
-            "ANG_TEST": "Karma e Jasmine para Angular"
-          }
-        }
-      }
-    },
-    "RECENT_ARTICLES": {
-      "TITLE": "Artigos Recentes",
-      "SUBTITLE": "Últimos conteúdos publicados",
-      "VIEW_ALL": "Ver todos os artigos",
-      "VIEW_ALL_ARIA": "Ver todos os artigos publicados",
-      "READ_TIME": "de leitura",
-      "VIEWS": "visualizações"
-    },
-    "ARTICLES": {
-      "STANDALONE": {
-        "TITLE": "Standalone Components no Angular 17: O Futuro do Angular",
-        "DESC": "Descubra como os standalone components revolucionaram o desenvolvimento Angular com uma estrutura mais simples e performática."
-      },
-      "METAMASK": {
-        "TITLE": "Integrando MetaMask em Aplicações React",
-        "DESC": "Guia completo para conectar wallets em suas dApps, lidando com provedores e assinaturas de mensagens."
-      },
-      "AWS_DEPLOY": {
-        "TITLE": "Deploy Automático com AWS Lambda e API Gateway",
-        "DESC": "Configurando infraestrutura serverless na AWS de forma automatizada usando CI/CD."
-      },
-      "TS_ADVANCED": {
-        "TITLE": "Advanced TypeScript: Conditional Types e Utility Types",
-        "DESC": "Dominando recursos avançados do TypeScript para criar códigos mais robustos e tipos dinâmicos."
-      }
-    }
+    "FILTER_ALL": "Todas as trilhas",
+    "FILTER_ARIA": "Filtrar logs por trilha",
+    "LIST_TITLE": "Fila de publicação",
+    "EMPTY": "Nenhum log nesta trilha ainda.",
+    "FOLLOW_TITLE": "Quer saber quando o primeiro log sair?",
+    "FOLLOW_LEAD": "As publicações são anunciadas no LinkedIn.",
+    "FOLLOW_CTA": "Seguir no LinkedIn",
+    "BACK_HOME": "Voltar à Home"
   },
-
   "SHARED": {
     "MODAL_CONSTRUCTION": {
-      "TITLE": "Em Construção",
-      "MESSAGE": "Estou refinando a arquitetura do backend e a integração das APIs para garantir a melhor performance. Em breve, este conteúdo estará disponível com toda a robustez necessária!",
-      "BUTTON": "Entendido"
+      "LABEL": "Status",
+      "TITLE": "Log em redação.",
+      "MESSAGE": "Este log ainda está sendo escrito. As publicações são anunciadas no LinkedIn.",
+      "FOLLOW": "Seguir no LinkedIn",
+      "BUTTON": "Entendido",
+      "CLOSE": "Fechar aviso"
     }
   },
-
   "EDUCATION": {
-    "TITLE": "Jornada Acadêmica",
+    "TITLE": "Formação contínua",
     "STATUS": {
       "COMPLETED": "Concluído",
-      "IN_PROGRESS": "Em Andamento",
+      "IN_PROGRESS": "Em curso",
+      "PAUSED": "Trancado",
       "EXPECTED": "Previsão"
     },
     "COURSES": {
       "ADS": "Análise e Desenvolvimento de Sistemas",
-      "SOFTWARE_ENG": "Engenharia de Software"
+      "SOFTWARE_ENG": "Engenharia de Software",
+      "AI_POSTGRAD": "Pós-graduação em IA Generativa & LLMs"
     },
-    "DIPLOMA": "Diploma.pdf"
+    "DIPLOMA": "Diploma",
+    "DATES": {
+      "AI_POSTGRAD": "Jun 2027"
+    },
+    "NOTES": {
+      "SOFTWARE_ENG": "Faltam 2 anos para a conclusão"
+    }
   },
-
   "VOICES": {
-    "TITLE": "Vozes de Colaboração",
-    "SUBTITLE": "Feedback real do LinkedIn sobre nossos projetos compartilhados",
+    "LABEL": "Relatórios de campo",
+    "TITLE": "Quem esteve na trincheira.",
+    "LEAD": "Recomendações reais de quem construiu sistemas comigo, verificáveis no LinkedIn.",
     "VERIFY": "Verificar no LinkedIn",
-    "TRANSLATION_LABEL": "Tradução Rápida",
+    "ORIGINAL": "Print original",
+    "PREV": "Depoimento anterior",
+    "NEXT": "Próximo depoimento",
+    "RAIL_ARIA": "Depoimentos (role para os lados)",
     "TESTIMONIALS": {
       "ELENICE": "Trabalhei com o Lucas na DB em um projeto para o cliente CNJ. O Lucas entregou um desempenho excepcional, fornecendo consistentemente resultados de alta qualidade. Ele é altamente colaborativo e dedicado. Recomendo-o fortemente como profissional e espero futuras parcerias.",
       "SAMIRA": "O Lucas é um profissional dedicado e altamente qualificado, que está sempre em busca de aperfeiçoamento. Possui sólido conhecimento técnico e extrema resiliência. Um ótimo jogador de equipe que vai além para garantir entregas de alto nível. Foi uma honra presenciar seu crescimento tão de perto.",
@@ -285,6 +349,123 @@
       "JESSICA": "Como designer, sempre pude contar com as habilidades técnicas e a atenção aos detalhes do Lucas ao implementar interfaces complexas. Ele está sempre buscando otimizar o código, e sua comunicação proativa tornou nossa colaboração fluida, resultando em soluções que são funcionais e elegantes.",
       "RHANNA": "O Lucas é um profissional admirável. Sempre trabalhou excepcionalmente bem com a equipe e é tecnicamente muito forte. Um profissional com quem espero definitivamente trabalhar novamente em oportunidades futuras.",
       "ADRIANE": "O Lucas é um ótimo profissional, trazendo constantemente inovações tecnológicas tanto em componentes quanto em linguagens para garantir a melhor performance para o cliente. É muito gentil e trabalha perfeitamente em equipe. Foi um prazer trabalhar ao seu lado."
+    },
+    "RELATION": {
+      "MANAGER": "Gestão direta",
+      "TEAM": "Mesmo time"
+    },
+    "ROLES": {
+      "ELENICE": "Gerente de Projetos · Scrum Master",
+      "SAMIRA": "IT Project Manager · Agile Coach",
+      "CARLOS": "Software Architect · DBServer",
+      "EDSON": "Desenvolvedor Fullstack Sênior (Java/Angular)",
+      "RENAN": "Desenvolvedor Backend · Java/Spring Boot",
+      "ALEXSANDER": "Desenvolvedor · DBServer",
+      "MARCOS": "Angular Developer · Coopersystem",
+      "JESSICA": "UX/UI Designer",
+      "RHANNA": "Analista de Testes · QA",
+      "ADRIANE": "Analista de Qualidade de Software · QA"
+    }
+  },
+  "LOGS": {
+    "LABEL": "Logs de engenharia",
+    "TITLE": "Field notes.",
+    "LEAD": "IA aplicada, arquitetura orientada a eventos e segurança: o que estudo na pós e o que aprendo no dia a dia de um sistema bancário.",
+    "FEATURED": "Destaque",
+    "READ": "Ler log",
+    "READ_TIME": "min de leitura",
+    "VIEW_ALL": "Ver todos os logs",
+    "STATUS": {
+      "DRAFT": "Em redação",
+      "PUBLISHED": "Publicado"
+    },
+    "TRACKS": {
+      "AI": {
+        "NAME": "IA & LLMs",
+        "DESC": "RAG, avaliação de modelos e IA em sistemas críticos: notas da pós em andamento."
+      },
+      "ARCH": {
+        "NAME": "Arquitetura & Eventos",
+        "DESC": "Kafka, Kong e Kubernetes vistos de dentro de um produto bancário real."
+      },
+      "SEC": {
+        "NAME": "Segurança",
+        "DESC": "Mentalidade ofensiva aplicada ao design de sistemas."
+      },
+      "FRONT": {
+        "NAME": "Front-end",
+        "DESC": "Angular, performance e motion design de alto impacto."
+      }
+    },
+    "ITEMS": {
+      "RAG": {
+        "TITLE": "RAG na prática: do documento à resposta auditável",
+        "DESC": "Como recuperação, embeddings e citações transformam um LLM genérico num assistente confiável."
+      },
+      "AI_BANK": {
+        "TITLE": "LLM em sistema crítico: onde a IA entra num banco (e onde não entra)",
+        "DESC": "Uma visão de engenharia sobre riscos, governança e casos de uso realistas para IA no setor financeiro."
+      },
+      "EVALS": {
+        "TITLE": "Evals antes de prompts: medindo se o modelo acertou",
+        "DESC": "Por que avaliação sistemática vale mais do que ajuste fino de prompt na hora de levar IA para produção."
+      },
+      "POSTGRAD": {
+        "TITLE": "Diário da pós: aprendendo IA Generativa & LLMs",
+        "DESC": "Notas de estudo da pós-graduação, dos fundamentos de transformers aos primeiros agentes."
+      },
+      "KAFKA": {
+        "TITLE": "Eventos no crédito consignado: Kafka fora do tutorial",
+        "DESC": "Como produtos como seguros e garantias conversam por filas, e o que isso muda no jeito de pensar o fluxo."
+      },
+      "KONG": {
+        "TITLE": "Do endpoint à tela: o caminho de uma API pelo Kong",
+        "DESC": "O que acontece entre criar um endpoint e o front conseguir consumi-lo num ecossistema com API Gateway."
+      },
+      "K8S": {
+        "TITLE": "Kubernetes para dev de produto: pods, logs e restarts",
+        "DESC": "O mínimo que um dev precisa saber para acompanhar seus serviços no cluster sem medo."
+      },
+      "THM": {
+        "TITLE": "Pensando como atacante: o que o TryHackMe ensina a um dev",
+        "DESC": "Lições de laboratórios de segurança ofensiva aplicadas ao design de sistemas."
+      },
+      "GSAP": {
+        "TITLE": "Animações de alto impacto no Angular com GSAP e SSR",
+        "DESC": "Scramble, tilt 3D e scroll reveal sem quebrar a pré-renderização nem a acessibilidade: os bastidores deste site."
+      }
+    }
+  },
+  "CONTACT": {
+    "LABEL": "Contato",
+    "TITLE": "Sistema crítico em jogo?",
+    "LEAD": "Arquitetura, IA aplicada ou auditoria de segurança. Traga o problema, a gente desenha a solução.",
+    "FRONTS_ARIA": "Frentes de atuação",
+    "FRONTS": {
+      "ARCH": "Arquitetura de sistemas",
+      "AI": "IA aplicada",
+      "SEC": "Segurança & DevSecOps"
+    },
+    "EMAIL_LABEL": "Canal direto",
+    "COPY": "Copiar e-mail",
+    "COPIED": "Copiado ✔",
+    "CHANNELS": {
+      "LINKEDIN": {
+        "NAME": "LinkedIn",
+        "DESC": "Trajetória, recomendações e conexão profissional."
+      },
+      "GITHUB": {
+        "NAME": "GitHub",
+        "DESC": "Código, laboratórios e repositórios públicos."
+      },
+      "WHATSAPP": {
+        "NAME": "WhatsApp",
+        "DESC": "Conversa rápida para alinhar contexto."
+      },
+      "RESUME": {
+        "NAME": "Currículo",
+        "DESC": "Versão internacional para download (.docx)."
+      }
     }
   }
 }

@@ -1,0 +1,235 @@
+:host {
+  display: block;
+}
+
+.arsenal {
+  position: relative;
+  padding: clamp(8rem, 12vw, 16rem) 0;
+  background:
+    radial-gradient(60rem 40rem at 0% 30%, rgba(var(--ax-cyan-rgb), 0.06), transparent 70%),
+    var(--ax-bg);
+  overflow: hidden;
+}
+
+.arsenal__container {
+  max-width: var(--ax-container);
+  margin: 0 auto;
+  padding: 0 var(--ax-gutter);
+}
+
+/* --- Domínios --------------------------------------------------------------- */
+.arsenal__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.domain__head {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid var(--ax-border);
+}
+
+.domain__index {
+  font-family: var(--ax-font-mono);
+  font-size: 1.2rem;
+  color: rgb(var(--accent-rgb));
+}
+
+.domain__title {
+  margin: 0;
+  font-family: var(--ax-font-mono);
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ax-text);
+}
+
+.domain__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tech {
+  position: relative;
+  display: flex;
+  gap: 1.4rem;
+  padding: 1.8rem 0 1.8rem 0;
+  border-bottom: 1px dashed var(--ax-border);
+  transition: padding-left var(--ax-dur-base) var(--ax-ease-out);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  /* Barra neon à esquerda no hover. */
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.8rem;
+    bottom: 1.8rem;
+    width: 2px;
+    background: rgb(var(--accent-rgb));
+    box-shadow: 0 0 1.2rem rgba(var(--accent-rgb), 0.8);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform var(--ax-dur-base) var(--ax-ease-out);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tech:hover {
+    padding-left: 1.4rem;
+
+    &::before {
+      transform: scaleY(1);
+    }
+
+    .tech__name {
+      color: rgb(var(--accent-rgb));
+    }
+  }
+}
+
+.tech__id {
+  flex-shrink: 0;
+  padding-top: 0.3rem;
+  font-family: var(--ax-font-mono);
+  font-size: 1.1rem;
+  color: var(--ax-text-dim);
+}
+
+.tech__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.tech__name {
+  font-family: var(--ax-font-display);
+  font-size: clamp(1.9rem, 1.7vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ax-text);
+  transition: color var(--ax-dur-fast) ease;
+}
+
+.tech__desc {
+  font-family: var(--ax-font-body);
+  font-weight: 300;
+  font-size: 1.45rem;
+  line-height: 1.55;
+  color: var(--ax-text-muted);
+}
+
+/* --- Faixa "também em campo" (marquee) --------------------------------------- */
+.kit {
+  margin-top: clamp(6.4rem, 8vw, 9.6rem);
+}
+
+.kit__label {
+  max-width: var(--ax-container);
+  margin: 0 auto 2rem;
+  padding: 0 var(--ax-gutter);
+  font-family: var(--ax-font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ax-text-dim);
+}
+
+.kit__viewport {
+  overflow: hidden;
+  border-block: 1px solid var(--ax-border);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.kit__track {
+  display: flex;
+  width: max-content;
+  animation: ax-marquee 45s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.kit__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 2.2rem 0 2.2rem 4rem;
+    font-family: var(--ax-font-display);
+    font-size: clamp(2rem, 2.4vw, 3rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    color: var(--ax-text-muted);
+
+    &::after {
+      content: '';
+      width: 0.6rem;
+      height: 0.6rem;
+      background: var(--ax-purple);
+      box-shadow: var(--ax-glow-purple);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+@keyframes ax-marquee {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kit__track {
+    animation: none;
+  }
+
+  .kit__viewport {
+    overflow-x: auto;
+  }
+}
+
+/* --- Responsivo --------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .arsenal__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Etiqueta de uso (Dia a dia / Em formação) --------------------------------- */
+.tech__tag {
+  display: inline-block;
+  margin-left: 0.8rem;
+  padding: 0.2rem 0.7rem;
+  border: 1px solid currentColor;
+  border-radius: 0.3rem;
+  vertical-align: middle;
+  font-family: var(--ax-font-mono);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  &[data-tag='DAILY'] {
+    color: var(--ax-ok);
+  }
+
+  &[data-tag='STUDY'] {
+    color: var(--ax-purple);
+  }
+}

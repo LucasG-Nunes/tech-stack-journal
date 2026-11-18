@@ -15,7 +15,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "tech-stack",
+            "prefix": ["tech-stack", "ax"],
             "style": "camelCase"
           }
         ],
@@ -23,7 +23,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "tech-stack",
+            "prefix": ["tech-stack", "ax"],
             "style": "kebab-case"
           }
         ]

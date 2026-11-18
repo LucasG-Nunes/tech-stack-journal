@@ -1,25 +1,31 @@
-<div 
-  class="modal-overlay" 
-  (click)="close()" 
-  (keydown.escape)="close()"
-  tabindex="0"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="modal-title">
-  
-  <div class="modal-content" appScrollReveal>
-    <div class="icon" aria-hidden="true">🏗️</div>
-    
-    <h1 id="modal-title" class="modal-title">
-      {{ 'SHARED.MODAL_CONSTRUCTION.TITLE' | transloco }}
-    </h1>
-    
-    <p class="modal-body">
-      {{ 'SHARED.MODAL_CONSTRUCTION.MESSAGE' | transloco }}
-    </p>
-    
-    <button class="close-btn" (click)="close()" type="button">
-      {{ 'SHARED.MODAL_CONSTRUCTION.BUTTON' | transloco }}
-    </button>
+<div class="notice">
+  <div class="notice__backdrop" aria-hidden="true" (click)="close()"></div>
+
+  <div class="notice__panel" role="dialog" aria-modal="true" aria-labelledby="notice-title" aria-describedby="notice-body">
+    <div class="notice__bar">
+      <span class="notice__label">
+        <span class="dot" aria-hidden="true"></span>
+        {{ 'SHARED.MODAL_CONSTRUCTION.LABEL' | transloco }} // {{ 'LOGS.STATUS.DRAFT' | transloco }}
+      </span>
+      <button
+        type="button"
+        class="notice__x"
+        (click)="close()"
+        [attr.aria-label]="'SHARED.MODAL_CONSTRUCTION.CLOSE' | transloco">
+        <span aria-hidden="true">✕</span>
+      </button>
+    </div>
+
+    <h2 id="notice-title" class="notice__title">{{ 'SHARED.MODAL_CONSTRUCTION.TITLE' | transloco }}</h2>
+    <p id="notice-body" class="notice__body">{{ 'SHARED.MODAL_CONSTRUCTION.MESSAGE' | transloco }}</p>
+
+    <div class="notice__actions">
+      <a class="btn btn--ghost" [href]="linkedin" target="_blank" rel="noopener noreferrer">
+        {{ 'SHARED.MODAL_CONSTRUCTION.FOLLOW' | transloco }} <span aria-hidden="true">↗</span>
+      </a>
+      <button type="button" class="btn btn--primary" (click)="close()">
+        {{ 'SHARED.MODAL_CONSTRUCTION.BUTTON' | transloco }}
+      </button>
+    </div>
   </div>
 </div>

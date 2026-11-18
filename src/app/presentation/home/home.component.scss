@@ -5,6 +5,10 @@
 .page-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  background-color: #0a0a0a;
+  gap: 0;
+  background-color: var(--ax-bg);
+}
+/* Âncoras da navegação: compensa o header fixo. */
+.page-container > * {
+  scroll-margin-top: 7.2rem;
 }

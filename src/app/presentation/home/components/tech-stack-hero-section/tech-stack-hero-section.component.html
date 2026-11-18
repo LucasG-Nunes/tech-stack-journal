@@ -1,16 +1,69 @@
-<section class="hero-section" aria-labelledby="hero-title" >
-  <h2 id="hero-title" class="sr-only">
-    {{ 'HERO.ACCESSIBLE_TITLE' | transloco }}
-  </h2> 
+<section class="hero" aria-labelledby="hero-title">
+  <ax-video-backdrop [sources]="videoSources" />
 
-  <div class="avatar" aria-hidden="true" appScrollReveal>👨‍💻</div>
+  <div class="hero__inner">
+    <p class="hero__tag" data-ax-intro data-hero="tag">
+      <span class="hero__tag-dot" aria-hidden="true"></span>
+      {{ 'HERO.TAG' | transloco }}
+    </p>
 
-  <h3 class="tagline" appScrollReveal>
-    {{ 'HERO.TAGLINE_BASE' | transloco }}
-    <span class="highlight">{{ 'HERO.TAGLINE_HIGHLIGHT' | transloco }}</span>
-  </h3>
+    <h1
+      id="hero-title"
+      class="hero__title"
+      [attr.aria-label]="('HERO.TITLE_LINE_1' | transloco) + ' ' + ('HERO.TITLE_LINE_2' | transloco)">
+      <span
+        class="hero__line"
+        aria-hidden="true"
+        data-ax-intro
+        [axScramble]="'HERO.TITLE_LINE_1' | transloco"
+        scrambleTrigger="load"
+        [scrambleDelay]="0.25"
+        >{{ 'HERO.TITLE_LINE_1' | transloco }}</span
+      >
+      <span
+        class="hero__line hero__line--neon"
+        aria-hidden="true"
+        data-ax-intro
+        [axScramble]="'HERO.TITLE_LINE_2' | transloco"
+        scrambleTrigger="load"
+        [scrambleDelay]="0.6"
+        >{{ 'HERO.TITLE_LINE_2' | transloco }}</span
+      >
+    </h1>
 
-  <p class="description" appScrollReveal>
-    {{ 'HERO.DESCRIPTION' | transloco }}
-  </p>
+    <p class="hero__sub" data-ax-intro data-hero="fade">
+      {{ 'HERO.SUBTITLE' | transloco }}
+    </p>
+
+    <div class="hero__ctas" data-ax-intro data-hero="fade">
+      <a class="ax-btn ax-btn--primary" href="#track-record">
+        <span aria-hidden="true">[</span> {{ 'HERO.CTA_PRIMARY' | transloco }} <span aria-hidden="true">]</span>
+      </a>
+      <a class="ax-btn ax-btn--ghost" href="#contact">
+        <span aria-hidden="true">[</span> {{ 'HERO.CTA_SECONDARY' | transloco }} <span aria-hidden="true">]</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero__status" data-ax-intro data-hero="status">
+    <dl class="hero__status-grid">
+      <div class="hero__status-item">
+        <dt>{{ 'HERO.STATUS.SYS_LABEL' | transloco }}</dt>
+        <dd class="is-ok"><span class="pulse" aria-hidden="true"></span>{{ 'HERO.STATUS.SYS_VALUE' | transloco }}</dd>
+      </div>
+      <div class="hero__status-item">
+        <dt>{{ 'HERO.STATUS.EDU_LABEL' | transloco }}</dt>
+        <dd class="is-purple">{{ 'HERO.STATUS.EDU_VALUE' | transloco }}</dd>
+      </div>
+
+      @for (metric of metrics; track metric.label) {
+        <div class="hero__status-item">
+          <dt>{{ metric.label | transloco }}</dt>
+          <dd class="hero__metric" [axTicker]="metric.value" [tickerSuffix]="metric.suffix">
+            {{ metric.value }}{{ metric.suffix }}
+          </dd>
+        </div>
+      }
+    </dl>
+  </div>
 </section>

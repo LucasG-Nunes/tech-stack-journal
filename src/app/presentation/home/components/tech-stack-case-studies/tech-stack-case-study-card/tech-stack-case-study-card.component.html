@@ -1,25 +1,58 @@
-<div class="project-card" 
-     [style.grid-area]="data.gridArea" 
-     (click)="handleProjectClick()" 
-     tabindex="0"
-     (keydown.enter)="handleProjectClick()"
-     (keydown.space)="handleProjectClick(); $event.preventDefault()">
-  
-  <div class="project-image" [ngClass]="data.gradientClass">
-    <div class="logo-wrapper">
-      <img [src]="data.imageUrl" 
-           [alt]="data.title" 
-           class="project-logo" 
-           loading="lazy">
+@let project = data();
+
+<ax-glass-card axTilt class="dossier" [accent]="project.accent ?? 'cyan'">
+  <div class="dossier__top">
+    <span class="dossier__sector">
+      @if (project.current) {
+        <span class="dossier__current"><span class="dot" aria-hidden="true"></span>{{ 'PROJECTS.CLASS.CURRENT' | transloco }}</span>
+      }
+      {{ 'PROJECTS.SECTORS.' + project.sector | transloco }}
+    </span>
+    <span class="dossier__class" [attr.data-class]="project.classification">
+      {{ 'PROJECTS.CLASS.' + project.classification | transloco }}
+    </span>
+  </div>
+
+  <div class="dossier__body">
+    <div class="dossier__logo">
+      @if (project.imageUrl) {
+        <img [src]="project.imageUrl" alt="" loading="lazy" decoding="async" />
+      } @else {
+        <span class="dossier__monogram" aria-hidden="true">{{ project.monogram }}</span>
+      }
     </div>
 
-    <div class="bg-overlay"></div>
+    <h3 class="dossier__title">{{ project.title | transloco }}</h3>
+    <p class="dossier__desc">{{ project.description | transloco }}</p>
   </div>
-  
-  <div class="project-info">
-    <h3 class="project-title">{{ data.title | transloco }}</h3>
-    <p class="project-description">{{ data.description | transloco }}</p>
+
+  @if (project.metric; as metric) {
+    <div class="dossier__metric">
+      <span
+        class="dossier__metric-value"
+        [axTicker]="metric.value"
+        [tickerPrefix]="metric.prefix ?? ''"
+        [tickerSuffix]="metric.suffix ?? ''"
+        >{{ metric.prefix }}{{ metric.value }}{{ metric.suffix }}</span
+      >
+      <span class="dossier__metric-label">{{ metric.label | transloco }}</span>
+    </div>
+  }
+
+  <div class="dossier__bottom">
+    <ul class="dossier__stack" [attr.aria-label]="'PROJECTS.STACK_ARIA' | transloco">
+      @for (tech of project.stack; track tech) {
+        <li>{{ tech }}</li>
+      }
+    </ul>
+
+    <span class="dossier__cta" aria-hidden="true">{{ 'PROJECTS.OPEN' | transloco }} →</span>
   </div>
-  
-  <button class="project-arrow" aria-label="Open project details">→</button>
-</div>
+
+  <!-- Área clicável cobrindo o card inteiro, acessível por teclado. -->
+  <button
+    type="button"
+    class="dossier__hit"
+    [attr.aria-label]="('PROJECTS.OPEN_ARIA' | transloco) + ': ' + (project.title | transloco)"
+    (click)="open()"></button>
+</ax-glass-card>

@@ -1,55 +1,148 @@
 {
-  "HOME": {
-    "TITLE": "Building scalable products",
-    "SUBTITLE": "performance, design and innovation",
-    "EXPERTISE_TITLE": "Expertise in the following technologies"
-  },
   "NAV": {
+    "MANIFESTO": "Manifesto",
+    "ARSENAL": "Arsenal",
+    "TRACK_RECORD": "Track record",
+    "SECURITY": "Security",
+    "LOGS": "Logs",
     "BLOG": "Blog",
-    "PROJECTS": "Projects",
-    "CONTACT": "Contact"
+    "CONTACT": "Contact",
+    "MAIN_ARIA": "Main navigation",
+    "MENU_OPEN": "Open menu",
+    "MENU_CLOSE": "Close menu",
+    "LANG_ARIA": "Switch language (Portuguese / English)",
+    "SKIP": "Skip to content"
   },
   "SEO": {
-    "TITLE": "Lucas Nunes | Product Engineer | Scalable Solutions Specialist",
-    "DESCRIPTION": "Software Engineer focused on transforming business challenges into robust digital solutions. Expert in React, Angular, Node.js and Cloud Infrastructure.",
-    "KEYWORDS": "Product Engineer, Software Architect, Angular Specialist, Scalable Systems, Lucas Nunes, Senior Web Developer"
+    "TITLE": "Lucas Nunes | AI Solutions Engineer: Architecture, AI & Security",
+    "DESCRIPTION": "Software & AI Engineer on mission-critical banking and Judiciary systems: microservices, Kafka events, Kubernetes and Kong day to day, plus a postgraduate degree in Generative AI & LLMs underway.",
+    "KEYWORDS": "Lucas Nunes, AI Solutions Engineer, software and AI engineer, Generative AI, LLMs, RAG, microservices architecture, micro-frontends, Kubernetes, Kafka, Kong, AWS, DevSecOps, offensive security"
   },
   "HEADER": {
-    "NAME": "Lucas Meireles",
-    "ROLE": "Product Engineer | Scalable Solutions (React • Angular • Node)",
-    "TOOLTIPS": {
-      "LANG": "Switch to Portuguese",
-      "LINKEDIN": "Let's connect and share insights!",
-      "GITHUB": "Explore my repos and contribute!",
-      "WHATSAPP": "Let's build a successful product together?",
-      "BLOG": "Engineering Lab: Come contribute to the community!"
-    }
+    "NAME": "Lucas Nunes",
+    "ROLE": "AI Solutions Engineer",
+    "HOME_ARIA": "Lucas Nunes: back to home"
   },
   "HERO": {
-    "ACCESSIBLE_TITLE": "Welcome to my engineering ecosystem!",
-    "TAGLINE_BASE": "Building scalable products that unite",
-    "TAGLINE_HIGHLIGHT": "performance, design, and intelligence.",
-    "DESCRIPTION": "I am a Software Engineer focused on transforming business challenges into robust digital solutions. With solid experience in national payment management for the CNJ and financial ecosystems at Randon, I leverage the TypeScript ecosystem to deliver scalable products. Currently, I focus on clean architecture concepts, high performance, and building SaaS products that drive real value."
+    "TAG": "// AI Solutions Engineer · Software & AI",
+    "TITLE_LINE_1": "Mission-critical systems engineering.",
+    "TITLE_LINE_2": "Intelligence built in.",
+    "SUBTITLE": "I build software for mission-critical banking and Judiciary systems, inside an ecosystem of microservices, events and Kubernetes. Now I'm taking that foundation into Generative AI, with a postgraduate degree in LLMs underway.",
+    "CTA_PRIMARY": "View track record",
+    "CTA_SECONDARY": "Open channel",
+    "STATUS": {
+      "SYS_LABEL": "SYS.STATUS",
+      "SYS_VALUE": "Operational",
+      "EDU_LABEL": "Postgrad GenAI & LLMs",
+      "EDU_VALUE": "In progress"
+    },
+    "METRICS": {
+      "LOC": "Lines of code · CNJ",
+      "MRS": "Merge requests",
+      "INTL": "Organic reach USA"
+    }
   },
-  "SKILLS": {
-    "HEADING": "Expertise in the following technologies",
-    "ARIA_TECH": "Technology: ",
-    "TOOLTIPS": {
-      "angular": "Signals, RxJS, Standalone Components, and Dependency Injection.",
-      "react": "Hooks, Context API, Server Components, and State Management.",
-      "nodejs": "Event Loop, Streams, Non-blocking I/O, and API Development.",
-      "nestjs": "Modular Architecture, Dependency Injection, Decorators, and Pipes.",
-      "aws": "Serverless (Lambda), S3, CloudFront, API Gateway, and IAM.",
-      "docker": "Containerization, Docker Compose, and Image Optimization (Multi-stage).",
-      "gitlab": "CI/CD Pipelines, Automated Deployment, and YAML Configuration.",
-      "devops": "Infrastructure as Code, Automation, and Deployment Monitoring.",
-      "solidity": "Smart Contracts, EVM, Hardhat/Foundry, and Blockchain Security.",
-      "web3": "Decentralization, dApps, Wallet Integration, and Ethers.js/Viem."
+  "MANIFESTO": {
+    "LABEL": "Manifesto",
+    "TITLE": "AI is not a feature. It is an architecture layer.",
+    "LEAD": "A model that shines in a notebook doesn't pay the bills. What separates a prototype from a product is everything around the LLM: integration, observability, cost, data governance and a plan B for when the model is wrong. That is the layer I'm studying in my postgraduate program, with the background of someone who already supports critical systems in production.",
+    "TAGS_ARIA": "Technologies and practices",
+    "PIPELINE_LABEL": "Reference pipeline",
+    "PILLARS": {
+      "RAG": {
+        "TITLE": "RAG & Agents",
+        "DESC": "Retrieval over your own data and tool-using agents: the current focus of my studies and labs."
+      },
+      "LLMOPS": {
+        "TITLE": "LLMOps",
+        "DESC": "Evals, prompt versioning and cost control: what turns a demo into a product."
+      },
+      "ENTERPRISE": {
+        "TITLE": "Enterprise Integration",
+        "DESC": "Kafka, Kong and Kubernetes are already part of my routine on a banking system. That is the door AI comes through."
+      }
+    },
+    "STATUS": {
+      "STUDY": "In training",
+      "DAILY": "Day to day"
+    }
+  },
+  "ARSENAL": {
+    "LABEL": "Arsenal",
+    "TITLE": "Combat stack.",
+    "LEAD": "What I use day to day and what I'm studying, honestly labeled.",
+    "FIELD_KIT": "Also in the field",
+    "DOMAINS": {
+      "ARCH": "Architecture",
+      "INFRA": "Infra & Data",
+      "AI": "Artificial Intelligence"
+    },
+    "ITEMS": {
+      "MICROSERVICES": {
+        "NAME": "Microservices",
+        "DESC": "A product inside an ecosystem of services talking through APIs and events."
+      },
+      "MICROFRONTENDS": {
+        "NAME": "Micro-frontends",
+        "DESC": "Front end split into independent parts, each with its own deploy and ownership."
+      },
+      "KONG": {
+        "NAME": "Kong",
+        "DESC": "Every new endpoint goes through it: I expose it on the gateway so the front end can reach it."
+      },
+      "AWS": {
+        "NAME": "AWS",
+        "DESC": "Lambda, S3 and CloudFront in deploys and personal projects."
+      },
+      "KUBERNETES": {
+        "NAME": "Kubernetes",
+        "DESC": "Daily routine of watching pods, reading logs and restarting when a service needs it."
+      },
+      "KAFKA": {
+        "NAME": "Kafka",
+        "DESC": "Event-driven architecture in payroll loans: queues that connect insurance and collateral to the product."
+      },
+      "PYTHON": {
+        "NAME": "Python",
+        "DESC": "The base of my AI postgraduate program: notebooks, scripts and model experiments."
+      },
+      "LLMS": {
+        "NAME": "LLMs",
+        "DESC": "Integrating and evaluating language models, in applied study."
+      },
+      "GENAI": {
+        "NAME": "Generative AI",
+        "DESC": "RAG, agents and automation: postgraduate labs."
+      }
+    },
+    "TAGS": {
+      "DAILY": "Day to day",
+      "STUDY": "In training"
     }
   },
   "PROJECTS": {
-    "TITLE": "Projects and Contributions",
-    "SUBTITLE": "Check out some of my most recent work",
+    "LABEL": "Track Record",
+    "TITLE": "Missions in production.",
+    "LEAD": "Systems where failure is not an option: money and Justice. Open a dossier to see context, architecture and evidence.",
+    "OPEN": "Open dossier",
+    "OPEN_ARIA": "Open project dossier",
+    "STACK_ARIA": "Project stack",
+    "SECTORS": {
+      "FINANCE": "Financial sector",
+      "JUDICIARY": "Judiciary",
+      "SAAS": "SaaS",
+      "RND": "R&D"
+    },
+    "CLASS": {
+      "CRITICAL": "Critical",
+      "PRODUCT": "Product",
+      "LAB": "Lab",
+      "CURRENT": "Current"
+    },
+    "METRICS": {
+      "SISPREQ": "in court-ordered payments projected for 2026",
+      "LCP": "LCP in production"
+    },
     "ITEMS": {
       "RANDON": {
         "TITLE": "Financing & CDC Ecosystem",
@@ -123,153 +216,128 @@
             }
           ]
         }
+      },
+      "SICREDI": {
+        "TITLE": "Sicredi: Payroll Loans",
+        "DESC": "A payroll-loan product in an event-driven architecture, integrated with insurance and collateral.",
+        "DEEP_DIVE": "My current role at <b>Sicredi</b>, on the <b>payroll-loan</b> product. It lives in an <b>event-driven microservices</b> ecosystem: other bank products, such as <b>insurance</b> and <b>collateral</b>, talk to it through <b>Kafka queues</b>, so understanding the event flow is part of the routine. <br><br> Day to day, I follow the services on <b>Kubernetes</b>: watching pods, reading logs and restarting when needed. Whenever a new endpoint has to reach the front end, it is exposed on <b>Kong</b>, the gateway that gives the components access. <br><br> It is the context that shapes my view of architecture the most today: a critical financial system, integration between products and real operation in production."
       }
     },
     "MODAL": {
-      "LINKS_TITLE": "Referências e Artigos",
-      "METRICS_TITLE": "Métricas e Case de Sucesso"
+      "DOSSIER": "Dossier",
+      "DEEP_DIVE_TITLE": "Technical deep dive",
+      "LINKS_TITLE": "References",
+      "METRICS_TITLE": "Evidence and metrics",
+      "CLOSE": "Close dossier",
+      "EXPAND": "Expand dossier",
+      "COLLAPSE": "Collapse dossier",
+      "OPEN_IMAGE": "Enlarge evidence",
+      "IMAGE_CLOSE": "Close image",
+      "EXTERNAL": "(opens in a new tab)"
     }
   },
-  "THINK_DIFFERENT": {
-    "TITLE_BASE": "Think different, ",
-    "TITLE_HIGHLIGHT": "be different.",
-    "DESCRIPTION": "I don't just create digital experiences — I design journeys that connect people to solutions. My approach merges aesthetics, functionality, and a human touch to turn the complex into something intuitive and enjoyable to use.",
-    "RESUME_BTN": "View Resume",
-    "RESUME_ARIA": "Open Lucas Nunes' resume in a new tab",
-    "CONTACT_LABEL": "GET IN TOUCH AT",
-    "CONTRIBUTE_BUTTON": "Technical Insights",
-    "CONTRIBUTE_ARIA": "View technical blog and community contributions",
-    "TOOLTIPS": {
-      "LANG": "Switch to Portuguese",
-      "LINKEDIN": "Let's connect and share insights!",
-      "GITHUB": "Explore my repos and contribute!",
-      "WHATSAPP": "Let's build a successful product together?",
-      "BLOG": "Engineering Lab: Come contribute to the community!"
+  "SECURITY": {
+    "LABEL": "Offensive security & DevSecOps",
+    "TITLE": "I think like the attacker. I build like the defender.",
+    "LEAD": "I train offense on TryHackMe as a hobby and bring that mindset into system design. In banking and the Judiciary, security is not the last step: it is an architecture requirement.",
+    "TERMINAL_TITLE": "ops-console — bash",
+    "TERMINAL": {
+      "WHOAMI": "software & ai engineer · mission-critical systems",
+      "HOBBY": "TryHackMe: offensive security labs",
+      "FIELD": "Randon: payment flows reviewed alongside the pentest team",
+      "APPLY": "attacker mindset → design → review → production",
+      "CHECK_GATEWAY": "endpoints exposed only through the gateway (Kong)",
+      "CHECK_SECRETS": "secrets kept out of code",
+      "CHECK_PIPELINE": "reviews with a pentest mindset"
+    },
+    "PRACTICES": {
+      "THREAT": {
+        "TITLE": "Attacker mindset in design",
+        "DESC": "Training offense on TryHackMe changes the question: before “does it work?” comes “how does it break?”."
+      },
+      "PIPELINE": {
+        "TITLE": "Security in the flow, not at the end",
+        "DESC": "Dependency reviews and automated checks as part of CI, not as a final step."
+      },
+      "ZERO_TRUST": {
+        "TITLE": "Gateway as the front door",
+        "DESC": "Nothing goes straight to a service: a new endpoint only reaches the front end after being exposed on Kong."
+      },
+      "HARDENING": {
+        "TITLE": "Secrets and least privilege",
+        "DESC": "Credentials out of code and every component with the access it needs, nothing more."
+      }
     }
   },
   "FOOTER": {
-    "ROLE": "Software Engineer",
-    "TAGLINE_BASE": "Turning confusion into reality, one pixel at a time — created with precision and a touch of",
-    "TAGLINE_HIGHLIGHT": "Brazilian heart ",
-    "SOCIAL_LABEL": "Social Media",
-    "CONTACTS_LABEL": "Contacts",
-    "TOOLTIPS": {
-      "LANG": "Switch to Portuguese",
-      "LINKEDIN": "Let's connect and share insights!",
-      "GITHUB": "Explore my repos and contribute!",
-      "WHATSAPP": "Let's build a successful product together?",
-      "BLOG": "Engineering Lab: Come contribute to the community!"
-    }
+    "TAGLINE": "Mission-critical systems engineering. Intelligence built in. Security by design.",
+    "NAV_LABEL": "Navigation",
+    "CHANNELS_LABEL": "Channels",
+    "STATUS_LABEL": "Status",
+    "REMOTE": "Remote",
+    "BACK_TO_TOP": "Back to top"
   },
   "BLOG": {
-    "BREADCRUMB": "Technical Blog",
-    "ROLE_SUBTITLE": "Full Stack Engineer | Angular & Node.js | AWS Cloud | Web3 & Smart Contracts",
+    "SEO_TITLE": "Engineering logs | Engineering Lab",
+    "SEO_DESCRIPTION": "Field notes by Lucas Nunes on Generative AI, LLMs, event-driven architecture, Kubernetes and security.",
+    "LABEL": "Engineering Lab",
+    "TITLE": "Engineering logs.",
+    "LEAD": "Field notes on applied AI, architecture and security. No marketing: what worked, what broke and why.",
+    "STATUS_LABEL": "Lab status",
     "STATS": {
-      "TECH_LABEL": "Technologies",
-      "ARTICLES_LABEL": "Articles",
-      "LEARNING_LABEL": "Learning"
+      "DRAFTS": "Logs in writing",
+      "PUBLISHED": "Published",
+      "TRACKS": "Tracks"
     },
-    "CATEGORIES_SECTION": {
-      "TITLE": "Technical Articles",
-      "SUBTITLE": "Knowledge organized by field of expertise",
-      "ARIA_VIEW": "View articles about ",
-      "ARTICLES_COUNT": "articles",
-      "LIST": {
-        "WEB2": {
-          "TITLE": "Web 2 Development",
-          "DESC": "Modern web development focused on performance and user experience",
-          "ITEMS": {
-            "TS": "Static typing for JavaScript",
-            "ANG": "Enterprise framework with standalone components",
-            "REACT": "Library for user interfaces",
-            "NEXT": "React framework for production",
-            "NODE": "Server-side JavaScript runtime",
-            "NEST": "Scalable Node.js framework",
-            "FRONT_TOOLS": "HTML5, CSS3, SASS/SCSS, RxJS, Storybook"
-          }
-        },
-        "CLOUD": {
-          "TITLE": "Cloud & DevOps",
-          "DESC": "Modern infrastructure and development pipeline",
-          "ITEMS": {
-            "AWS": "S3, CloudFront, Lambda, API Gateway, DynamoDB",
-            "DOCKER": "Application containerization",
-            "CICD": "GitLab CI/CD, GitHub Actions"
-          }
-        },
-        "WEB3": {
-          "TITLE": "Web3 & Blockchain",
-          "DESC": "Decentralized development and smart contracts",
-          "ITEMS": {
-            "SOL": "Language for smart contracts",
-            "HARDHAT": "Ethereum development environment",
-            "DAPP": "MetaMask and WalletConnect integration"
-          }
-        },
-        "QUALITY": {
-          "TITLE": "Testing & Quality",
-          "DESC": "Quality assurance and automated testing",
-          "ITEMS": {
-            "JEST": "JavaScript testing framework",
-            "ANG_TEST": "Karma and Jasmine for Angular"
-          }
-        }
-      }
-    },
-    "RECENT_ARTICLES": {
-      "TITLE": "Recent Articles",
-      "SUBTITLE": "Latest published content",
-      "VIEW_ALL": "View all articles",
-      "VIEW_ALL_ARIA": "View all published articles",
-      "READ_TIME": "read",
-      "VIEWS": "views"
-    },
-    "ARTICLES": {
-      "STANDALONE": {
-        "TITLE": "Standalone Components in Angular 17: The Future of Angular",
-        "DESC": "Discover how standalone components revolutionized Angular development with a simpler and more performant structure."
-      },
-      "METAMASK": {
-        "TITLE": "Integrating MetaMask in React Applications",
-        "DESC": "Complete guide to connecting wallets in your dApps, handling providers and message signatures."
-      },
-      "AWS_DEPLOY": {
-        "TITLE": "Automated Deploy with AWS Lambda and API Gateway",
-        "DESC": "Configuring serverless infrastructure on AWS automatically using CI/CD."
-      },
-      "TS_ADVANCED": {
-        "TITLE": "Advanced TypeScript: Conditional Types and Utility Types",
-        "DESC": "Mastering advanced TypeScript features to create robust code and dynamic types."
-      }
-    }
+    "FILTER_ALL": "All tracks",
+    "FILTER_ARIA": "Filter logs by track",
+    "LIST_TITLE": "Publishing queue",
+    "EMPTY": "No logs in this track yet.",
+    "FOLLOW_TITLE": "Want to know when the first log ships?",
+    "FOLLOW_LEAD": "New posts are announced on LinkedIn.",
+    "FOLLOW_CTA": "Follow on LinkedIn",
+    "BACK_HOME": "Back to Home"
   },
   "SHARED": {
     "MODAL_CONSTRUCTION": {
-      "TITLE": "Under Construction",
-      "MESSAGE": "I am currently refining the backend architecture and API integrations to ensure peak performance. This content will be available soon with the robustness it deserves!",
-      "BUTTON": "Got it"
+      "LABEL": "Status",
+      "TITLE": "Log in writing.",
+      "MESSAGE": "This log is still being written. New posts are announced on LinkedIn.",
+      "FOLLOW": "Follow on LinkedIn",
+      "BUTTON": "Got it",
+      "CLOSE": "Close notice"
     }
   },
-
   "EDUCATION": {
-    "TITLE": "Academic Journey",
+    "TITLE": "Continuous education",
     "STATUS": {
       "COMPLETED": "Completed",
-      "IN_PROGRESS": "In Progress",
+      "IN_PROGRESS": "In progress",
+      "PAUSED": "On hold",
       "EXPECTED": "Expected"
     },
     "COURSES": {
-      "ADS": "Analysis and Systems Development",
-      "SOFTWARE_ENG": "Software Engineering"
+      "ADS": "Systems Analysis and Development",
+      "SOFTWARE_ENG": "Software Engineering",
+      "AI_POSTGRAD": "Postgraduate in Generative AI & LLMs"
     },
-    "DIPLOMA": "Diploma.pdf"
+    "DIPLOMA": "Diploma",
+    "DATES": {
+      "AI_POSTGRAD": "Jun 2027"
+    },
+    "NOTES": {
+      "SOFTWARE_ENG": "2 years left to complete"
+    }
   },
-
   "VOICES": {
-    "TITLE": "Collaboration Voices",
-    "SUBTITLE": "Real feedback from LinkedIn about our shared projects",
+    "LABEL": "Field reports",
+    "TITLE": "People who were in the trenches.",
+    "LEAD": "Real recommendations from people who built systems with me, verifiable on LinkedIn.",
     "VERIFY": "Verify on LinkedIn",
-    "TRANSLATION_LABEL": "Quick Translation",
+    "ORIGINAL": "Original screenshot",
+    "PREV": "Previous testimonial",
+    "NEXT": "Next testimonial",
+    "RAIL_ARIA": "Testimonials (scroll sideways)",
     "TESTIMONIALS": {
       "ELENICE": "I worked with Lucas at DB on a project for the CNJ client. Lucas delivered exceptional performance, consistently providing high-quality results. He is highly collaborative and dedicated. I strongly recommend him as a professional and look forward to future partnerships.",
       "SAMIRA": "Lucas is a dedicated and highly skilled professional who is always striving for improvement. He possesses strong technical knowledge and extreme resilience. A great team player who goes above and beyond to ensure top-tier deliveries. It’s been an honor to witness his growth so closely.",
@@ -281,6 +349,123 @@
       "JESSICA": "As a designer, I could always rely on Lucas's technical skills and attention to detail when implementing complex interfaces. He is always looking to optimize code, and his proactive communication made our collaboration fluid, resulting in solutions that are both functional and elegant.",
       "RHANNA": "Lucas is an admirable professional. He has always worked exceptionally well within the team and is technically very strong. A professional I definitely hope to work with again in future opportunities.",
       "ADRIANE": "Lucas is a great professional, constantly bringing technological innovations in both components and languages to ensure the best performance for the client. He is very kind and works seamlessly with the team. It was a pleasure to work alongside him."
+    },
+    "RELATION": {
+      "MANAGER": "Direct manager",
+      "TEAM": "Same team"
+    },
+    "ROLES": {
+      "ELENICE": "Project Manager · Scrum Master",
+      "SAMIRA": "IT Project Manager · Agile Coach",
+      "CARLOS": "Software Architect · DBServer",
+      "EDSON": "Senior Fullstack Developer (Java/Angular)",
+      "RENAN": "Backend Developer · Java/Spring Boot",
+      "ALEXSANDER": "Developer · DBServer",
+      "MARCOS": "Angular Developer · Coopersystem",
+      "JESSICA": "UX/UI Designer",
+      "RHANNA": "Test Analyst · QA",
+      "ADRIANE": "Software Quality Analyst · QA"
+    }
+  },
+  "LOGS": {
+    "LABEL": "Engineering logs",
+    "TITLE": "Field notes.",
+    "LEAD": "Applied AI, event-driven architecture and security: what I'm studying in my postgraduate program and learning day to day on a banking system.",
+    "FEATURED": "Featured",
+    "READ": "Read log",
+    "READ_TIME": "min read",
+    "VIEW_ALL": "View all logs",
+    "STATUS": {
+      "DRAFT": "In writing",
+      "PUBLISHED": "Published"
+    },
+    "TRACKS": {
+      "AI": {
+        "NAME": "AI & LLMs",
+        "DESC": "RAG, model evaluation and AI in critical systems: notes from my postgraduate program."
+      },
+      "ARCH": {
+        "NAME": "Architecture & Events",
+        "DESC": "Kafka, Kong and Kubernetes seen from inside a real banking product."
+      },
+      "SEC": {
+        "NAME": "Security",
+        "DESC": "An offensive mindset applied to system design."
+      },
+      "FRONT": {
+        "NAME": "Front end",
+        "DESC": "Angular, performance and high-impact motion design."
+      }
+    },
+    "ITEMS": {
+      "RAG": {
+        "TITLE": "RAG in practice: from document to auditable answer",
+        "DESC": "How retrieval, embeddings and citations turn a generic LLM into a trustworthy assistant."
+      },
+      "AI_BANK": {
+        "TITLE": "LLMs in critical systems: where AI fits in a bank (and where it doesn't)",
+        "DESC": "An engineering view on risk, governance and realistic AI use cases in finance."
+      },
+      "EVALS": {
+        "TITLE": "Evals before prompts: measuring whether the model got it right",
+        "DESC": "Why systematic evaluation beats prompt tweaking when taking AI to production."
+      },
+      "POSTGRAD": {
+        "TITLE": "Postgrad diary: learning Generative AI & LLMs",
+        "DESC": "Study notes from my postgraduate program, from transformer basics to the first agents."
+      },
+      "KAFKA": {
+        "TITLE": "Events in payroll loans: Kafka beyond the tutorial",
+        "DESC": "How products like insurance and collateral talk through queues, and how that changes the way you think about flow."
+      },
+      "KONG": {
+        "TITLE": "From endpoint to screen: an API’s path through Kong",
+        "DESC": "What happens between creating an endpoint and the front end consuming it in an API Gateway ecosystem."
+      },
+      "K8S": {
+        "TITLE": "Kubernetes for product devs: pods, logs and restarts",
+        "DESC": "The minimum a developer needs to follow their services in the cluster without fear."
+      },
+      "THM": {
+        "TITLE": "Thinking like an attacker: what TryHackMe teaches a developer",
+        "DESC": "Lessons from offensive security labs applied to system design."
+      },
+      "GSAP": {
+        "TITLE": "High-impact animations in Angular with GSAP and SSR",
+        "DESC": "Scramble, 3D tilt and scroll reveal without breaking prerendering or accessibility: behind the scenes of this site."
+      }
+    }
+  },
+  "CONTACT": {
+    "LABEL": "Contact",
+    "TITLE": "Mission-critical system at stake?",
+    "LEAD": "Architecture, applied AI or a security review. Bring the problem, we design the solution.",
+    "FRONTS_ARIA": "Areas of work",
+    "FRONTS": {
+      "ARCH": "Systems architecture",
+      "AI": "Applied AI",
+      "SEC": "Security & DevSecOps"
+    },
+    "EMAIL_LABEL": "Direct channel",
+    "COPY": "Copy email",
+    "COPIED": "Copied ✔",
+    "CHANNELS": {
+      "LINKEDIN": {
+        "NAME": "LinkedIn",
+        "DESC": "Career, recommendations and professional network."
+      },
+      "GITHUB": {
+        "NAME": "GitHub",
+        "DESC": "Code, labs and public repositories."
+      },
+      "WHATSAPP": {
+        "NAME": "WhatsApp",
+        "DESC": "Quick chat to align on context."
+      },
+      "RESUME": {
+        "NAME": "Resume",
+        "DESC": "International version to download (.docx)."
+      }
     }
   }
 }

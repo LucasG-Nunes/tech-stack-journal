@@ -29,7 +29,13 @@ public init(): void {
       this.router.events.pipe(
         filter(e => e instanceof NavigationEnd)
       ).subscribe((e) => {
-        const url = `${environment.baseUrl}${(e as NavigationEnd).urlAfterRedirects}`;
+        // Fragmento (#logs) e query não fazem parte da URL canônica.
+        const path = (e as NavigationEnd).urlAfterRedirects.split(/[?#]/)[0];
+        const url = `${environment.baseUrl}${path}`;
+
+        // Rotas sem meta próprio (Home) voltam ao SEO padrão ao navegar de volta.
+        if (path === '/') this.updateMetaTags();
+
         this.updateCanonical(url);
         this.metaService.updateTag({ property: 'og:url', content: url });
         this.metaService.updateTag({ name: 'twitter:url', content: url });

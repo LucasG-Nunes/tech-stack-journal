@@ -1,0 +1,58 @@
+<section class="arsenal" aria-labelledby="arsenal-title">
+  <div class="arsenal__container">
+    <ax-section-header
+      index="02"
+      titleId="arsenal-title"
+      [label]="'ARSENAL.LABEL' | transloco"
+      [title]="'ARSENAL.TITLE' | transloco"
+      [lead]="'ARSENAL.LEAD' | transloco" />
+
+    <div class="arsenal__grid" axReveal [revealStagger]="0.14">
+      @for (domain of domains; track domain.key; let d = $index) {
+        <ax-glass-card class="domain" data-reveal-item [accent]="domain.accent">
+          <header class="domain__head">
+            <span class="domain__index">0{{ d + 1 }}</span>
+            <h3 class="domain__title">{{ 'ARSENAL.DOMAINS.' + domain.key | transloco }}</h3>
+          </header>
+
+          <ul class="domain__list">
+            @for (item of domain.items; track item; let i = $index) {
+              <li class="tech">
+                <span class="tech__id" aria-hidden="true">[{{ d + 1 }}.{{ i + 1 }}]</span>
+                <span class="tech__body">
+                  <span class="tech__name">
+                    {{ 'ARSENAL.ITEMS.' + item + '.NAME' | transloco }}
+                    @if (usage[item]; as tag) {
+                      <span class="tech__tag" [attr.data-tag]="tag">{{ 'ARSENAL.TAGS.' + tag | transloco }}</span>
+                    }
+                  </span>
+                  <span class="tech__desc">{{ 'ARSENAL.ITEMS.' + item + '.DESC' | transloco }}</span>
+                </span>
+              </li>
+            }
+          </ul>
+        </ax-glass-card>
+      }
+    </div>
+  </div>
+
+  <div class="kit" axReveal="blur">
+    <p class="kit__label">{{ 'ARSENAL.FIELD_KIT' | transloco }}</p>
+
+    <div class="kit__viewport">
+      <div class="kit__track">
+        <ul class="kit__list">
+          @for (tech of fieldKit; track tech) {
+            <li>{{ tech }}</li>
+          }
+        </ul>
+        <!-- Cópia para o loop contínuo do marquee: invisível para leitores de tela. -->
+        <ul class="kit__list" aria-hidden="true">
+          @for (tech of fieldKit; track tech) {
+            <li>{{ tech }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

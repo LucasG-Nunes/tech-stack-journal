@@ -1,0 +1,60 @@
+:host {
+  display: block;
+  margin-bottom: clamp(4rem, 6vw, 6.4rem);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 0 0 2.4rem;
+  font-family: var(--ax-font-mono);
+  font-size: 1.2rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.index {
+  color: var(--ax-cyan);
+}
+
+.sep {
+  color: var(--ax-text-dim);
+}
+
+.label {
+  color: var(--ax-text-muted);
+}
+
+.rule {
+  flex: 1;
+  max-width: 24rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--ax-border-strong), transparent);
+}
+
+.title {
+  max-width: 22ch;
+  margin: 0;
+  font-family: var(--ax-font-display);
+  font-weight: 700;
+  font-size: clamp(3.2rem, 5vw, 6.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  color: var(--ax-text);
+  text-wrap: balance;
+
+  span {
+    display: block;
+  }
+}
+
+.lead {
+  max-width: 68rem;
+  margin: 2.8rem 0 0;
+  font-family: var(--ax-font-body);
+  font-weight: 300;
+  font-size: clamp(1.6rem, 1.4vw, 1.9rem);
+  line-height: 1.7;
+  color: var(--ax-text-muted);
+}

@@ -1,48 +1,24 @@
-@use '../../../../../styles/variables' as *;
+:host {
+  display: block;
+  scroll-margin-top: 2rem;
+}
 
-.case-studies-section {
-  padding: 6rem 2.4rem;
-  max-width: 800px;
+.track {
+  position: relative;
+  padding: clamp(8rem, 12vw, 16rem) var(--ax-gutter);
+  background:
+    radial-gradient(70rem 50rem at 50% 0%, rgba(var(--ax-cyan-rgb), 0.06), transparent 70%),
+    var(--ax-bg);
+}
+
+.track__container {
+  max-width: var(--ax-container);
   margin: 0 auto;
+}
 
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: $color-text-main;
-    text-align: center;
-    margin-bottom: 4rem;
-
-    @media (max-width: 480px) {
-      font-size: 2rem;
-      margin-bottom: 2.5rem;
-    }
-  }
-
-  .projects-grid {
-    display: grid;
-    gap: 2rem;
-
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: repeat(3, 20rem);
-      grid-template-areas:
-        'p1 p1 p1 p1 p1 p2 p2 p2 p2 p2 p2 p2'
-        'p3 p3 p3 p3 p3 p3 p4 p4 p4 p4 p4 p4'
-        'p5 p5 p5 p5 p5 p5 p5 p5 p5 p5 p5 p5';
-      gap: 1.5rem;
-    }
-
-    @media (max-width: 1023px) {
-      display: flex;
-      flex-direction: column;
-    }
-
-    tech-stack-case-study-card {
-      display: contents;
-    }
-  }
-
-  @media (max-width: 480px) {
-    padding: 4rem 1.6rem;
-  }
+.track__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 2rem;
+  perspective: 1200px;
 }

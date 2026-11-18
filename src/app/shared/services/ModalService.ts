@@ -6,10 +6,13 @@ export class ModalService {
   private componentRef?: ComponentRef<any>;
   private appRef = inject(ApplicationRef);
   private injector = inject(EnvironmentInjector);
-  constructor() {}
+  /** Elemento que abriu o modal; recebe o foco de volta ao fechar. */
+  private returnFocusTo: HTMLElement | null = null;
 
   public open<T>(component: Type<T>, data?: Partial<T>): void {
     if (this.componentRef) return;
+
+    this.returnFocusTo = document.activeElement instanceof HTMLElement ? document.activeElement : null;
 
     this.componentRef = createComponent(component, {
       environmentInjector: this.injector,
@@ -39,7 +42,9 @@ export class ModalService {
       this.appRef.detachView(this.componentRef.hostView);
       this.componentRef.destroy();
       this.componentRef = undefined;
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
+      this.returnFocusTo?.focus({ preventScroll: true });
+      this.returnFocusTo = null;
     }
   }
 }

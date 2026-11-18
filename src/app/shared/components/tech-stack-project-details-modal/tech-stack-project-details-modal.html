@@ -1,102 +1,154 @@
-<div
-  class="modal-overlay"
-  [class.is-maximized]="isMaximized"
-  (click)="close()"
-  (keydown.escape)="close()"
-  tabindex="0"
-  role="button"
-  aria-label="Fechar modal">
+@let project = projectData;
+
+<div class="dossier-modal" [class.is-maximized]="isMaximized()">
+  <!-- Backdrop: clique fora fecha (Esc também, via HostListener). -->
+  <div class="dossier-modal__backdrop" aria-hidden="true" (click)="close()"></div>
+
   <div
-    class="modal-content"
-    [class.maximized-mode]="isMaximized"
-    (click)="$event.stopPropagation()"
-    (keydown.escape)="close()"
-    tabindex="-1"
+    class="dossier-modal__panel"
+    [attr.data-accent]="project.accent ?? 'cyan'"
     role="dialog"
     aria-modal="true"
-    aria-labelledby="modal-title"
-    appScrollReveal>
-    <header class="modal-header">
-      <div class="header-top">
-        <div class="left-actions">
-          <div class="type-badge">{{ projectData.type }}</div>
-          <button
-            class="expand-btn"
-            (click)="toggleMaximize()"
-            type="button"
-            [title]="isMaximized ? 'Minimizar' : 'Expandir (F11)'"
-            aria-label="Alternar tela cheia">
-            <span class="icon" aria-hidden="true">{{ isMaximized ? '❐' : '⛶' }}</span>
-          </button>
-        </div>
-        <div class="floating-icon" aria-hidden="true">🚀</div>
+    aria-labelledby="dossier-title">
+    <!-- Barra superior -->
+    <header class="dossier-modal__bar">
+      <p class="dossier-modal__crumbs">
+        <span class="accent">{{ 'PROJECTS.MODAL.DOSSIER' | transloco }}</span>
+        <span aria-hidden="true">//</span>
+        <span>{{ 'PROJECTS.SECTORS.' + project.sector | transloco }}</span>
+        <span aria-hidden="true">//</span>
+        <span class="class" [attr.data-class]="project.classification">
+          {{ 'PROJECTS.CLASS.' + project.classification | transloco }}
+        </span>
+      </p>
+
+      <div class="dossier-modal__actions">
+        <button
+          type="button"
+          class="icon-btn icon-btn--expand"
+          (click)="toggleMaximize()"
+          [attr.aria-pressed]="isMaximized()"
+          [attr.aria-label]="(isMaximized() ? 'PROJECTS.MODAL.COLLAPSE' : 'PROJECTS.MODAL.EXPAND') | transloco">
+          <span aria-hidden="true">{{ isMaximized() ? '⤡' : '⤢' }}</span>
+        </button>
+        <button
+          type="button"
+          class="icon-btn"
+          (click)="close()"
+          [attr.aria-label]="'PROJECTS.MODAL.CLOSE' | transloco">
+          <span aria-hidden="true">✕</span>
+        </button>
       </div>
-      <h1 id="modal-title" class="modal-title">{{ projectData.title | transloco }}</h1>
     </header>
 
-    <div class="modal-body custom-scroll">
-      <div class="project-preview" [class]="projectData.gradientClass">
-        <div class="preview-overlay"></div>
-        <img [src]="projectData.imageUrl" [alt]="projectData.title" class="modal-project-logo" />
-      </div>
-
-      <div class="project-content">
-        <p class="description">{{ projectData.description | transloco }}</p>
-
-        @if (isMaximized) {
-        <div class="extra-details">
-          <div class="divider"></div>
-
-          <h3>Technical Deep Dive</h3>
-          <div class="deep-dive-card">
-            <p class="rich-text" [innerHTML]="'PROJECTS.ITEMS.' + getProjectKey() + '.DEEP_DIVE' | transloco"></p>
-          </div>
-
-          @if (projectLinks; as links) {
-          <div class="resources-section">
-            <h3>{{ 'PROJECTS.MODAL.LINKS_TITLE' | transloco }}</h3>
-            <div class="links-grid">
-              @for (link of links; track link.URL) { @if (link.LABEL) {
-              <a [href]="link.URL" target="_blank" class="resource-link">
-                <span class="link-icon">🔗</span>
-                <span class="link-label">{{ link.LABEL }}</span>
-              </a>
-              } }
-            </div>
-          </div>
-          } @if (projectImages; as images) {
-          <div class="resources-section">
-            <h3>{{ 'PROJECTS.MODAL.METRICS_TITLE' | transloco }}</h3>
-            <div class="images-gallery">
-              @for (img of images; track img.URL) {
-              <div class="evidence-card" (click)="openImagePreview(img.URL)" tabindex="0" (keydown.enter)="openImagePreview(img.URL)">
-                <div class="image-wrapper">
-                  <img [src]="img.URL" [alt]="img.CAPTION" loading="lazy" />
-                </div>
-                <p class="image-caption">{{ img.CAPTION }}</p>
-              </div>
-              }
-            </div>
-          </div>
+    <div class="dossier-modal__scroll">
+      <!-- Identificação -->
+      <section class="intro" data-dossier-item>
+        <div class="intro__logo">
+          @if (project.imageUrl) {
+            <img [src]="project.imageUrl" alt="" />
+          } @else {
+            <span class="intro__monogram" aria-hidden="true">{{ project.monogram }}</span>
           }
         </div>
+        <div>
+          <h2 id="dossier-title" class="intro__title">{{ project.title | transloco }}</h2>
+          <p class="intro__desc">{{ project.description | transloco }}</p>
+        </div>
+      </section>
+
+      <!-- Ficha técnica -->
+      <dl class="spec" data-dossier-item>
+        @if (project.metric; as metric) {
+          <div class="spec__item spec__item--metric">
+            <dt>{{ metric.label | transloco }}</dt>
+            <dd
+              [axTicker]="metric.value"
+              [tickerPrefix]="metric.prefix ?? ''"
+              [tickerSuffix]="metric.suffix ?? ''"
+              [tickerDuration]="1.4">
+              {{ metric.prefix }}{{ metric.value }}{{ metric.suffix }}
+            </dd>
+          </div>
         }
-      </div>
+        <div class="spec__item">
+          <dt>{{ 'PROJECTS.STACK_ARIA' | transloco }}</dt>
+          <dd>
+            <ul class="chips">
+              @for (tech of project.stack; track tech) {
+                <li>{{ tech }}</li>
+              }
+            </ul>
+          </dd>
+        </div>
+      </dl>
+
+      <!-- Deep dive -->
+      <section class="block" data-dossier-item>
+        <h3 class="block__title"><span class="block__index">01</span>{{ 'PROJECTS.MODAL.DEEP_DIVE_TITLE' | transloco }}</h3>
+        <div class="rich-text" [innerHTML]="'PROJECTS.ITEMS.' + projectKey + '.DEEP_DIVE' | transloco"></div>
+      </section>
+
+      <!-- Referências -->
+      @if (links.length) {
+        <section class="block" data-dossier-item>
+          <h3 class="block__title"><span class="block__index">02</span>{{ 'PROJECTS.MODAL.LINKS_TITLE' | transloco }}</h3>
+          <ul class="links">
+            @for (link of links; track link.URL) {
+              <li>
+                <a [href]="link.URL" target="_blank" rel="noopener noreferrer">
+                  <span>{{ link.LABEL }}</span>
+                  <span class="links__arrow" aria-hidden="true">↗</span>
+                  <span class="sr-only">{{ 'PROJECTS.MODAL.EXTERNAL' | transloco }}</span>
+                </a>
+              </li>
+            }
+          </ul>
+        </section>
+      }
+
+      <!-- Evidências -->
+      @if (images.length) {
+        <section class="block" data-dossier-item>
+          <h3 class="block__title">
+            <span class="block__index">0{{ links.length ? 3 : 2 }}</span>{{ 'PROJECTS.MODAL.METRICS_TITLE' | transloco }}
+          </h3>
+          <ul class="evidence">
+            @for (image of images; track image.URL) {
+              <li>
+                <button
+                  type="button"
+                  class="evidence__card"
+                  (click)="openImage(image)"
+                  [attr.aria-label]="('PROJECTS.MODAL.OPEN_IMAGE' | transloco) + ': ' + image.CAPTION">
+                  <span class="evidence__frame">
+                    <img [src]="image.URL" alt="" loading="lazy" decoding="async" />
+                  </span>
+                  <span class="evidence__caption">{{ image.CAPTION }}</span>
+                </button>
+              </li>
+            }
+          </ul>
+        </section>
+      }
     </div>
-
-    <footer class="modal-footer">
-      <button class="close-btn" (click)="close()" type="button">{{ 'SHARED.MODAL_CONSTRUCTION.BUTTON' | transloco }}</button>
-    </footer>
-
-
-
-  @if (selectedImage) {
-  <div class="image-upscale-overlay" (click)="closeImagePreview()" tabindex="0" (keydown.enter)="closeImagePreview()" role="button">
-    <div class="close-preview">✕</div>
-    <img [src]="selectedImage" class="upscaled-image" [alt]="'imagem selecionadda'" />
   </div>
+
+  <!-- Lightbox -->
+  @if (selectedImage(); as image) {
+    <div class="lightbox" role="dialog" aria-modal="true" [attr.aria-label]="image.CAPTION">
+      <div class="lightbox__backdrop" aria-hidden="true" (click)="closeImage()"></div>
+      <figure class="lightbox__figure">
+        <img [src]="image.URL" [alt]="image.CAPTION" />
+        <figcaption>{{ image.CAPTION }}</figcaption>
+      </figure>
+      <button
+        type="button"
+        class="icon-btn lightbox__close"
+        (click)="closeImage()"
+        [attr.aria-label]="'PROJECTS.MODAL.IMAGE_CLOSE' | transloco">
+        <span aria-hidden="true">✕</span>
+      </button>
+    </div>
   }
-
-  </div>
-
 </div>

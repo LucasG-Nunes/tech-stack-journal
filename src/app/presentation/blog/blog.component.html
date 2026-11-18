@@ -1,13 +1,98 @@
-<div class="page-container">
-  <section aria-labelledby="blog-hero-title">
-    <tech-stack-blog-hero-section id="blog-hero-title" />
+<div class="blog">
+  <!-- Hero -->
+  <section class="lab-hero" aria-labelledby="blog-title">
+    <ax-video-backdrop [overlay]="0.84" />
+
+    <div class="lab-hero__inner">
+      <p class="lab-hero__eyebrow" axReveal>
+        <span class="index">ENG.LAB</span>
+        <span class="sep" aria-hidden="true">//</span>
+        <span>{{ 'BLOG.LABEL' | transloco }}</span>
+      </p>
+
+      <h1 id="blog-title" class="lab-hero__title" [attr.aria-label]="'BLOG.TITLE' | transloco">
+        <span aria-hidden="true" data-ax-intro [axScramble]="'BLOG.TITLE' | transloco" scrambleTrigger="load" [scrambleDelay]="0.15">{{
+          'BLOG.TITLE' | transloco
+        }}</span>
+      </h1>
+
+      <p class="lab-hero__lead" axReveal="blur">{{ 'BLOG.LEAD' | transloco }}</p>
+
+      <dl class="lab-hero__stats" axReveal [revealStagger]="0.08" [attr.aria-label]="'BLOG.STATUS_LABEL' | transloco">
+        <div data-reveal-item>
+          <dt>{{ 'BLOG.STATS.DRAFTS' | transloco }}</dt>
+          <dd [axTicker]="drafts">{{ drafts }}</dd>
+        </div>
+        <div data-reveal-item>
+          <dt>{{ 'BLOG.STATS.PUBLISHED' | transloco }}</dt>
+          <dd>{{ published }}</dd>
+        </div>
+        <div data-reveal-item>
+          <dt>{{ 'BLOG.STATS.TRACKS' | transloco }}</dt>
+          <dd [axTicker]="tracks.length">{{ tracks.length }}</dd>
+        </div>
+      </dl>
+    </div>
   </section>
 
-  <section class="content-section">
-    <tech-stack-technology-categories appScrollReveal />
+  <!-- Trilhas + fila -->
+  <section class="queue" aria-labelledby="queue-title">
+    <div class="queue__inner">
+      <ax-section-header index="01" titleId="queue-title" [label]="'BLOG.LABEL' | transloco" [title]="'BLOG.LIST_TITLE' | transloco" />
+
+      <div class="tracks" role="group" [attr.aria-label]="'BLOG.FILTER_ARIA' | transloco" axReveal [revealStagger]="0.06">
+        <button
+          type="button"
+          class="track track--all"
+          data-reveal-item
+          [class.is-active]="activeTrack() === null"
+          [attr.aria-pressed]="activeTrack() === null"
+          (click)="selectTrack(null)">
+          <span class="track__name">{{ 'BLOG.FILTER_ALL' | transloco }}</span>
+          <span class="track__count">{{ logs.length }}</span>
+        </button>
+
+        @for (track of tracks; track track.key) {
+          <button
+            type="button"
+            class="track"
+            data-reveal-item
+            [attr.data-track]="track.key"
+            [class.is-active]="activeTrack() === track.key"
+            [attr.aria-pressed]="activeTrack() === track.key"
+            (click)="selectTrack(track.key)">
+            <span class="track__name">{{ 'LOGS.TRACKS.' + track.key + '.NAME' | transloco }}</span>
+            <span class="track__desc">{{ 'LOGS.TRACKS.' + track.key + '.DESC' | transloco }}</span>
+            <span class="track__count">{{ track.count }}</span>
+          </button>
+        }
+      </div>
+
+      <ol class="queue__grid" aria-live="polite">
+        @for (log of visibleLogs(); track log.id) {
+          <li>
+            <ax-log-card [log]="log" [featured]="!!log.featured && activeTrack() === null" (opened)="openLog()" />
+          </li>
+        } @empty {
+          <li class="queue__empty">{{ 'BLOG.EMPTY' | transloco }}</li>
+        }
+      </ol>
+    </div>
   </section>
 
-  <article class="highlight-section">
-    <tech-stack-recent-articles appScrollReveal />
-  </article>
+  <!-- Seguir -->
+  <section class="follow" aria-labelledby="follow-title" axReveal>
+    <div class="follow__inner">
+      <div>
+        <h2 id="follow-title" class="follow__title">{{ 'BLOG.FOLLOW_TITLE' | transloco }}</h2>
+        <p class="follow__lead">{{ 'BLOG.FOLLOW_LEAD' | transloco }}</p>
+      </div>
+      <div class="follow__actions">
+        <a class="btn btn--primary" [href]="linkedin" target="_blank" rel="noopener noreferrer">
+          {{ 'BLOG.FOLLOW_CTA' | transloco }} <span aria-hidden="true">↗</span>
+        </a>
+        <a class="btn btn--ghost" routerLink="/">{{ 'BLOG.BACK_HOME' | transloco }}</a>
+      </div>
+    </div>
+  </section>
 </div>

@@ -1,0 +1,411 @@
+:host {
+  display: block;
+}
+
+.reports {
+  position: relative;
+  padding: clamp(8rem, 12vw, 16rem) 0;
+  background:
+    radial-gradient(60rem 40rem at 20% 10%, rgba(var(--ax-cyan-rgb), 0.05), transparent 70%),
+    var(--ax-bg);
+  overflow: hidden;
+}
+
+.reports__container {
+  max-width: var(--ax-container);
+  margin: 0 auto;
+  padding: 0 var(--ax-gutter);
+}
+
+.reports__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2.4rem;
+
+  ax-section-header {
+    flex: 1;
+  }
+}
+
+/* --- Navegação do rail -------------------------------------------------------- */
+.rail-nav {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: clamp(4rem, 6vw, 6.4rem);
+}
+
+.rail-btn {
+  display: grid;
+  place-items: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  border: 1px solid var(--ax-border-strong);
+  border-radius: 50%;
+  background: var(--ax-glass-bg);
+  color: var(--ax-text);
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition:
+    border-color var(--ax-dur-fast) ease,
+    color var(--ax-dur-fast) ease,
+    box-shadow var(--ax-dur-fast) ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--ax-cyan);
+    color: var(--ax-cyan);
+    box-shadow: var(--ax-glow-cyan);
+    outline: none;
+  }
+}
+
+/* --- Rail ------------------------------------------------------------------- */
+.rail {
+  /* Alinha o primeiro card com o container, mas deixa o rail sangrar à direita. */
+  --rail-inset: max(var(--ax-gutter), calc((100vw - var(--ax-container)) / 2 + var(--ax-gutter)));
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: clamp(28rem, 34vw, 42rem);
+  gap: 1.6rem;
+  margin: 0;
+  padding: 0.8rem var(--rail-inset) 2.4rem;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--rail-inset);
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:focus-visible {
+    outline: 1px dashed var(--ax-border-strong);
+    outline-offset: -0.4rem;
+  }
+
+  li {
+    scroll-snap-align: start;
+    min-width: 0;
+  }
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.quote__index {
+  margin-bottom: 2rem;
+  font-family: var(--ax-font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.16em;
+  color: rgb(var(--accent-rgb));
+}
+
+.quote__text {
+  flex: 1;
+  margin: 0 0 2.4rem;
+
+  p {
+    margin: 0;
+    font-family: var(--ax-font-body);
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ax-text);
+
+    &::before {
+      content: '“';
+      margin-right: 0.2rem;
+      color: rgb(var(--accent-rgb));
+    }
+
+    &::after {
+      content: '”';
+      margin-left: 0.2rem;
+      color: rgb(var(--accent-rgb));
+    }
+  }
+}
+
+.quote__footer {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ax-border);
+}
+
+.quote__avatar {
+  display: grid;
+  place-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(var(--accent-rgb), 0.5);
+  border-radius: 50%;
+  font-family: var(--ax-font-mono);
+  font-size: 1.1rem;
+  color: rgb(var(--accent-rgb));
+}
+
+.quote__who {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.quote__role {
+  font-family: var(--ax-font-body);
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--ax-text-muted);
+}
+
+.quote__relation {
+  margin-top: 0.4rem;
+  font-family: var(--ax-font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ax-text-dim);
+
+  &[data-relation='MANAGER'] {
+    color: rgb(var(--accent-rgb));
+  }
+}
+
+.edu__note {
+  margin: -0.8rem 0 1.6rem;
+  font-family: var(--ax-font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: var(--ax-text-dim);
+}
+
+.quote__name {
+  font-family: var(--ax-font-display);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--ax-text);
+}
+
+.quote__links {
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 1.6rem;
+
+  a {
+    font-family: var(--ax-font-mono);
+    font-size: 1.05rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ax-text-dim);
+    text-decoration: none;
+    transition: color var(--ax-dur-fast) ease;
+
+    &:hover,
+    &:focus-visible {
+      color: rgb(var(--accent-rgb));
+    }
+  }
+}
+
+/* --- Formação ----------------------------------------------------------------- */
+.edu {
+  margin-top: clamp(6.4rem, 8vw, 9.6rem);
+  padding-top: 4rem;
+  border-top: 1px solid var(--ax-border);
+}
+
+.edu__title {
+  margin: 0 0 4rem;
+  font-family: var(--ax-font-mono);
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ax-text);
+}
+
+.edu__mark {
+  color: var(--ax-cyan);
+}
+
+.edu__timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  /* Trilho horizontal ligando os nós. */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0.6rem;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--ax-cyan), var(--ax-purple) 70%, transparent);
+    opacity: 0.5;
+  }
+}
+
+.edu__item {
+  --node: var(--ax-cyan);
+
+  position: relative;
+  padding-top: 3.2rem;
+
+  &[data-status='IN_PROGRESS'] {
+    --node: var(--ax-ok);
+  }
+
+  &[data-status='PAUSED'] {
+    --node: var(--ax-text-dim);
+
+    .edu__course {
+      color: var(--ax-text-muted);
+    }
+  }
+
+  &.is-highlight {
+    --node: var(--ax-purple);
+
+    .edu__course {
+      background: var(--ax-gradient-neon);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+}
+
+.edu__node {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background: var(--ax-bg);
+  border: 2px solid var(--node);
+  box-shadow: 0 0 1.2rem var(--node);
+}
+
+.edu__status {
+  display: block;
+  margin-bottom: 1rem;
+  font-family: var(--ax-font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--node);
+}
+
+.edu__course {
+  margin: 0 0 1.6rem;
+  font-family: var(--ax-font-display);
+  font-size: clamp(1.9rem, 1.8vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ax-text);
+}
+
+.edu__progress {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.edu__bar {
+  flex: 1;
+  height: 0.4rem;
+  border-radius: 0.4rem;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+
+  span {
+    display: block;
+    height: 100%;
+    background: var(--ax-gradient-neon);
+    transform-origin: left;
+  }
+}
+
+.edu__pct {
+  min-width: 4.4rem;
+  font-family: var(--ax-font-mono);
+  font-size: 1.2rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: var(--ax-text-muted);
+}
+
+.edu__doc {
+  display: inline-block;
+  margin-top: 1.6rem;
+  font-family: var(--ax-font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ax-text-dim);
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--ax-cyan);
+  }
+}
+
+/* --- Responsivo --------------------------------------------------------------- */
+@media (max-width: 860px) {
+  .reports__head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rail-nav {
+    display: none;
+  }
+
+  .rail {
+    grid-auto-columns: 84vw;
+  }
+
+  .edu__timeline {
+    grid-template-columns: 1fr;
+    padding-left: 2.8rem;
+
+    &::before {
+      top: 0;
+      bottom: 0;
+      left: 0.6rem;
+      right: auto;
+      width: 1px;
+      height: auto;
+      background: linear-gradient(180deg, var(--ax-cyan), var(--ax-purple));
+    }
+  }
+
+  .edu__item {
+    padding-top: 0;
+  }
+
+  .edu__node {
+    left: -2.8rem;
+    top: 0.2rem;
+  }
+}

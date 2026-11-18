@@ -1,0 +1,174 @@
+:host {
+  display: block;
+}
+
+.manifesto {
+  position: relative;
+  padding: clamp(8rem, 12vw, 16rem) var(--ax-gutter);
+  background:
+    radial-gradient(70rem 40rem at 100% 0%, rgba(var(--ax-purple-rgb), 0.08), transparent 70%),
+    var(--ax-bg);
+}
+
+.manifesto__container {
+  max-width: var(--ax-container);
+  margin: 0 auto;
+}
+
+/* --- Pilares ---------------------------------------------------------------- */
+.manifesto__pillars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.pillar {
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  font-family: var(--ax-font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.16em;
+}
+
+.pillar__code {
+  color: rgb(var(--accent-rgb));
+}
+
+.pillar__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ax-text-dim);
+
+  .dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--ax-ok);
+    box-shadow: 0 0 0.8rem var(--ax-ok);
+  }
+
+  /* Em formação: roxo, sinalizando estudo e não operação. */
+  &[data-status='STUDY'] {
+    color: var(--ax-purple);
+
+    .dot {
+      background: var(--ax-purple);
+      box-shadow: 0 0 0.8rem var(--ax-purple);
+    }
+  }
+
+  &[data-status='DAILY'] {
+    color: var(--ax-ok);
+  }
+}
+
+.pillar__title {
+  margin: 0 0 1.2rem;
+  font-family: var(--ax-font-display);
+  font-size: clamp(2.2rem, 2vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ax-text);
+}
+
+.pillar__desc {
+  flex: 1;
+  margin: 0 0 2.8rem;
+  font-family: var(--ax-font-body);
+  font-weight: 300;
+  font-size: 1.55rem;
+  line-height: 1.65;
+  color: var(--ax-text-muted);
+}
+
+.pillar__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 0.5rem 1rem;
+    font-family: var(--ax-font-mono);
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+    color: var(--ax-text);
+    border: 1px solid var(--ax-border);
+    border-radius: 0.4rem;
+    background: rgba(255, 255, 255, 0.02);
+  }
+}
+
+/* --- Pipeline ---------------------------------------------------------------- */
+.manifesto__pipeline {
+  margin: clamp(4.8rem, 6vw, 8rem) 0 0;
+  padding-top: 2.4rem;
+  border-top: 1px solid var(--ax-border);
+
+  figcaption {
+    margin-bottom: 2rem;
+    font-family: var(--ax-font-mono);
+    font-size: 1.1rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ax-text-dim);
+  }
+
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-family: var(--ax-font-mono);
+    font-size: clamp(1.2rem, 1.2vw, 1.4rem);
+    letter-spacing: 0.14em;
+    color: var(--ax-text);
+
+    &::after {
+      content: '';
+      width: clamp(2.4rem, 5vw, 7.2rem);
+      height: 1px;
+      background: var(--ax-gradient-neon);
+      box-shadow: 0 0 0.8rem rgba(var(--ax-cyan-rgb), 0.5);
+    }
+
+    &.is-last {
+      color: var(--ax-cyan);
+      text-shadow: 0 0 1.6rem rgba(var(--ax-cyan-rgb), 0.6);
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+/* --- Responsivo --------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .manifesto__pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .pillar__head {
+    margin-bottom: 2.4rem;
+  }
+}

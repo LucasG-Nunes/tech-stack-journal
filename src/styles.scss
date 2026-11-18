@@ -3,13 +3,12 @@
    ========================================================================== */
 
 @use './styles/variables' as *;
+@use './styles/axiom-tokens';
 
-// Importação das fontes modernas (Plus Jakarta Sans para Títulos e Inter para Corpo)
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600&display=swap');
-
-// Variáveis Tipográficas Locais
-$font-title: 'Plus Jakarta Sans', sans-serif;
-$font-body: 'Inter', sans-serif;
+// Fontes AXIOM (carregadas via <link> no index.html):
+// Space Grotesk (display) · Inter (corpo) · JetBrains Mono (labels/terminal)
+$font-title: var(--ax-font-display);
+$font-body: var(--ax-font-body);
 $neon-cyan: #00d2ff;
 
 /* Reset & Base Config
@@ -22,6 +21,11 @@ $neon-cyan: #00d2ff;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Raiz do app como bloco: necessário para o header sticky. */
+tech-stack-root {
+  display: block;
+}
+
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -30,8 +34,8 @@ html {
 
 body {
   height: 100%;
-  background-color: #000; 
-  color: #fff;
+  background-color: var(--ax-bg);
+  color: var(--ax-text);
   font-family: $font-body;
   overflow-x: hidden;
   line-height: 1.5;
@@ -71,71 +75,21 @@ p, span, a, li, .modal-body {
   }
 }
 
-/* Scroll Reveal (Diretiva appScrollReveal)
-   ========================================================================== */
-.reveal-hidden {
-  opacity: 0;
-  transform: translateY(40px);
-  filter: blur(8px);
-  transition: 
-    opacity 0.8s ease-out, 
-    transform 1s cubic-bezier(0.2, 0.8, 0.2, 1), 
-    filter 0.8s ease-out;
-  will-change: transform, opacity;
-}
-
-.reveal-visible {
-  opacity: 1;
-  transform: translateY(0);
-  filter: blur(0);
-}
-
-/* Componentes Globais (Overlays)
-   ========================================================================== */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(12px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  
-  cursor: pointer; 
-  
-  & > * {
-    cursor: default;
-  }
-}
-
 /* Ajustes de Acessibilidade
    ========================================================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 :focus-visible {
   outline: 2px solid $neon-cyan;
   outline-offset: 4px;
-}
-
-
-.glass-tooltip {
-  position: absolute;
-  padding: 8px 16px;
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 210, 255, 0.4);
-  color: #fff;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  pointer-events: none;
-  transform: translate(-50%, -10px);
-  z-index: 99999;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 210, 255, 0.1);
-  white-space: nowrap;
-  animation: tooltipFadeIn 0.2s ease-out forwards;
-}
-
-@keyframes tooltipFadeIn {
-  from { opacity: 0; transform: translate(-50%, 0); }
-  to { opacity: 1; transform: translate(-50%, -10px); }
 }

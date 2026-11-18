@@ -1,0 +1,109 @@
+<section class="reports" aria-labelledby="reports-title">
+  <div class="reports__container">
+    <div class="reports__head">
+      <ax-section-header
+        index="05"
+        titleId="reports-title"
+        [label]="'VOICES.LABEL' | transloco"
+        [title]="'VOICES.TITLE' | transloco"
+        [lead]="'VOICES.LEAD' | transloco" />
+
+      <div class="rail-nav" axReveal>
+        <button type="button" class="rail-btn" (click)="scrollRail(-1)" [attr.aria-label]="'VOICES.PREV' | transloco">
+          <span aria-hidden="true">←</span>
+        </button>
+        <button type="button" class="rail-btn" (click)="scrollRail(1)" [attr.aria-label]="'VOICES.NEXT' | transloco">
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rail de depoimentos (sangra até a borda da tela) -->
+  <ul
+    #rail
+    class="rail"
+    axReveal
+    [revealStagger]="0.08"
+    tabindex="0"
+    [attr.aria-label]="'VOICES.RAIL_ARIA' | transloco">
+    @for (item of testimonials; track item.id; let i = $index) {
+      <li data-reveal-item>
+        <ax-glass-card class="quote" [accent]="i % 2 ? 'purple' : 'cyan'">
+          <span class="quote__index" aria-hidden="true">REP.{{ (i + 1).toString().padStart(2, '0') }}</span>
+
+          <blockquote class="quote__text">
+            <p>{{ 'VOICES.TESTIMONIALS.' + item.id | transloco }}</p>
+          </blockquote>
+
+          <footer class="quote__footer">
+            <span class="quote__avatar" aria-hidden="true">{{ initials(item.name) }}</span>
+            <span class="quote__who">
+              <cite class="quote__name">{{ item.name }}</cite>
+              <span class="quote__role">{{ 'VOICES.ROLES.' + item.id | transloco }}</span>
+              <span class="quote__relation" [attr.data-relation]="item.relation">
+                {{ 'VOICES.RELATION.' + item.relation | transloco }}
+              </span>
+            </span>
+          </footer>
+
+          <div class="quote__links">
+            <a [href]="item.print" target="_blank" rel="noopener">{{ 'VOICES.ORIGINAL' | transloco }} ↗</a>
+            <a [href]="linkedinUrl" target="_blank" rel="noopener noreferrer">{{ 'VOICES.VERIFY' | transloco }} ↗</a>
+          </div>
+        </ax-glass-card>
+      </li>
+    }
+  </ul>
+
+  <!-- Formação contínua -->
+  <div class="reports__container">
+    <div class="edu">
+      <h3 class="edu__title" axReveal>
+        <span class="edu__mark" aria-hidden="true">//</span> {{ 'EDUCATION.TITLE' | transloco }}
+      </h3>
+
+      <ol class="edu__timeline" axReveal [revealStagger]="0.12">
+        @for (entry of education; track entry.course) {
+          <li class="edu__item" data-reveal-item [class.is-highlight]="entry.highlight" [attr.data-status]="entry.status">
+            <span class="edu__node" aria-hidden="true"></span>
+
+            <span class="edu__status">
+              {{ 'EDUCATION.STATUS.' + entry.status | transloco }}
+              @if (entry.expected) {
+                · {{ 'EDUCATION.STATUS.EXPECTED' | transloco }} {{ entry.expected | transloco }}
+              }
+            </span>
+
+            <h4 class="edu__course">{{ 'EDUCATION.COURSES.' + entry.course | transloco }}</h4>
+
+            @if (entry.note) {
+              <p class="edu__note">{{ entry.note | transloco }}</p>
+            }
+
+            @if (entry.progress !== undefined) {
+              <div class="edu__progress">
+                <div
+                  class="edu__bar"
+                  role="progressbar"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  [attr.aria-valuenow]="entry.progress"
+                  [attr.aria-label]="'EDUCATION.COURSES.' + entry.course | transloco">
+                  <span [style.transform]="'scaleX(' + entry.progress / 100 + ')'"></span>
+                </div>
+                <span class="edu__pct" [axTicker]="entry.progress" tickerSuffix="%">{{ entry.progress }}%</span>
+              </div>
+            }
+
+            @if (entry.document) {
+              <a class="edu__doc" [href]="entry.document" target="_blank" rel="noopener">
+                {{ 'EDUCATION.DIPLOMA' | transloco }} ↗
+              </a>
+            }
+          </li>
+        }
+      </ol>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,61 @@
+<section class="security" aria-labelledby="security-title">
+  <div class="security__container">
+    <ax-section-header
+      index="04"
+      titleId="security-title"
+      [label]="'SECURITY.LABEL' | transloco"
+      [title]="'SECURITY.TITLE' | transloco"
+      [lead]="'SECURITY.LEAD' | transloco" />
+
+    <div class="security__grid">
+      <!-- Terminal -->
+      <div class="terminal" axReveal="blur">
+        <div class="terminal__bar">
+          <span class="terminal__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="terminal__title">{{ 'SECURITY.TERMINAL_TITLE' | transloco }}</span>
+        </div>
+
+        <div class="terminal__body" axTypewriter>
+          @for (line of terminal; track $index) {
+            @switch (line.kind) {
+              @case ('cmd') {
+                <p class="line line--cmd" data-type-line="cmd">
+                  <span class="prompt" aria-hidden="true">lucas&#64;axiom:~$</span> {{ line.text }}
+                </p>
+              }
+              @case ('tag') {
+                <p class="line line--tag" data-type-line>
+                  <span class="tag">{{ line.tag }}</span> {{ line.text | transloco }}
+                </p>
+              }
+              @case ('ok') {
+                <p class="line line--ok" data-type-line>
+                  <span class="check" aria-hidden="true">✔</span> {{ line.text | transloco }}
+                </p>
+              }
+              @default {
+                <p class="line" data-type-line>{{ line.text | transloco }}</p>
+              }
+            }
+          }
+          <p class="line line--cmd" aria-hidden="true">
+            <span class="prompt">lucas&#64;axiom:~$</span> <span class="cursor"></span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Práticas -->
+      <ul class="practices" axReveal [revealStagger]="0.1">
+        @for (practice of practices; track practice; let i = $index) {
+          <li data-reveal-item>
+            <ax-glass-card axTilt [tiltMax]="4" accent="purple" class="practice">
+              <span class="practice__index">SEC.0{{ i + 1 }}</span>
+              <h3 class="practice__title">{{ 'SECURITY.PRACTICES.' + practice + '.TITLE' | transloco }}</h3>
+              <p class="practice__desc">{{ 'SECURITY.PRACTICES.' + practice + '.DESC' | transloco }}</p>
+            </ax-glass-card>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

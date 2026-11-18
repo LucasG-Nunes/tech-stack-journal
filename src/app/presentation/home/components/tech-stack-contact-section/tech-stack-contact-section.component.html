@@ -1,0 +1,60 @@
+<section class="contact" aria-labelledby="contact-title">
+  <ax-video-backdrop [overlay]="0.86" />
+
+  <div class="contact__container">
+    <p class="contact__eyebrow" axReveal>
+      <span class="index">07</span>
+      <span class="sep" aria-hidden="true">//</span>
+      <span>{{ 'CONTACT.LABEL' | transloco }}</span>
+    </p>
+
+    <h2 id="contact-title" class="contact__title" [attr.aria-label]="'CONTACT.TITLE' | transloco">
+      <span aria-hidden="true" [axScramble]="'CONTACT.TITLE' | transloco" scrambleTrigger="view">{{
+        'CONTACT.TITLE' | transloco
+      }}</span>
+    </h2>
+
+    <p class="contact__lead" axReveal="blur">{{ 'CONTACT.LEAD' | transloco }}</p>
+
+    <ul class="contact__fronts" axReveal [revealStagger]="0.08" [attr.aria-label]="'CONTACT.FRONTS_ARIA' | transloco">
+      @for (front of fronts; track front) {
+        <li data-reveal-item>{{ 'CONTACT.FRONTS.' + front | transloco }}</li>
+      }
+    </ul>
+
+    <!-- Canal principal -->
+    <div class="mail" axReveal>
+      <span class="mail__label">{{ 'CONTACT.EMAIL_LABEL' | transloco }}</span>
+      <div class="mail__row">
+        <a class="mail__link" [href]="'mailto:' + email">{{ email }}</a>
+        <button type="button" class="mail__copy" (click)="copyEmail()" [class.is-copied]="copied()">
+          <span aria-live="polite">{{ (copied() ? 'CONTACT.COPIED' : 'CONTACT.COPY') | transloco }}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Canais secundários -->
+    <ul class="channels" axReveal [revealStagger]="0.08">
+      @for (channel of channels; track channel.key; let i = $index) {
+        <li data-reveal-item>
+          @if (channel.download) {
+            <a class="channel" [href]="channel.href" download>
+              <span class="channel__index" aria-hidden="true">CH.0{{ i + 1 }}</span>
+              <span class="channel__name">{{ 'CONTACT.CHANNELS.' + channel.key + '.NAME' | transloco }}</span>
+              <span class="channel__desc">{{ 'CONTACT.CHANNELS.' + channel.key + '.DESC' | transloco }}</span>
+              <span class="channel__arrow" aria-hidden="true">↓</span>
+            </a>
+          } @else {
+            <a class="channel" [href]="channel.href" target="_blank" rel="noopener noreferrer">
+              <span class="channel__index" aria-hidden="true">CH.0{{ i + 1 }}</span>
+              <span class="channel__name">{{ 'CONTACT.CHANNELS.' + channel.key + '.NAME' | transloco }}</span>
+              <span class="channel__desc">{{ 'CONTACT.CHANNELS.' + channel.key + '.DESC' | transloco }}</span>
+              <span class="channel__arrow" aria-hidden="true">↗</span>
+              <span class="sr-only">{{ 'PROJECTS.MODAL.EXTERNAL' | transloco }}</span>
+            </a>
+          }
+        </li>
+      }
+    </ul>
+  </div>
+</section>

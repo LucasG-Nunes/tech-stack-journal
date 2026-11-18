@@ -1,0 +1,40 @@
+@let entry = log();
+
+<ax-glass-card axTilt [tiltMax]="featured() ? 3 : 5" class="log" [accent]="entry.track === 'AI' ? 'cyan' : 'purple'">
+  <div class="log__meta">
+    @if (entry.status === 'PUBLISHED' && entry.date) {
+      <span class="log__stamp">LOG.{{ stamp(entry.date) }}</span>
+    } @else {
+      <span class="log__draft"><span class="dot" aria-hidden="true"></span>{{ 'LOGS.STATUS.DRAFT' | transloco }}</span>
+    }
+    <span class="log__track">{{ 'LOGS.TRACKS.' + entry.track + '.NAME' | transloco }}</span>
+  </div>
+
+  @if (featured()) {
+    <span class="log__featured">{{ 'LOGS.FEATURED' | transloco }}</span>
+  }
+
+  <h3 class="log__title">{{ 'LOGS.ITEMS.' + entry.id + '.TITLE' | transloco }}</h3>
+  <p class="log__desc">{{ 'LOGS.ITEMS.' + entry.id + '.DESC' | transloco }}</p>
+
+  <ul class="log__tags">
+    @for (tag of entry.tags; track tag) {
+      <li>{{ tag }}</li>
+    }
+  </ul>
+
+  <div class="log__foot">
+    <span class="log__time">
+      @if (entry.readTime) {
+        {{ entry.readTime }} {{ 'LOGS.READ_TIME' | transloco }}
+      }
+    </span>
+    <span class="log__cta" aria-hidden="true">{{ 'LOGS.READ' | transloco }} →</span>
+  </div>
+
+  <button
+    type="button"
+    class="log__hit"
+    (click)="opened.emit(entry)"
+    [attr.aria-label]="('LOGS.READ' | transloco) + ': ' + ('LOGS.ITEMS.' + entry.id + '.TITLE' | transloco)"></button>
+</ax-glass-card>

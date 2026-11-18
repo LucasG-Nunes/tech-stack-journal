@@ -1,0 +1,24 @@
+<section class="logs" aria-labelledby="logs-title">
+  <div class="logs__container">
+    <div class="logs__head">
+      <ax-section-header
+        index="06"
+        titleId="logs-title"
+        [label]="'LOGS.LABEL' | transloco"
+        [title]="'LOGS.TITLE' | transloco"
+        [lead]="'LOGS.LEAD' | transloco" />
+
+      <a class="logs__all" routerLink="/blog" axReveal>
+        {{ 'LOGS.VIEW_ALL' | transloco }} <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <ol class="logs__grid" axReveal [revealStagger]="0.12">
+      @for (log of logs; track log.id; let first = $first) {
+        <li data-reveal-item [class.is-featured]="first">
+          <ax-log-card [log]="log" [featured]="first" (opened)="openLog()" />
+        </li>
+      }
+    </ol>
+  </div>
+</section>

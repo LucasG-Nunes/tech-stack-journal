@@ -1,14 +1,15 @@
-<section class="case-studies-section" aria-labelledby="projects-title">
-  <div class="case-studies-container">
-    <header class="section-header">
-      <h2 id="projects-title" class="section-title">
-        {{ 'PROJECTS.TITLE' | transloco }}
-      </h2>
-    </header>
+<section class="track" aria-labelledby="projects-title">
+  <div class="track__container">
+    <ax-section-header
+      index="03"
+      titleId="projects-title"
+      [label]="'PROJECTS.LABEL' | transloco"
+      [title]="'PROJECTS.TITLE' | transloco"
+      [lead]="'PROJECTS.LEAD' | transloco" />
 
-    <div class="projects-grid">
+    <div class="track__grid" axReveal [revealStagger]="0.1" revealStart="top 85%">
       @for (project of projects; track project.title) {
-        <tech-stack-case-study-card [data]="project" (projectOpened)="openProjectModal($event)" />
+        <tech-stack-case-study-card data-reveal-item [data]="project" (projectOpened)="openProjectModal($event)" />
       }
     </div>
   </div>

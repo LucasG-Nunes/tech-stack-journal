@@ -1,0 +1,73 @@
+/* ==========================================================================
+   AXIOM DESIGN TOKENS
+   Fonte única de cor, tipografia, glass e motion. Consumir via var(--ax-*).
+   Obs.: html { font-size: 62.5% } → 1rem = 10px.
+   ========================================================================== */
+
+:root {
+  /* --- Superfícies --- */
+  --ax-bg: #050505;
+  --ax-bg-elevated: #0b0b0d;
+  --ax-surface: rgba(255, 255, 255, 0.03);
+  --ax-surface-hover: rgba(255, 255, 255, 0.06);
+  --ax-border: rgba(255, 255, 255, 0.08);
+  --ax-border-strong: rgba(255, 255, 255, 0.16);
+
+  /* --- Texto --- */
+  --ax-text: #ededed;
+  --ax-text-muted: #8a8a8a;
+  --ax-text-dim: #5c5c5c;
+
+  /* --- Acentos neon --- */
+  --ax-cyan: #00f0ff;
+  --ax-cyan-rgb: 0, 240, 255;
+  --ax-purple: #a855f7;
+  --ax-purple-rgb: 168, 85, 247;
+  --ax-danger: #ff3b5c;
+  --ax-ok: #2bff88;
+
+  --ax-glow-cyan: 0 0 24px rgba(var(--ax-cyan-rgb), 0.35);
+  --ax-glow-purple: 0 0 24px rgba(var(--ax-purple-rgb), 0.35);
+  --ax-gradient-neon: linear-gradient(100deg, var(--ax-cyan) 0%, var(--ax-purple) 100%);
+
+  /* --- Glass --- */
+  --ax-glass-bg: rgba(255, 255, 255, 0.03);
+  --ax-glass-blur: blur(16px) saturate(140%);
+
+  /* --- Tipografia --- */
+  --ax-font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --ax-font-body: 'Inter', system-ui, sans-serif;
+  --ax-font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+
+  /* --- Layout --- */
+  --ax-container: 120rem;
+  --ax-gutter: clamp(1.6rem, 4vw, 4.8rem);
+  --ax-radius: 1.2rem;
+
+  /* --- Motion (espelhado em core/motion/motion.tokens.ts) --- */
+  --ax-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ax-dur-fast: 0.2s;
+  --ax-dur-base: 0.6s;
+}
+
+/* --------------------------------------------------------------------------
+   Gate de intro: elementos marcados com [data-ax-intro] ficam ocultos
+   só quando há JS (classe .ax-js setada no index.html) e o GSAP os revela.
+   Ao iniciar, o GSAP marca [data-ax-ready] e assume o controle.
+   Failsafe: se o JS falhar, aparecem sozinhos após 2.5s.
+   -------------------------------------------------------------------------- */
+.ax-js [data-ax-intro]:not([data-ax-ready]) {
+  opacity: 0;
+  animation: ax-intro-failsafe 0.6s ease-out 2.5s forwards;
+}
+
+@keyframes ax-intro-failsafe {
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ax-js [data-ax-intro] {
+    opacity: 1;
+    animation: none;
+  }
+}
