@@ -30,6 +30,9 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   height: 100%;
+  /* Reserva o espaço da barra de rolagem: ao abrir um modal (overflow: hidden)
+     a largura da página não muda, então não há relayout nem "pulo" do conteúdo. */
+  scrollbar-gutter: stable;
 }
 
 body {

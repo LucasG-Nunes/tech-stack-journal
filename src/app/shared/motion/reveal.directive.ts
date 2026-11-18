@@ -9,7 +9,7 @@ export type RevealVariant = 'fade-up' | 'blur';
  *
  * Uso:
  *   <div axReveal>…</div>                          → fade-up no próprio host
- *   <div axReveal="blur">…</div>                   → blur-to-clear
+ *   <div axReveal="blur">…</div>                   → "foco" (escala + fade, sem filter)
  *   <ul axReveal [revealStagger]="0.12">
  *     <li data-reveal-item>…</li>                  → anima os filhos em cascata
  *   </ul>
@@ -57,24 +57,34 @@ export class RevealDirective {
 
               ready();
 
+              // Só transform + opacity (compositor). O antigo filter: blur()
+              // repintava o bloco inteiro a cada frame da entrada.
+              // A variante "blur" virou um "foco" por escala: sai levemente
+              // ampliado e assenta, que lê como desfoque → nítido sem o custo.
               gsap.fromTo(
                 targets,
                 {
                   autoAlpha: 0,
-                  y: isBlur ? 0 : 40,
-                  scale: isBlur ? 0.985 : 1,
-                  filter: `blur(${isBlur ? 16 : 6}px)`,
+                  y: isBlur ? 12 : 40,
+                  scale: isBlur ? 1.04 : 1,
                 },
                 {
                   autoAlpha: 1,
                   y: 0,
                   scale: 1,
-                  filter: 'blur(0px)',
                   duration: isBlur ? AX_DURATION.slow : AX_DURATION.base,
                   delay: this.revealDelay(),
                   ease: AX_EASE.out,
                   stagger,
-                  clearProps: 'filter,transform',
+                  force3D: true,
+                  // will-change só durante a animação: camada criada no início e
+                  // liberada no fim, em vez de dezenas de camadas ociosas.
+                  onStart: () => {
+                    gsap.set(targets, { willChange: 'transform, opacity' });
+                  },
+                  onComplete: () => {
+                    gsap.set(targets, { clearProps: 'transform,willChange' });
+                  },
                   scrollTrigger: { trigger: this.host, start: this.revealStart(), once: true },
                 },
               );

@@ -16,9 +16,9 @@
 .notice__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(5, 5, 5, 0.82);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   cursor: pointer;
   animation: notice-fade var(--ax-dur-base) var(--ax-ease-out);
 }
@@ -164,7 +164,6 @@
   from {
     opacity: 0;
     transform: translateY(1.6rem) scale(0.98);
-    filter: blur(8px);
   }
 }
 

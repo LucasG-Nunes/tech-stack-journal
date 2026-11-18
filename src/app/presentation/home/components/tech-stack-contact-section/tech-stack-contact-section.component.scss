@@ -181,21 +181,38 @@
   padding: 2.4rem;
   border: 1px solid var(--ax-border);
   border-radius: var(--ax-radius);
-  background: var(--ax-glass-bg);
-  backdrop-filter: var(--ax-glass-blur);
-  -webkit-backdrop-filter: var(--ax-glass-blur);
+  /*
+   * Sem backdrop-filter: estes cards ficam sobre o canvas animado do contato,
+   * então o blur era refeito a cada frame. Um fundo escuro mais opaco
+   * esconde as linhas do mesmo jeito, sem custo por frame.
+   */
+  background: rgba(10, 10, 12, 0.78);
   text-decoration: none;
   transition:
     border-color var(--ax-dur-base) var(--ax-ease-out),
-    transform var(--ax-dur-base) var(--ax-ease-out),
-    box-shadow var(--ax-dur-base) var(--ax-ease-out);
+    transform var(--ax-dur-base) var(--ax-ease-out);
+
+  /* Brilho do hover pré-pintado numa camada própria; só a opacidade anima. */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 3.2rem rgba(var(--ax-cyan-rgb), 0.12);
+    opacity: 0;
+    transition: opacity var(--ax-dur-base) var(--ax-ease-out);
+    pointer-events: none;
+  }
 
   &:hover,
   &:focus-visible {
     border-color: rgba(var(--ax-cyan-rgb), 0.5);
-    box-shadow: 0 0 3.2rem rgba(var(--ax-cyan-rgb), 0.12);
     transform: translateY(-0.4rem);
     outline: none;
+
+    &::after {
+      opacity: 1;
+    }
 
     .channel__arrow {
       color: var(--ax-cyan);

@@ -19,7 +19,8 @@ import { HOME_ANCHORS } from '../../contants/profile-links.constant';
  * - Transparente no topo; vira glass ao rolar.
  * - Destaca a seção ativa da Home (IntersectionObserver).
  * - Menu colapsável no mobile; fecha ao navegar ou com Esc.
- * - Listeners de scroll/IO fora da NgZone; só sinais mudam o template.
+ * - Sem listener de scroll: IntersectionObserver (fora da NgZone) para o
+ *   estado "rolado" e para a seção ativa; só sinais mudam o template.
  */
 @Component({
   selector: 'tech-stack-header',
@@ -84,15 +85,28 @@ export class TechStackHeaderComponent {
     this.menuOpen.set(false);
   }
 
+  /**
+   * Estado "rolado" sem listener de scroll: um sentinela de 24px no topo do
+   * documento é observado por IntersectionObserver. Quando ele sai da tela,
+   * o header vira vidro. Zero trabalho na main thread durante o scroll.
+   */
   private watchScroll(): void {
+    const sentinel = document.createElement('div');
+    sentinel.setAttribute('aria-hidden', 'true');
+    sentinel.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:24px;pointer-events:none;visibility:hidden';
+    document.body.prepend(sentinel);
+
     this.zone.runOutsideAngular(() => {
-      const onScroll = (): void => {
-        const next = window.scrollY > 24;
+      const observer = new IntersectionObserver(([entry]) => {
+        const next = !entry.isIntersecting;
         if (next !== this.scrolled()) this.zone.run(() => this.scrolled.set(next));
-      };
-      onScroll();
-      window.addEventListener('scroll', onScroll, { passive: true });
-      this.destroyRef.onDestroy(() => window.removeEventListener('scroll', onScroll));
+      });
+      observer.observe(sentinel);
+
+      this.destroyRef.onDestroy(() => {
+        observer.disconnect();
+        sentinel.remove();
+      });
     });
   }
 

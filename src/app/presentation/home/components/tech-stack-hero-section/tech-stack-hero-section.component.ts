@@ -24,7 +24,7 @@ interface HeroMetric {
  *
  * Orquestração da entrada:
  *   tag → H1 (scramble, via [axScramble]) → sub (blur-to-clear) → CTAs → status bar (+ tickers)
- * Ao rolar: o conteúdo sobe e desfoca levemente (parallax com ScrollTrigger scrub).
+ * Ao rolar: o conteúdo sobe e esmaece (parallax com ScrollTrigger scrub, só transform/opacity).
  */
 @Component({
   selector: 'tech-stack-hero-section',
@@ -71,22 +71,25 @@ export class TechStackHeroSection {
                 .from('[data-hero="tag"]', { autoAlpha: 0, x: -16 }, 0)
                 .from(
                   '[data-hero="fade"]',
-                  { autoAlpha: 0, y: 28, filter: 'blur(12px)', stagger: AX_STAGGER.base },
+                  { autoAlpha: 0, y: 28, scale: 1.03, stagger: AX_STAGGER.base, clearProps: 'transform' },
                   0.9,
                 )
                 .from('[data-hero="status"]', { autoAlpha: 0, y: 16, duration: AX_DURATION.slow }, 1.3);
 
-              // Parallax de saída: conteúdo sobe e perde nitidez enquanto o usuário rola.
+              // Parallax de saída: conteúdo sobe e esmaece enquanto o usuário rola.
+              // Só transform + opacity: o antigo filter: blur() em scrub repintava
+              // o Hero inteiro a cada frame de scroll (principal causa do jank).
+              // scrub: 0.4 suaviza a leitura do scroll sem atrasar a resposta.
               gsap.to('.hero__inner', {
                 yPercent: -12,
                 autoAlpha: 0.15,
-                filter: 'blur(6px)',
                 ease: 'none',
+                force3D: true,
                 scrollTrigger: {
                   trigger: this.host,
                   start: 'top top',
                   end: 'bottom top',
-                  scrub: true,
+                  scrub: 0.4,
                 },
               });
             }, this.host);
