@@ -20,9 +20,14 @@
 .dossier-modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(5, 5, 5, 0.82);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  /*
+   * Único blur do modal. 8px sobre um véu de 85% é indistinguível de 10px e
+   * custa menos amostras. O fundo animado da página pausa enquanto o modal
+   * está aberto (ModalService.isOpen), então o blur é calculado uma vez.
+   */
+  background: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   cursor: pointer;
 }
 
@@ -37,16 +42,15 @@
   max-height: min(88svh, 100%);
   border: 1px solid var(--ax-border-strong);
   border-radius: var(--ax-radius);
-  background: rgba(11, 11, 13, 0.92);
-  backdrop-filter: var(--ax-glass-blur);
-  -webkit-backdrop-filter: var(--ax-glass-blur);
+  /* Opaco o bastante para dispensar um segundo backdrop-filter sobre o do overlay. */
+  background: rgba(11, 11, 13, 0.97);
   box-shadow:
     0 4rem 12rem rgba(0, 0, 0, 0.7),
     0 0 6rem rgba(var(--accent-rgb), 0.08);
   overflow: hidden;
-  transition:
-    width var(--ax-dur-base) var(--ax-ease-out),
-    max-height var(--ax-dur-base) var(--ax-ease-out);
+  /* O modal só existe enquanto aberto e é animado na entrada/saída: camada dedicada. */
+  will-change: transform, opacity;
+  contain: layout paint;
 
   &[data-accent='purple'] {
     --accent-rgb: var(--ax-purple-rgb);

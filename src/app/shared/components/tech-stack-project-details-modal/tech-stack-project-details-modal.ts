@@ -5,6 +5,7 @@ import {
   EventEmitter,
   HostListener,
   Input,
+  OnInit,
   Output,
   afterNextRender,
   inject,
@@ -30,7 +31,10 @@ interface ProjectResourceImage {
  * Dossiê de projeto (modal AXIOM).
  *
  * Criado dinamicamente pelo ModalService, que atribui `projectData` e escuta `closed`.
- * - Entrada/saída animadas com GSAP (overlay fade + painel blur-to-clear).
+ * - Entrada/saída com GSAP só em transform + opacity. O véu (com backdrop-filter)
+ *   e o painel animam separados: opacidade num ANCESTRAL do véu o transformaria
+ *   em "backdrop root" e o blur só apareceria no fim do fade.
+ * - Dados derivados de i18n calculados uma vez (ngOnInit), não a cada change detection.
  * - Esc fecha a imagem ampliada primeiro, depois o dossiê.
  * - Deep dive, referências e evidências sempre visíveis; "expandir" só muda o tamanho.
  */
@@ -41,7 +45,7 @@ interface ProjectResourceImage {
   styleUrl: './tech-stack-project-details-modal.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TechStackProjectDetailsModal {
+export class TechStackProjectDetailsModal implements OnInit {
   @Input() projectData!: CaseStudy;
   @Output() closed = new EventEmitter<void>();
 
@@ -52,6 +56,10 @@ export class TechStackProjectDetailsModal {
   private readonly motion = inject(GsapService);
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
   private closing = false;
+
+  protected projectKey = '';
+  protected links: ProjectResourceLink[] = [];
+  protected images: ProjectResourceImage[] = [];
 
   constructor() {
     afterNextRender(() => this.animateIn());
@@ -66,8 +74,34 @@ export class TechStackProjectDetailsModal {
     this.close();
   }
 
+  ngOnInit(): void {
+    const parts = this.projectData.title.split('.');
+    this.projectKey = parts[parts.length - 2];
+    this.links = this.resource<ProjectResourceLink>('LINKS').filter(link => !!link.LABEL);
+    this.images = this.resource<ProjectResourceImage>('IMAGES');
+  }
+
+  /**
+   * Expandir/recolher: o tamanho muda de uma vez (sem transition de
+   * width/max-height, que fazia relayout a cada frame) e o painel "assenta"
+   * com uma animação curta de scale + opacity, toda no compositor.
+   */
   protected toggleMaximize(): void {
     this.isMaximized.update(value => !value);
+    if (this.motion.prefersReducedMotion()) return;
+
+    this.motion
+      .load()
+      .then(({ gsap }) =>
+        this.motion.outside(() =>
+          gsap.fromTo(
+            this.q('.dossier-modal__panel'),
+            { scale: 0.985, autoAlpha: 0.7 },
+            { scale: 1, autoAlpha: 1, duration: AX_DURATION.fast * 1.5, ease: AX_EASE.out, clearProps: 'transform' },
+          ),
+        ),
+      )
+      .catch(() => undefined);
   }
 
   protected openImage(image: ProjectResourceImage): void {
@@ -98,30 +132,17 @@ export class TechStackProjectDetailsModal {
               autoAlpha: 0,
               y: 16,
               scale: 0.98,
-              filter: 'blur(8px)',
+              force3D: true,
               duration: AX_DURATION.fast,
               ease: 'power2.in',
             })
-            .to(this.q('.dossier-modal'), { autoAlpha: 0, duration: AX_DURATION.fast }, '<0.1'),
+            .to(this.q('.dossier-modal__backdrop'), { autoAlpha: 0, duration: AX_DURATION.fast }, '<0.1'),
         ),
       )
       .catch(() => this.closed.emit());
   }
 
   // ---------------------------------------------------------------- dados i18n
-  protected get projectKey(): string {
-    const parts = this.projectData.title.split('.');
-    return parts[parts.length - 2];
-  }
-
-  protected get links(): ProjectResourceLink[] {
-    return this.resource<ProjectResourceLink>('LINKS').filter(link => !!link.LABEL);
-  }
-
-  protected get images(): ProjectResourceImage[] {
-    return this.resource<ProjectResourceImage>('IMAGES');
-  }
-
   /** Transloco devolve a própria chave (string) quando ela não existe. */
   private resource<T>(kind: 'LINKS' | 'IMAGES'): T[] {
     const value = this.transloco.translate<unknown>(`PROJECTS.ITEMS.${this.projectKey}.RESOURCES.${kind}`);
@@ -138,10 +159,10 @@ export class TechStackProjectDetailsModal {
         this.motion.outside(() => {
           gsap
             .timeline({ defaults: { ease: AX_EASE.out } })
-            .from(this.q('.dossier-modal'), { autoAlpha: 0, duration: AX_DURATION.fast })
+            .from(this.q('.dossier-modal__backdrop'), { autoAlpha: 0, duration: AX_DURATION.fast })
             .from(
               this.q('.dossier-modal__panel'),
-              { autoAlpha: 0, y: 32, scale: 0.97, filter: 'blur(12px)', duration: AX_DURATION.base, clearProps: 'filter,transform' },
+              { autoAlpha: 0, y: 32, scale: 0.97, force3D: true, duration: AX_DURATION.base, clearProps: 'transform' },
               '<0.05',
             )
             .from(

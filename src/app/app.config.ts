@@ -11,7 +11,8 @@ import { ssrSafeLocalStorage } from './core/utils/ser-safe-storage';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    // Coalescing: vários eventos/tarefas no mesmo frame → um único ciclo de change detection.
+    provideZoneChangeDetection({ eventCoalescing: true, runCoalescing: true }),
     provideRouter(routes, withInMemoryScrolling({ anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled' })),
     provideHttpClient(withFetch()),
 

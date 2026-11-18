@@ -25,19 +25,38 @@
 }
 
 /* --- Barra -------------------------------------------------------------------- */
+/*
+ * O vidro fica num pseudo-elemento sempre montado e só a OPACIDADE dele anima.
+ * Antes a transição era no próprio backdrop-filter (o browser recalculava o
+ * blur com raio diferente a cada frame da transição). Aqui o blur tem raio fixo
+ * e o compositor apenas faz o fade da camada.
+ */
 .ax-header {
+  position: relative;
+  isolation: isolate;
   border-bottom: 1px solid transparent;
-  transition:
-    background-color var(--ax-dur-base) var(--ax-ease-out),
-    border-color var(--ax-dur-base) var(--ax-ease-out),
-    backdrop-filter var(--ax-dur-base) var(--ax-ease-out);
+  transition: border-color var(--ax-dur-base) var(--ax-ease-out);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(5, 5, 5, 0.72);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    opacity: 0;
+    transition: opacity var(--ax-dur-base) var(--ax-ease-out);
+    pointer-events: none;
+  }
 
   &.is-scrolled,
   &.is-open {
-    background: rgba(5, 5, 5, 0.72);
-    backdrop-filter: blur(16px) saturate(140%);
-    -webkit-backdrop-filter: blur(16px) saturate(140%);
     border-color: var(--ax-border);
+
+    &::before {
+      opacity: 1;
+    }
   }
 }
 

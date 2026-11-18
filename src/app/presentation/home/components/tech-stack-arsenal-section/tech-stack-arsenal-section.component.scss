@@ -61,7 +61,12 @@
   gap: 1.4rem;
   padding: 1.8rem 0 1.8rem 0;
   border-bottom: 1px dashed var(--ax-border);
-  transition: padding-left var(--ax-dur-base) var(--ax-ease-out);
+
+  /* Deslocamento do hover via transform (antes: padding-left → relayout por frame). */
+  > .tech__id,
+  > .tech__body {
+    transition: transform var(--ax-dur-base) var(--ax-ease-out);
+  }
 
   &:last-child {
     border-bottom: 0;
@@ -85,7 +90,10 @@
 
 @media (hover: hover) and (pointer: fine) {
   .tech:hover {
-    padding-left: 1.4rem;
+    > .tech__id,
+    > .tech__body {
+      transform: translateX(1.4rem);
+    }
 
     &::before {
       transform: scaleY(1);
@@ -155,6 +163,8 @@
   display: flex;
   width: max-content;
   animation: ax-marquee 45s linear infinite;
+  /* Animação contínua de transform: camada própria permanente é justificada. */
+  will-change: transform;
 
   &:hover {
     animation-play-state: paused;

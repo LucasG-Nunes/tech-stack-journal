@@ -40,26 +40,48 @@ export class TiltDirective {
             const el = this.host;
             const max = this.tiltMax();
 
-            gsap.set(el, { transformPerspective: this.tiltPerspective(), transformStyle: 'preserve-3d' });
+            // Perspectiva embutida no transform; sem preserve-3d (os filhos não
+            // têm profundidade própria, e preserve-3d anula o overflow: hidden do card).
+            gsap.set(el, { transformPerspective: this.tiltPerspective() });
 
             const toRotX = gsap.quickTo(el, 'rotationX', { duration: 0.6, ease: AX_EASE.soft });
             const toRotY = gsap.quickTo(el, 'rotationY', { duration: 0.6, ease: AX_EASE.soft });
             const toScale = gsap.quickTo(el, 'scale', { duration: 0.6, ease: AX_EASE.soft });
 
+            // Retângulo medido na entrada, não a cada pointermove: ler layout
+            // por evento (várias vezes por frame) força recálculo síncrono.
+            // Medido antes do tilt começar, também não "treme" com a rotação.
+            let rect: DOMRect | null = null;
+            let rectScrollY = 0;
+            const measure = (): void => {
+              rect = el.getBoundingClientRect();
+              rectScrollY = window.scrollY;
+            };
+            let release: gsap.core.Tween | undefined;
+
             const onMove = (event: PointerEvent): void => {
-              const rect = el.getBoundingClientRect();
-              const px = (event.clientX - rect.left) / rect.width - 0.5;
-              const py = (event.clientY - rect.top) / rect.height - 0.5;
+              if (!rect || window.scrollY !== rectScrollY) measure();
+              const px = (event.clientX - rect!.left) / rect!.width - 0.5;
+              const py = (event.clientY - rect!.top) / rect!.height - 0.5;
               toRotY(px * max * 2);
               toRotX(-py * max * 2);
             };
             const onEnter = (): void => {
+              measure();
+              release?.kill();
+              // Camada de GPU só enquanto o card está sendo inclinado.
+              el.style.willChange = 'transform';
               toScale(this.tiltScale());
             };
             const onLeave = (): void => {
+              rect = null;
               toRotX(0);
               toRotY(0);
               toScale(1);
+              // Libera a camada quando o card terminar de assentar.
+              release = gsap.delayedCall(0.65, () => {
+                el.style.willChange = '';
+              });
             };
 
             el.addEventListener('pointermove', onMove, { passive: true });
@@ -70,6 +92,7 @@ export class TiltDirective {
               el.removeEventListener('pointermove', onMove);
               el.removeEventListener('pointerenter', onEnter);
               el.removeEventListener('pointerleave', onLeave);
+              release?.kill();
               gsap.killTweensOf(el);
             };
           }),

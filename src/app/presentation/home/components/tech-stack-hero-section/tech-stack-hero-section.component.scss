@@ -29,7 +29,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  will-change: transform, filter, opacity;
+  /* Animado continuamente pelo parallax (scrub): camada própria justificada. */
+  will-change: transform, opacity;
 }
 
 /* --- Tag ------------------------------------------------------------------ */
@@ -136,8 +137,8 @@
 
 .ax-btn--ghost {
   color: var(--ax-text);
-  background: var(--ax-glass-bg);
-  backdrop-filter: var(--ax-glass-blur);
+  /* Fundo sólido equivalente: o blur sobre o canvas animado era refeito a cada frame. */
+  background: rgba(16, 16, 18, 0.7);
   box-shadow: inset 0 0 0 1px var(--ax-border-strong);
 
   &:hover {
@@ -200,13 +201,25 @@
   color: var(--ax-purple) !important;
 }
 
+/*
+ * Pulso: um anel (::after) que cresce e some. Antes era box-shadow animado,
+ * que repintava a cada frame para sempre; agora só transform + opacity.
+ */
 .pulse {
+  position: relative;
   width: 0.7rem;
   height: 0.7rem;
   border-radius: 50%;
   background: var(--ax-ok);
-  box-shadow: 0 0 0 0 rgba(43, 255, 136, 0.6);
-  animation: ax-pulse 2s ease-out infinite;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(43, 255, 136, 0.6);
+    animation: ax-pulse 2s ease-out infinite;
+  }
 }
 
 .hero__status-item .hero__metric {
@@ -249,13 +262,13 @@
 }
 
 @keyframes ax-pulse {
-  70% { box-shadow: 0 0 0 0.8rem rgba(43, 255, 136, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(43, 255, 136, 0); }
+  0% { transform: scale(1); opacity: 1; }
+  70%, 100% { transform: scale(3.3); opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero__tag-dot,
-  .pulse {
+  .pulse::after {
     animation: none;
   }
 }
